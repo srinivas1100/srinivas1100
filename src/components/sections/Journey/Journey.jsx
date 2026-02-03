@@ -6,12 +6,12 @@ const Journey = () => {
     return (
         <section className="journey section" id="journey">
             <div className="container">
-                <SectionTitle
-                    subtitle="Experience"
-                    title="My Journey So Far"
-                    highlight="Journey"
-                    align="center"
-                />
+                <div className="journey-header">
+                    <span className="journey-subtitle">Work Experience</span>
+                    <h2 className="journey-title">
+                        My <span className="journey-highlight">Professional</span> Journey
+                    </h2>
+                </div>
 
                 <div className="journey-timeline">
                     {journey.map((item, index) => (

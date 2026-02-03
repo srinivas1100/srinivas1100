@@ -7,16 +7,35 @@ const Footer = () => {
     return (
         <footer className="footer" id="contact">
             <div className="footer-container container">
+
+                {/* Footer Top Section (New) */}
+                <div className="footer-top">
+                    <h2 className="footer-title">
+                        Let's <span className="highlight-text">Connect</span> there
+                    </h2>
+                    <a href="#blogs" className="btn-view-blogs">
+                        View All Blogs
+                        <span className="btn-icon-circle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <div className="footer-divider"></div>
+
                 {/* Main Footer Content */}
                 <div className="footer-content">
-                    {/* Brand Column */}
+                    {/* Column 1: Brand */}
                     <div className="footer-brand">
                         <a href="#home" className="footer-logo">
-                            <span className="logo-icon">✦</span>
-                            <span className="logo-text">{personalInfo.name}</span>
+                            <span className="logo-icon">O</span>
+                            <span className="logo-text">Olivia.</span>
                         </a>
                         <p className="footer-description">
-                            {personalInfo.shortBio}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                         <div className="footer-social">
                             {socialLinks.map((link) => (
@@ -34,53 +53,54 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="footer-links-column">
-                        <h4 className="footer-heading">Quick Links</h4>
+                    {/* Column 2: Navigation */}
+                    <div className="footer-column">
+                        <h4 className="footer-heading">Navigation</h4>
                         <ul className="footer-links">
-                            {footerLinks.quickLinks.map((link) => (
-                                <li key={link.label}>
-                                    <a href={link.href} className="footer-link">{link.label}</a>
-                                </li>
-                            ))}
+                            <li><a href="#home" className="footer-link">Home</a></li>
+                            <li><a href="#services" className="footer-link">Services</a></li>
+                            <li><a href="#about" className="footer-link">About</a></li>
+                            <li><a href="#projects" className="footer-link">Projects</a></li>
+                            <li><a href="#blogs" className="footer-link">Blogs</a></li>
+                            <li><a href="#faqs" className="footer-link">FAQs</a></li>
                         </ul>
                     </div>
 
-                    {/* Services */}
-                    <div className="footer-links-column">
-                        <h4 className="footer-heading">Services</h4>
-                        <ul className="footer-links">
-                            {footerLinks.services.map((link) => (
-                                <li key={link.label}>
-                                    <a href={link.href} className="footer-link">{link.label}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact & Newsletter */}
-                    <div className="footer-contact">
-                        <h4 className="footer-heading">Let's Connect</h4>
-                        <div className="contact-info">
-                            <a href={`mailto:${personalInfo.email}`} className="contact-link">
-                                <span className="contact-icon">✉️</span>
-                                {personalInfo.email}
-                            </a>
-                            <a href={`tel:${personalInfo.phone}`} className="contact-link">
-                                <span className="contact-icon">📞</span>
+                    {/* Column 3: Contact */}
+                    <div className="footer-column">
+                        <h4 className="footer-heading">Contact</h4>
+                        <div className="contact-info-list">
+                            <a href={`tel:${personalInfo.phone}`} className="contact-item-link">
                                 {personalInfo.phone}
                             </a>
+                            <a href="#" className="contact-item-link">
+                                www.example.com
+                            </a>
+                            <a href={`mailto:${personalInfo.email}`} className="contact-item-link">
+                                {personalInfo.email}
+                            </a>
+                            <address className="contact-address">
+                                2464 Royal Ln. Mesa,<br />
+                                New Jersey 45463
+                            </address>
                         </div>
-                        <div className="newsletter">
-                            <p className="newsletter-text">Subscribe to my newsletter</p>
-                            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+                    </div>
+
+                    {/* Column 4: Newsletter */}
+                    <div className="footer-column newsletter-column">
+                        <h4 className="footer-heading">Get the latest information</h4>
+                        <div className="newsletter-wrapper">
+                            <form className="newsletter-form-inline" onSubmit={(e) => e.preventDefault()}>
                                 <input
                                     type="email"
-                                    placeholder="Enter your email"
-                                    className="newsletter-input"
+                                    placeholder="Email address"
+                                    className="newsletter-input-inline"
                                 />
-                                <button type="submit" className="newsletter-btn">
-                                    →
+                                <button type="submit" className="newsletter-btn-inline">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
                                 </button>
                             </form>
                         </div>
@@ -88,13 +108,16 @@ const Footer = () => {
                 </div>
 
                 {/* Footer Bottom */}
-                <div className="footer-bottom">
-                    <p className="copyright">
-                        © {currentYear} {personalInfo.name}. All rights reserved.
-                    </p>
-                    <div className="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                <div className="footer-bottom-bar">
+                    <div className="footer-bottom-content">
+                        <p className="copyright">
+                            Copyright © {currentYear} <span className="text-highlight">Olivia.</span> All Rights Reserved.
+                        </p>
+                        <div className="footer-legal">
+                            <a href="#">User Terms & Conditions</a>
+                            <span className="separator">|</span>
+                            <a href="#">Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,31 +127,22 @@ const Footer = () => {
 
 // Social Icon Component
 const SocialIcon = ({ name }) => {
+    // Mapping icons as per design (FaFacebookF, etc. usually, but using SVGs here)
     const icons = {
         dribbble: (
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.424 25.424 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.245.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg> // Using FB icon for demo as per screenshot usually 1st icon
         ),
         behance: (
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M7.5 11c1.38 0 2.5-1.12 2.5-2.5S8.88 6 7.5 6H3v5h4.5zm0-3.5c.55 0 1 .45 1 1s-.45 1-1 1H4.5v-2h3zM3 18h4.5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5H3v5zm1.5-3.5h3c.55 0 1 .45 1 1s-.45 1-1 1h-3v-2zM14 7h5v1.5h-5V7zm6.5 5.5c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4c1.38 0 2.64-.7 3.37-1.76l-1.27-.95c-.46.66-1.22 1.06-2.1 1.06-1.24 0-2.26-.91-2.45-2.1h6.42c.02-.08.03-.17.03-.25zm-6.42-.75c.21-1.08 1.15-1.9 2.42-1.9s2.21.82 2.42 1.9h-4.84z" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22 7h-5v2h5V7zm0 10h-5v2h5v-2zm-12-5c0-2-1.5-3-3.5-3H2v10h4.5c2 0 3.5-1.5 3.5-3.5V12zm-3.5 5H4v-3h2.5c.8 0 1.5.7 1.5 1.5S7.3 17 6.5 17zm0-5H4V9h2.5c.8 0 1.5.7 1.5 1.5S7.3 12 6.5 12z" /></svg> // Behance
         ),
         linkedin: (
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" /></svg> // Youtube
         ),
         twitter: (
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.39 4.61 3.43-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.42-.01-.63.96-.69 1.79-1.56 2.45-2.55z" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg> // Twitter
         ),
         instagram: (
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2m-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 011.25 1.25A1.25 1.25 0 0117.25 8 1.25 1.25 0 0116 6.75a1.25 1.25 0 011.25-1.25M12 7a5 5 0 015 5 5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5m0 2a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3z" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
         ),
     };
 

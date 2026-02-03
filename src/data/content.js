@@ -87,12 +87,34 @@ export const selectedWorks = [
 ];
 
 export const projects = [
-  { id: 1, title: "Mobile Banking App", image: "/projects/project1.jpg", category: "Mobile App" },
-  { id: 2, title: "SaaS Dashboard", image: "/projects/project2.jpg", category: "Web App" },
-  { id: 3, title: "Travel Booking", image: "/projects/project3.jpg", category: "Mobile App" },
-  { id: 4, title: "Food Delivery", image: "/projects/project4.jpg", category: "Mobile App" },
-  { id: 5, title: "Social Platform", image: "/projects/project5.jpg", category: "Web App" },
-  { id: 6, title: "Fitness Tracker", image: "/projects/project6.jpg", category: "Mobile App" },
+  {
+    id: 1,
+    title: "Beauty Product - Ecommerce Mobile App Solution",
+    image: "/projects/project1.jpg",
+    tags: ["UI/UX Design", "App Design", "Wireframe"],
+    category: "Mobile App"
+  },
+  {
+    id: 2,
+    title: "Beauty Product Mobile App Landing Page Design",
+    image: "/projects/project2.jpg",
+    tags: ["UI/UX Design", "Web Design", "Wireframe"],
+    category: "Web Design"
+  },
+  {
+    id: 3,
+    title: "Coffee Shop App - Coffee Ordering App Solution",
+    image: "/projects/project3.jpg",
+    tags: ["UI/UX Design", "App Design", "Wireframe"],
+    category: "Mobile App"
+  },
+  {
+    id: 4,
+    title: "Coffee Shop Mobile App Landing Page Design",
+    image: "/projects/project4.jpg",
+    tags: ["UI/UX Design", "Web Design", "Wireframe"],
+    category: "Web Design"
+  },
 ];
 
 export const expertise = [
@@ -229,3 +251,28 @@ export const footerLinks = {
     { label: "Consulting", href: "#" },
   ],
 };
+
+export const servicesData = [
+  {
+    id: 1,
+    icon: "uiux",
+    title: "UI/UX Design",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ...",
+    link: "#"
+  },
+  {
+    id: 2,
+    icon: "app",
+    title: "Application Design",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ...",
+    link: "#"
+  },
+  {
+    id: 3,
+    icon: "web",
+    title: "Website Design",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ...",
+    link: "#"
+  }
+];
+

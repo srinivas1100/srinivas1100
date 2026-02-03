@@ -1,57 +1,78 @@
-import Button from '../../common/Button';
 import './About.css';
+import oliviaProfile from '../../../assets/olivia_profile.png';
 
 const About = () => {
+    const serviceTags = [
+        { label: 'UX/UI Design', position: 'tag-1' },
+        { label: 'Mobile App Design', position: 'tag-2' },
+        { label: 'Website Design', position: 'tag-3' },
+        { label: 'Design System', position: 'tag-4' },
+        { label: 'Prototype', position: 'tag-5' },
+        { label: 'Dashboard', position: 'tag-6' },
+        { label: 'Wireframe Design', position: 'tag-7' },
+    ];
+
     return (
-        <section className="about section" id="about">
+        <section className="about-section" id="about">
             <div className="container">
-                <div className="about-content">
-                    <div className="about-image">
-                        <div className="about-image-wrapper">
-                            <img
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop"
-                                alt="Working on design"
-                            />
-                            <div className="about-image-accent"></div>
+                <div className="about-grid">
+                    <div className="about-visual">
+                        <div className="profile-circle-wrapper">
+                            <div className="profile-circle-bg"></div>
+                            <img src={oliviaProfile} alt="Olivia Smith" className="profile-img" />
+                            <div className="floating-tags">
+                                {serviceTags.map((tag, index) => (
+                                    <span key={index} className={`service-tag ${tag.position}`}>
+                                        {tag.label}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    <div className="about-text">
-                        <span className="about-subtitle">About Me</span>
-                        <h2 className="about-title">
-                            I Help Startups <span className="highlight">Launch</span> &
-                            <span className="highlight"> Grow</span> Their Products
-                        </h2>
-                        <p className="about-description">
-                            With over 8 years of experience in product design, I've helped numerous startups
-                            and established companies transform their ideas into successful digital products.
-                            My approach combines user-centered design principles with business strategy to
-                            create solutions that not only look great but also drive results.
-                        </p>
-                        <p className="about-description">
-                            I believe in the power of design to solve complex problems and create meaningful
-                            experiences. Whether it's crafting a new product from scratch or improving an
-                            existing one, I bring passion, creativity, and strategic thinking to every project.
+                    <div className="about-content">
+                        <div className="content-header">
+                            <span className="about-subtitle">— About Me</span>
+                            <h2 className="about-heading">
+                                Who is <span className="script-name">Olivia Smith?</span>
+                            </h2>
+                        </div>
+
+                        <p className="about-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
 
-                        <div className="about-stats">
-                            <div className="about-stat">
-                                <span className="stat-number">8+</span>
-                                <span className="stat-label">Years Experience</span>
+                        <div className="stats-grid">
+                            <div className="stat-item">
+                                <h3 className="stat-value">600+</h3>
+                                <p className="stat-label">Project Completed</p>
                             </div>
-                            <div className="about-stat">
-                                <span className="stat-number">50+</span>
-                                <span className="stat-label">Projects Delivered</span>
+                            <div className="stat-item">
+                                <h3 className="stat-value">50+</h3>
+                                <p className="stat-label">Industry Covered</p>
                             </div>
-                            <div className="about-stat">
-                                <span className="stat-number">30+</span>
-                                <span className="stat-label">Happy Clients</span>
+                            <div className="stat-item">
+                                <h3 className="stat-value">18+</h3>
+                                <p className="stat-label">Years of Experience</p>
                             </div>
                         </div>
 
-                        <Button variant="secondary" size="large" href="#contact">
-                            Let's Work Together
-                        </Button>
+                        <div className="about-actions">
+                            <a href="/cv.pdf" className="btn-download-cv">
+                                <div className="btn-cv-inner">
+                                    <span className="btn-cv-text">Download CV</span>
+                                </div>
+                                <div className="btn-cv-arrow">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" />
+                                    </svg>
+                                </div>
+                            </a>
+                            <div className="signature-area">
+                                <span className="signature-text-plain">Olivia Smith</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,3 +81,4 @@ const About = () => {
 };
 
 export default About;
+

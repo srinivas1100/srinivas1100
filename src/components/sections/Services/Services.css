@@ -1,0 +1,199 @@
+.services-section {
+    padding: var(--space-20) 0;
+    background-color: var(--color-bg-primary);
+}
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-12);
+}
+
+.services-subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.subtitle-dash {
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+    font-size: 1.5em;
+}
+
+.services-title {
+    font-size: 3.2rem;
+    font-weight: var(--font-bold);
+    color: #1A1A1A;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.services-title .text-highlight {
+    color: var(--color-primary);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* View All Services Button */
+.btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    padding: 3px;
+    text-decoration: none;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-view-all:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-view-inner {
+    background-color: #2D4033;
+    /* Specific dark green/gray from screenshot */
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+}
+
+.btn-text {
+    color: var(--color-text-light);
+    font-weight: var(--font-semibold);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.btn-view-arrow {
+    width: 42px;
+    height: 42px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    margin-right: 8px;
+    color: var(--color-text-primary);
+}
+
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.service-card {
+    background-color: #F7F7F7;
+    /* Specific light gray from screenshot */
+    padding: 32px;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+    background-color: var(--color-bg-primary);
+}
+
+.service-icon-wrapper {
+    margin-bottom: 24px;
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.service-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+}
+
+.service-card-description {
+    font-size: 15px;
+    color: #777777;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.service-learn-more {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 16px;
+    font-weight: 700;
+    color: #2D4033;
+    /* Dark green from screenshot */
+    text-decoration: none;
+    transition: var(--transition-base);
+    margin-top: auto;
+}
+
+.service-learn-more svg {
+    color: #F5A623;
+    /* Yellow/Orange from screenshot */
+    width: 18px;
+    height: 18px;
+    transition: transform var(--transition-fast);
+}
+
+.service-learn-more:hover {
+    color: #1A2E22;
+}
+
+.service-learn-more:hover svg {
+    transform: translateX(5px);
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-6);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-title {
+        font-size: var(--text-4xl);
+    }
+}

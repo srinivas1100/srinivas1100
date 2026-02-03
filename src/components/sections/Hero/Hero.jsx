@@ -49,8 +49,8 @@ const Hero = () => {
                                     <span>View My Portfolio</span>
                                 </a>
                                 <button className="btn-play-icon" aria-label="Play">
-                                    <svg width="16" height="16" viewBox="0 0 12 12" fill="currentColor">
-                                        <path d="M2.5 1.5v9l7-4.5-7-4.5z" />
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z" />
                                     </svg>
                                 </button>
                             </div>
@@ -78,7 +78,11 @@ const Hero = () => {
                             {/* Circular Hire Me Badge */}
                             <div className="hire-me-badge">
                                 <div className="hire-me-inner">
-                                    <span className="hire-me-dot"></span>
+                                    <span className="hire-me-arrow">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                                        </svg>
+                                    </span>
                                 </div>
                                 <svg className="hire-me-text" viewBox="0 0 100 100">
                                     <defs>
@@ -86,7 +90,7 @@ const Hero = () => {
                                     </defs>
                                     <text>
                                         <textPath href="#circlePath">
-                                            • HIRE ME • HIRE ME • HIRE ME
+                                            HIRE ME • HIRE ME • HIRE ME •
                                         </textPath>
                                     </text>
                                 </svg>
@@ -103,13 +107,17 @@ const Hero = () => {
                             {/* UI/UX Designer Badge (Yellow) - with bottom-left tail */}
                             <div className="floating-badge badge-uiux">
                                 <span className="badge-tail badge-tail-bl"></span>
-                                <span>UI/UX Designer</span>
+                                <span>Product Designer</span>
                             </div>
 
-                            {/* Product Designer Badge (Green) - with left tail */}
+                            {/* Product Designer Badge (Green) - with clean triangle cursor (no tail) */}
                             <div className="floating-badge badge-product">
-                                <span className="badge-tail badge-tail-left"></span>
-                                <span>Product Designer</span>
+                                <span className="badge-cursor">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.5 12L4.5 21L4.5 3L19.5 12Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+                                    </svg>
+                                </span>
+                                <span>UI/UX Designer</span>
                             </div>
                         </div>
                     </div>
@@ -117,14 +125,17 @@ const Hero = () => {
             </div>
 
             {/* Services Marquee */}
-            <div className="hero-marquee">
-                <div className="marquee-track">
-                    {[...services, ...services, ...services].map((service, index) => (
-                        <div className="marquee-item" key={index}>
-                            <span className="marquee-text">{service}</span>
-                            <span className="marquee-star">✦</span>
-                        </div>
-                    ))}
+            <div className="hero-marquee-wrapper">
+                <div className="hero-marquee-bg"></div>
+                <div className="hero-marquee">
+                    <div className="marquee-track">
+                        {[...services, ...services, ...services].map((service, index) => (
+                            <div className="marquee-item" key={index}>
+                                <span className="marquee-text">{service}</span>
+                                <span className="marquee-star">*</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
