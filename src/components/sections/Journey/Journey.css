@@ -1,0 +1,99 @@
+/* ===================================
+   Journey Section Styles
+   =================================== */
+
+.journey {
+    background-color: var(--color-bg-secondary);
+}
+
+.journey-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.journey-item {
+    display: flex;
+    gap: var(--space-6);
+    position: relative;
+}
+
+.journey-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.journey-dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary);
+    border: 3px solid var(--color-bg-secondary);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 0 3px var(--color-primary);
+    z-index: 1;
+}
+
+.journey-line {
+    width: 2px;
+    flex: 1;
+    background-color: var(--color-border);
+    margin-top: var(--space-2);
+}
+
+.journey-content {
+    flex: 1;
+    padding-bottom: var(--space-10);
+}
+
+.journey-item:last-child .journey-content {
+    padding-bottom: 0;
+}
+
+.journey-year {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+}
+
+.journey-role {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.journey-company {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.journey-description {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .journey-item {
+        gap: var(--space-4);
+    }
+
+    .journey-content {
+        padding-bottom: var(--space-8);
+    }
+
+    .journey-role {
+        font-size: var(--text-lg);
+    }
+}

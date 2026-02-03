@@ -1,0 +1,136 @@
+/* ===================================
+   Expertise Section Styles
+   =================================== */
+
+.expertise {
+    background-color: var(--color-bg-primary);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.expertise-card {
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    transition: all var(--transition-base);
+}
+
+.expertise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Card Colors */
+.expertise-card-yellow {
+    background-color: var(--color-primary);
+}
+
+.expertise-card-green {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+}
+
+.expertise-card-green .expertise-title,
+.expertise-card-green .expertise-description,
+.expertise-card-green .expertise-link {
+    color: var(--color-text-light);
+}
+
+.expertise-card-light {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+}
+
+/* Icon */
+.expertise-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+    color: currentColor;
+}
+
+.expertise-card-light .expertise-icon {
+    background-color: var(--color-bg-accent);
+    color: var(--color-secondary);
+}
+
+.expertise-card-yellow .expertise-icon {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-primary);
+}
+
+/* Title */
+.expertise-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-primary);
+}
+
+/* Description */
+.expertise-description {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+    color: var(--color-text-secondary);
+}
+
+.expertise-card-yellow .expertise-description {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Link */
+.expertise-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: gap var(--transition-fast);
+}
+
+.expertise-link:hover {
+    gap: var(--space-3);
+}
+
+.expertise-card-green .expertise-link:hover {
+    color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .expertise-card:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-card:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+
+    .expertise-card {
+        padding: var(--space-6);
+    }
+}

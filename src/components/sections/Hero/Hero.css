@@ -1,0 +1,597 @@
+/* ===================================
+   Hero Section Styles - New Design
+   =================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    background: var(--color-bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+    width: 100%;
+}
+
+/* ===================================
+   Hero Text Content
+   =================================== */
+.hero-text {
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hello Badge */
+.hero-greeting {
+    margin-bottom: var(--space-6);
+}
+
+.greeting-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-primary);
+    position: relative;
+    background: transparent;
+}
+
+.badge-corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--color-primary);
+    border-style: solid;
+}
+
+.badge-corner-tl {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+}
+
+.badge-corner-tr {
+    top: 0;
+    right: 0;
+    border-width: 2px 2px 0 0;
+}
+
+.badge-corner-bl {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 2px 2px;
+}
+
+.badge-corner-br {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: var(--font-bold);
+    line-height: 1.15;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-primary);
+}
+
+.hero-name {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: var(--font-normal);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.hero-role {
+    display: inline;
+}
+
+.hero-location {
+    display: inline;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+    max-width: 400px;
+}
+
+/* CTA Buttons */
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Yellow wrapper containing portfolio button and play icon */
+.btn-portfolio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    padding: 6px 8px 6px 6px;
+    gap: 0;
+}
+
+.btn-portfolio {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    border: none;
+}
+
+.btn-portfolio:hover {
+    background-color: #163d2e;
+}
+
+.btn-play-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-left: 12px;
+}
+
+.btn-play-icon:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.05);
+}
+
+.btn-play-icon svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.btn-hire {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid #1a1a1a;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.btn-hire:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   Hero Image Section
+   =================================== */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Organic Blob Background */
+.hero-blob-bg {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 400px;
+    background-color: var(--color-primary);
+    /* Gold/Yellow */
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    z-index: 0;
+    opacity: 1;
+    filter: blur(2px);
+}
+
+@keyframes blobAnimate {
+    0% {
+        border-radius: 45% 55% 70% 30% / 30% 60% 40% 70%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom;
+    mix-blend-mode: multiply;
+    /* Blends white background into yellow blob */
+    filter: contrast(1.4) brightness(1.2);
+    /* Pushing gray grid squares towards white */
+    position: relative;
+    z-index: 2;
+}
+
+/* Circular Hire Me Badge */
+.hire-me-badge {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    width: 90px;
+    height: 90px;
+    z-index: 3;
+}
+
+.hire-me-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hire-me-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-primary);
+    /* Gold dot center */
+    border-radius: 50%;
+}
+
+.hire-me-text {
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.hire-me-text text {
+    font-size: 8.5px;
+    font-weight: var(--font-semibold);
+    fill: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Decoration scroll line */
+.hero-scroll-line {
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    z-index: 3;
+    animation: floatBadge 3s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+/* UI/UX Designer Badge - Yellow with bottom-left tail */
+.badge-uiux {
+    right: -40px;
+    top: 18%;
+    background-color: var(--color-primary);
+    color: #1a1a1a;
+}
+
+.badge-uiux .badge-tail-bl {
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid var(--color-primary);
+    transform: rotate(-20deg);
+}
+
+/* Product Designer Badge - Green with left tail */
+.badge-product {
+    bottom: 30%;
+    left: 50px;
+    background-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+.badge-product .badge-tail-left {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 12px solid var(--color-secondary);
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.badge-product {
+    animation: floatBadgeProduct 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatBadgeProduct {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* ===================================
+   Services Marquee
+   =================================== */
+.hero-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    padding: var(--space-4) 0;
+    transform: rotate(-1.5deg) scale(1.02);
+    margin-top: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+.marquee-track {
+    display: flex;
+    gap: var(--space-8);
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    flex-shrink: 0;
+}
+
+.marquee-text {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--color-secondary);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.marquee-star {
+    color: var(--color-secondary);
+    font-size: var(--text-xl);
+}
+
+/* ===================================
+   Responsive Styles
+   =================================== */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .hero-content {
+        gap: var(--space-6);
+    }
+
+    .hero-circle-bg {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hire-me-badge {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hire-me-inner {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: var(--space-6);
+    }
+
+    .hero-image-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .hero-description {
+        font-size: var(--text-sm);
+        max-width: 100%;
+    }
+
+    .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-circle-bg {
+        width: 200px;
+        height: 200px;
+        top: 20%;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+
+    .hire-me-badge {
+        width: 60px;
+        height: 60px;
+        top: 0;
+        right: 0;
+    }
+
+    .hire-me-inner {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hire-me-text text {
+        font-size: 7px;
+    }
+
+    .hero-decorative-line {
+        display: none;
+    }
+
+    .hero-marquee {
+        transform: rotate(-1deg) scale(1.02);
+        margin-top: var(--space-6);
+    }
+
+    .marquee-text {
+        font-size: var(--text-base);
+    }
+}

@@ -1,0 +1,103 @@
+/* ===================================
+   FAQ Section Styles
+   =================================== */
+
+.faq {
+    background-color: var(--color-bg-secondary);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.faq-item {
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.faq-question:hover {
+    background-color: var(--color-bg-secondary);
+}
+
+.question-text {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+}
+
+.faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.faq-item.open .faq-icon {
+    background-color: var(--color-primary);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    padding: 0 var(--space-6) var(--space-6);
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: var(--space-4);
+    }
+
+    .question-text {
+        font-size: var(--text-base);
+    }
+
+    .faq-answer p {
+        padding: 0 var(--space-4) var(--space-4);
+        font-size: var(--text-sm);
+    }
+}
