@@ -3,7 +3,7 @@
    =================================== */
 
 .skills-section {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-primary);
     padding: 100px 0;
     text-align: center;
 }
@@ -16,53 +16,33 @@
     display: block;
     font-size: 20px;
     font-weight: 500;
-    color: #000000;
-    /* Black */
+    color: var(--color-text-primary);
     margin-bottom: 16px;
     position: relative;
     display: inline-block;
 }
 
 .skills-dash {
-    color: #F5A623;
+    color: var(--color-primary);
 }
 
 .skills-heading {
     font-size: 48px;
     font-weight: 700;
     line-height: 1.2;
-    color: #000000;
+    color: var(--color-text-primary);
 }
 
 .text-highlight {
-    color: #F5A623;
-    font-weight: 400;
-    /* Lighter weight for "Exploring..." based on image */
-    font-style: italic;
-    /* "Exploring the Tools" looks italic/script-like? No, looks like a distinct font or just italic/light */
-    font-family: 'Dancing Script', cursive;
-    /* Using script based on previous "About Me" style similarity, or just normal */
-}
-
-/* Actually looking at image, "Exploring the Tools" is Italic Serif or Script-like. Let's try italic serif or just the script font if available. 'Dancing Script' was used in About Me. Let's stick to base font but italic/yellow if it looks standard, or use the script if it matches. 
-   Wait, zooming in on "Exploring the Tools" in the screenshot. It looks like a standard sans-serif/serif italic, not fully cursive. 
-   Let's assume "Outfit" or standard font but italic yellow. 
-*/
-.text-highlight {
-    color: #F5A623;
+    color: var(--color-primary);
     font-weight: 400;
     font-style: normal;
-    /* Actually looks like normal font in yellow in some designs, but here let's match the "Who is" style if possible. 
-    In the screenshot: "Exploring the Tools" is Yellow, "Behind My Designs" is Black. Both look like the same Sans-Serif font. 
-    Let's align with the "Who is Olivia Smith" logic but inverted colors? 
-    Actually, let's just make it Yellow and Normal/Bold as appropriate. */
     font-family: 'Dancing Script', cursive;
-    /* Let's use the script font for the "Exploring..." part as it matches the "Olivia Smith" vibe if it's the signature style. */
     font-size: 56px;
 }
 
 .text-secondary {
-    color: #000000 !important;
+    color: var(--color-text-primary) !important;
     font-weight: 700;
 }
 
@@ -81,11 +61,10 @@
 }
 
 /* The Pill Card */
-/* The Pill Card */
 .skill-pill {
     width: 150px;
     height: 240px;
-    background-color: #F8F9FA;
+    background-color: var(--color-bg-secondary);
     /* Light gray */
     border-radius: 120px;
     /* Fully rounded */
@@ -94,20 +73,20 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
-    border: 1px solid #EBEBEB;
+    border: 1px solid var(--color-border-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-pill:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-primary);
 }
 
 .skill-icon {
     width: 90px;
     height: 90px;
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -116,17 +95,27 @@
     /* Very subtle shadow */
 }
 
-.skill-percentage {
-    font-size: 32px;
-    font-weight: 800;
-    /* Extra bold */
-    color: #000000;
+.skill-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Subtitle label instead of percentage */
+.skill-subtitle-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.3;
 }
 
 .skill-name {
     font-size: 18px;
-    font-weight: 500;
-    color: #000000;
+    font-weight: 600;
+    color: var(--color-text-primary);
     margin-top: 20px;
 }
 
@@ -149,6 +138,20 @@
     .skill-pill {
         width: 120px;
         height: 180px;
+    }
+
+    .skill-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .skill-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .skill-subtitle-label {
+        font-size: 11px;
     }
 
     .skills-heading {

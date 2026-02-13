@@ -1,32 +1,32 @@
 import './Skills.css';
 
 const Skills = () => {
-    const favoriteTools = [
-        { name: 'Figma', percentage: '98%', icon: 'figma' },
-        { name: 'Sketch', percentage: '92%', icon: 'sketch' },
-        { name: 'Photoshop', percentage: '90%', icon: 'photoshop' },
-        { name: 'After Effects', percentage: '85%', icon: 'aftereffects' },
-        { name: 'Storybook', percentage: '90%', icon: 'storybook' },
-        { name: 'InVision', percentage: '95%', icon: 'invision' },
+    const coreTools = [
+        { name: 'Flutter', subtitle: 'Mobile Framework', icon: 'flutter' },
+        { name: 'iOS (Swift)', subtitle: 'Native Development', icon: 'swift' },
+        { name: 'Node.js', subtitle: 'Backend & APIs', icon: 'nodejs' },
+        { name: 'React.js', subtitle: 'Web Dashboards', icon: 'react' },
+        { name: 'AI & LLMs', subtitle: 'Intelligent Features', icon: 'ai' },
+        { name: 'Cloud & DevOps', subtitle: 'Infrastructure', icon: 'cloud' },
     ];
 
     return (
         <section className="skills-section" id="skills">
             <div className="container">
                 <div className="skills-header">
-                    <span className="skills-subtitle"><span className="skills-dash">—</span> My Favorite Tools</span>
+                    <span className="skills-subtitle"><span className="skills-dash">—</span> Core Tools & Stack</span>
                     <h2 className="skills-heading">
-                        <span className="text-highlight">Exploring the Tools</span> <br />
-                        <span className="text-secondary">Behind My Designs</span>
+                        <span className="text-highlight">Tools I Use to Build</span> <br />
+                        <span className="text-secondary">Production Systems</span>
                     </h2>
                 </div>
 
                 <div className="skills-grid">
-                    {favoriteTools.map((tool, index) => (
+                    {coreTools.map((tool, index) => (
                         <div key={index} className="skill-item">
                             <div className="skill-pill">
                                 <SkillIcon name={tool.icon} />
-                                <span className="skill-percentage">{tool.percentage}</span>
+                                <span className="skill-subtitle-label">{tool.subtitle}</span>
                             </div>
                             <span className="skill-name">{tool.name}</span>
                         </div>
@@ -39,51 +39,72 @@ const Skills = () => {
 
 const SkillIcon = ({ name }) => {
     const icons = {
-        figma: (
-            <svg viewBox="0 0 38 57" fill="none" width="40" height="40">
-                <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE" />
-                <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83" />
-                <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262" />
-                <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E" />
-                <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF" />
+        flutter: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <path d="M36.9 54.5L24.5 42 36.9 29.6H52.2L39.8 42 52.2 54.5H36.9Z" fill="#54C5F8" />
+                <path d="M11.8 29.6L24.5 42 36.9 29.6 24.5 17.2 11.8 29.6Z" fill="#54C5F8" />
+                <path d="M36.9 9.5H52.2L24.5 37 11.8 24.3 36.9 9.5Z" fill="#01579B" />
+                <path d="M36.9 29.6L24.5 42L36.9 54.5H52.2L39.8 42L52.2 29.6H36.9Z" fill="#29B6F6" />
             </svg>
         ),
-        sketch: (
-            <svg viewBox="0 0 32 32" fill="none" width="40" height="40">
-                <path d="M16 2L2 11L16 30L30 11L16 2Z" fill="#FDB300" />
-                <path d="M6 11L16 30L2 11H6Z" fill="#EA6C00" />
-                <path d="M26 11L16 30L30 11H26Z" fill="#EA6C00" />
-                <path d="M6 11H26L16 30L6 11Z" fill="#FDAD00" />
-                <path d="M16 2L6 11H26L16 2Z" fill="#FDD231" />
-                <path d="M2 11L6 11L16 2L2 11Z" fill="#FDAD00" />
-                <path d="M30 11L26 11L16 2L30 11Z" fill="#FDAD00" />
+        swift: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <rect width="64" height="64" rx="14" fill="url(#swift_bg)" />
+                <path d="M42.8 46.4C42.8 46.4 31.6 38.4 25.2 28.8C25.2 28.8 36.4 38 40 40.4C40 40.4 48.4 31.2 48.4 20.4C48.4 20.4 41.6 30.8 35.2 33.6C35.2 33.6 24 22.8 20.4 14C20.4 14 29.2 27.6 33.6 31.6C30.8 30 19.2 22.4 12.8 14C12.8 14 22.4 26 35.2 35.6C35.2 35.6 23.2 42 12 40.8C12 40.8 24 49.6 38 43.2C38 43.2 44.4 40 48.4 32.8C48.4 32.8 51.6 43.6 42.8 46.4Z" fill="white" />
+                <defs>
+                    <linearGradient id="swift_bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#FA7343" />
+                        <stop offset="1" stopColor="#F05138" />
+                    </linearGradient>
+                </defs>
             </svg>
         ),
-        photoshop: (
-            <svg viewBox="0 0 32 32" fill="none" width="40" height="40">
-                <rect width="32" height="32" rx="6" fill="#001E36" />
-                <path d="M9 22V10H13C15.2091 10 17 11.7909 17 14C17 16.2091 15.2091 18 13 18H11V22H9ZM11 16H13C14.1046 16 15 15.1046 15 14C15 12.8954 14.1046 12 13 12H11V16Z" fill="#31A8FF" />
-                <path d="M18 19.5C18 17.567 19.567 16 21.5 16C22.3 16 23.1 16.3 23.7 16.8V16.2H25.5V22H23.7V21.4C23.1 21.9 22.3 22.2 21.5 22.2C19.567 22.2 18 20.633 18 18.7V19.5ZM21.5 20.2C22.4 20.2 23.2 19.5 23.2 18.5C23.2 17.5 22.4 16.8 21.5 16.8C20.6 16.8 19.8 17.5 19.8 18.5C19.8 19.5 20.6 20.2 21.5 20.2Z" fill="#31A8FF" />
+        nodejs: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <path d="M32 8L53.6 20V44L32 56L10.4 44V20L32 8Z" fill="#68A063" />
+                <path d="M32 8L53.6 20V44L32 56V8Z" fill="#3C873A" />
+                <path d="M32 28V56L10.4 44V20L32 28Z" fill="#8CC84B" />
+                <text x="32" y="40" fontSize="14" fontWeight="bold" fill="white" textAnchor="middle" fontFamily="Arial">JS</text>
             </svg>
         ),
-        aftereffects: (
-            <svg viewBox="0 0 32 32" fill="none" width="40" height="40">
-                <rect width="32" height="32" rx="6" fill="#00005B" />
-                <path d="M14 22H11.5L9.5 17.5H6L4 22H1.5L7 8H9L14 22ZM8 10.5L6.5 15.5H9.5L8 10.5Z" fill="#9999FF" />
-                <path d="M21 16C22.5 16 23.5 17.1 23.5 18.7V22H21.5V19C21.5 18 21 17.5 20.2 17.5C19.4 17.5 18.8 18.1 18.8 19.1V22H16.8V12H18.8V16.3C19.3 16.1 19.9 16 20.5 16H21Z" fill="#9999FF" />
+        react: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <circle cx="32" cy="32" r="6" fill="#61DAFB" />
+                <ellipse cx="32" cy="32" rx="24" ry="9" stroke="#61DAFB" strokeWidth="2" fill="none" />
+                <ellipse cx="32" cy="32" rx="24" ry="9" stroke="#61DAFB" strokeWidth="2" fill="none" transform="rotate(60 32 32)" />
+                <ellipse cx="32" cy="32" rx="24" ry="9" stroke="#61DAFB" strokeWidth="2" fill="none" transform="rotate(120 32 32)" />
             </svg>
         ),
-        storybook: (
-            <svg viewBox="0 0 32 32" fill="none" width="40" height="40">
-                <path d="M16.76 2.05L26.68 7.35C27.08 7.57 27.27 8.01 27.18 8.44L23.44 26.54C23.35 26.96 23.01 27.29 22.58 27.38L4.48 31.12C4.05 31.21 3.61 31.02 3.39 30.62L0.29 20.7C0.07 20.3 0.17 19.81 0.5 19.52L14.71 7.21C15.22 6.77 15.98 6.81 16.44 7.27L22 12.83" fill="#FF4785" />
-                <rect x="5" y="5" width="22" height="22" rx="4" fill="#FF4785" />
-                <path d="M11 11H21V14H11V11ZM11 16H21V19H11V16ZM11 21H17V24H11V21Z" fill="white" />
+        ai: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <rect width="64" height="64" rx="14" fill="url(#ai_gradient)" />
+                <circle cx="32" cy="26" r="8" stroke="white" strokeWidth="2" fill="none" />
+                <circle cx="32" cy="26" r="3" fill="white" />
+                <path d="M24 44C24 38.4772 27.5817 34 32 34C36.4183 34 40 38.4772 40 44V50H24V44Z" stroke="white" strokeWidth="2" fill="none" />
+                <circle cx="20" cy="20" r="2" fill="white" opacity="0.6" />
+                <circle cx="44" cy="20" r="2" fill="white" opacity="0.6" />
+                <line x1="20" y1="20" x2="26" y2="22" stroke="white" strokeWidth="1" opacity="0.5" />
+                <line x1="44" y1="20" x2="38" y2="22" stroke="white" strokeWidth="1" opacity="0.5" />
+                <defs>
+                    <linearGradient id="ai_gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#667EEA" />
+                        <stop offset="1" stopColor="#764BA2" />
+                    </linearGradient>
+                </defs>
             </svg>
         ),
-        invision: (
-            <svg viewBox="0 0 32 32" fill="none" width="40" height="40">
-                <rect width="32" height="32" rx="6" fill="#FF3366" />
-                <path d="M16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8ZM20.5 17.5H18.5V20.5H16.5V17.5H14.5V20.5H12.5V16.5C12.5 15.4 13.4 14.5 14.5 14.5H18.5V12.5H12.5V11.5H18.5C19.6 11.5 20.5 12.4 20.5 13.5V17.5Z" fill="white" />
+        cloud: (
+            <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <rect width="64" height="64" rx="14" fill="url(#cloud_gradient)" />
+                <path d="M46 36H43C43 30.4772 38.5228 26 33 26C28.2014 26 24.1571 29.5886 23.1561 34.3C19.7979 34.5519 17.2 37.4774 17.2 41C17.2 44.866 20.334 48 24.2 48H46C49.3137 48 52 45.3137 52 42C52 38.6863 49.3137 36 46 36Z" fill="white" />
+                <rect x="29" y="14" width="6" height="3" rx="1" fill="white" opacity="0.6" />
+                <rect x="26" y="19" width="12" height="3" rx="1" fill="white" opacity="0.8" />
+                <defs>
+                    <linearGradient id="cloud_gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#4FACFE" />
+                        <stop offset="1" stopColor="#00F2FE" />
+                    </linearGradient>
+                </defs>
             </svg>
         ),
     };

@@ -1,32 +1,24 @@
+import arrowRightIcon from '../../../assets/arrow-right.png';
 import './Contact.css';
 
 const Contact = () => {
     return (
-        <section className="contact section" id="contact" style={{ backgroundColor: '#F8F9FA'} }>
+        <section className="contact-section" id="contact">
             <div className="container" >
                 <div className="contact-grid">
                     {/* Left Column: Contact Info */}
                     <div className="contact-info">
                         <div className="contact-header">
-                            <span className="contact-subtitle">Contact Us</span>
+                            <span className="contact-subtitle">Contact</span>
                             <h2 className="contact-title">
-                                Let's Talk for <span className="contact-highlight">Your</span><br />
-                                <span className="contact-highlight">Next Projects</span>
+                                Let's Talk
                             </h2>
                             <p className="contact-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                Open to remote opportunities and product-focused engineering roles. If you’re building a product and need a senior mobile engineer or tech lead, feel free to reach out.
                             </p>
                         </div>
 
                         <div className="contact-details">
-                            <div className="contact-item">
-                                <span className="contact-icon icon-phone">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                    </svg>
-                                </span>
-                                <span className="contact-text">+1(406) 555-0120</span>
-                            </div>
                             <div className="contact-item">
                                 <span className="contact-icon icon-email">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -34,27 +26,31 @@ const Contact = () => {
                                         <polyline points="22,6 12,13 2,6"></polyline>
                                     </svg>
                                 </span>
-                                <span className="contact-text">example@gmail.com</span>
+                                <a href="mailto:srinu11112000@gmail.com" className="contact-text" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    srinu11112000@gmail.com
+                                </a>
                             </div>
                             <div className="contact-item">
-                                <span className="contact-icon icon-skype">
+                                <span className="contact-icon icon-linkedin">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M17 6c2.5 1.5 3 4.5 1 7-1 1-1.5 2-1 3s.5 2 1 3c2.5 1.5 4.5 1 7-1"></path>
-                                        <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"></path>
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
                                     </svg>
                                 </span>
-                                <span className="contact-text">example</span>
+                                <a href="https://www.linkedin.com/in/srinivasu-vadlamudi-39571a1a2/" target="_blank" rel="noopener noreferrer" className="contact-text" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    linkedin.com/in/srinivasu-vadlamudi
+                                </a>
                             </div>
                             <div className="contact-item">
-                                <span className="contact-icon icon-location">
+                                <span className="contact-icon icon-github">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                        <circle cx="12" cy="10" r="3"></circle>
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                     </svg>
                                 </span>
-                                <span className="contact-text">
-                                    2464 Royal Ln. Mesa, New<br />Jersey 45463
-                                </span>
+                                <a href="https://github.com/srinivas1100" target="_blank" rel="noopener noreferrer" className="contact-text" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    github.com/srinivas1100
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -73,55 +69,24 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="form-row">
-                                <div className="form-group">
-                                    <label htmlFor="phone">Phone *</label>
-                                    <input type="tel" id="phone" placeholder="Enter Phone Number" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="interest">I'm Interested in *</label>
-                                    <select id="interest">
-                                        <option value="">Select</option>
-                                        <option value="web">Web Design</option>
-                                        <option value="app">App Design</option>
-                                        <option value="branding">Branding</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="form-row">
-                                <div className="form-group">
-                                    <label htmlFor="budget">Budget Range (USD) *</label>
-                                    <select id="budget">
-                                        <option value="">Select Range</option>
-                                        <option value="s">$1k - $5k</option>
-                                        <option value="m">$5k - $10k</option>
-                                        <option value="l">$10k+</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="country">Country*</label>
-                                    <select id="country">
-                                        <option value="">Select Country</option>
-                                        <option value="us">USA</option>
-                                        <option value="uk">UK</option>
-                                        <option value="in">India</option>
-                                    </select>
-                                </div>
-                            </div>
-
                             <div className="form-group message-group">
-                                <label htmlFor="message">Your Message *</label>
-                                <textarea id="message" placeholder="Enter here.." rows="4"></textarea>
+                                <label htmlFor="message">Message *</label>
+                                <textarea id="message" placeholder="Tell me about the role, product, or opportunity." rows="4"></textarea>
                             </div>
 
                             <button type="submit" className="contact-submit-btn">
                                 <span className="btn-text">Submit</span>
                                 <span className="btn-icon">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
+                                    <img
+                                        src={arrowRightIcon}
+                                        alt="Arrow Right"
+                                        style={{
+                                            width: '24px',
+                                            height: '24px',
+                                            objectFit: 'contain',
+                                            filter: 'brightness(0) saturate(100%) drop-shadow(0px 0px 0.5px rgba(0,0,0,1))'
+                                        }}
+                                    />
                                 </span>
                             </button>
                         </form>

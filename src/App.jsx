@@ -2,17 +2,14 @@
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
-// Sections
-import Hero from './components/sections/Hero';
-import Services from './components/sections/Services';
-import SelectedWorks from './components/sections/SelectedWorks';
-import Skills from './components/sections/Skills';
-import About from './components/sections/About';
-import Projects from './components/sections/Projects';
+// Pages
+import Home from './pages/Home';
+import AllServices from './pages/AllServices';
+import ServiceDetail from './pages/ServiceDetail';
+import AllProjects from './pages/AllProjects';
 
-import Contact from './components/sections/Contact';
-import Journey from './components/sections/Journey';
-import CTA from './components/sections/CTA';
+// Routing
+import { Routes, Route } from 'react-router-dom';
 
 // Styles
 import './App.css';
@@ -22,17 +19,12 @@ function App() {
     <div className="app">
       <Header />
       <main className="main">
-        <Hero />
-        <Services />
-        <About />
-        <Skills />
-        {/* <SelectedWorks /> removed */}
-        <Projects />
-        <Journey />
-        <Contact />
-
-        {/* <Journey /> moved up */}
-        {/* <CTA /> replaced by Contact */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-services" element={<AllServices />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/projects" element={<AllProjects />} />
+        </Routes>
       </main>
       <Footer />
     </div>

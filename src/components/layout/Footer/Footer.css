@@ -3,9 +3,9 @@
    =================================== */
 
 .footer {
-    background-color: #ffffff;
+    background-color: var(--color-bg-primary);
     /* Assuming this is a dark theme var or similar dark green */
-    color: #1a1a1a;
+    color: var(--color-text-primary);
     /* White/Light text */
     padding-top: var(--space-20);
     padding-bottom: 0;
@@ -28,24 +28,15 @@
 .footer-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--color-text-primary);
     margin: 0;
     letter-spacing: -0.02em;
-}
-
-.highlight-text {
-    color: #FFC107;
-    /* Yellowish connect color */
-    font-family: 'Dancing Script', cursive;
-    /* Match Project section highlight */
-    font-weight: 400;
-    /* Lighter weight for contrast if font supports */
 }
 
 .btn-view-blogs {
     display: inline-flex;
     align-items: center;
-    background-color: #2F4F2F;
+    background-color: var(--color-secondary);
     /* Dark green button bg */
     color: #fff;
     padding: 12px 24px;
@@ -65,9 +56,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--color-bg-primary);
     /* Yellow circle */
-    color: #000;
+    color: var(--color-text-dark);
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -99,7 +90,7 @@
     gap: var(--space-2);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--color-text-primary);
     text-decoration: none;
     margin-bottom: var(--space-4);
 }
@@ -110,15 +101,15 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    background-color: #FFC107;
-    color: #000;
+    background-color: var(--color-primary-accent);
+    color: var(--color-text-dark);
     border-radius: 50%;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
 .footer-description {
-    color: #666;
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: var(--space-8);
@@ -135,23 +126,23 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #FFC107;
+    background-color: var(--color-primary-accent);
     /* Yellow background */
     border-radius: 50%;
-    color: #000;
+    color: var(--color-text-dark);
     /* Dark icon */
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
     transform: translateY(-3px);
 }
 
 /* Headings */
 .footer-heading {
-    color: #FFC107;
+    color: var(--color-primary-accent);
     /* Yellow heading */
     font-size: 1.1rem;
     font-weight: 600;
@@ -170,40 +161,46 @@
 }
 
 .footer-link {
-    color: #666;
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .footer-link:hover {
-    color: #FFC107;
+    color: var(--color-primary-accent);
 }
 
 /* Contact Info */
 .contact-info-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-6);
+}
+
+.contact-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-info-label {
+    font-size: 12px;
+    color: var(--color-primary-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .contact-item-link {
-    color: #666;
+    color: var(--color-text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.2s;
 }
 
 .contact-item-link:hover {
-    color: #FFC107;
-}
-
-.contact-address {
-    color: #666;
-    font-style: normal;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: var(--space-2);
+    color: var(--color-primary-accent);
 }
 
 /* Newsletter Inline */
@@ -220,17 +217,17 @@
 .newsletter-input-inline {
     width: 100%;
     padding: 12px 48px 12px 16px;
-    background-color: #f5f5f5;
+    background-color: var(--color-bg-tertiary);
     /* Light gray input */
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--color-border-light);
     border-radius: 4px;
-    color: #333;
+    color: var(--color-text-primary);
     font-size: 0.9rem;
     outline: none;
 }
 
 .newsletter-input-inline::placeholder {
-    color: #999;
+    color: var(--color-text-tertiary);
 }
 
 .newsletter-btn-inline {
@@ -239,11 +236,11 @@
     top: 4px;
     bottom: 4px;
     width: 36px;
-    background-color: #2F4F2F;
+    background-color: var(--color-secondary);
     /* Dark green button */
     border: none;
     border-radius: 4px;
-    color: #FFC107;
+    color: var(--color-primary-accent);
     /* Yellow icon */
     display: flex;
     align-items: center;
@@ -258,7 +255,7 @@
 
 /* --- Footer Bottom Bar --- */
 .footer-bottom-bar {
-    background-color: #2F4F2F;
+    background-color: var(--color-secondary);
     /* Dark green bar */
     padding: var(--space-4) 0;
     margin-top: var(--space-8);
@@ -285,7 +282,7 @@
 }
 
 .text-highlight {
-    color: #FFC107;
+    color: var(--color-primary-accent);
 }
 
 .footer-legal {
@@ -302,7 +299,7 @@
 }
 
 .footer-legal a:hover {
-    color: #fff;
+    color: var(--color-text-light);
 }
 
 .separator {

@@ -70,6 +70,19 @@
     box-shadow: var(--shadow-md);
 }
 
+/* Light variant (White bg, Green text) */
+.btn-light {
+    background-color: var(--color-bg-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-bg-primary);
+}
+
+.btn-light:hover:not(:disabled) {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+
 /* Outline variant */
 .btn-outline {
     background-color: transparent;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { projects } from '../../../data/content';
 import SectionTitle from '../../common/SectionTitle';
 import './Projects.css';
@@ -11,10 +12,10 @@ const Projects = () => {
                     <div className="header-content">
                         <span className="section-subtitle">My Portfolio</span>
                         <h2 className="section-title">
-                            My Latest <span className="title-highlight">Projects</span>
+                            Selected <span className="title-highlight">Projects</span>
                         </h2>
                     </div>
-                    <a href="#" className="view-all-btn">
+                    <Link to="/projects" className="view-all-btn">
                         <span className="btn-text">View All Projects</span>
                         <span className="btn-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,7 +23,7 @@ const Projects = () => {
                                 <path d="M12 5l7 7-7 7"></path>
                             </svg>
                         </span>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Projects Grid */}
@@ -37,13 +38,31 @@ const Projects = () => {
                                 />
                             </div>
                             <div className="project-content">
+                                {/* Project Header with Title & Subtitle */}
+                                <div className="project-header">
+                                    <h3 className="project-title">{project.title}</h3>
+                                    {project.subtitle && (
+                                        <p className="project-subtitle">{project.subtitle}</p>
+                                    )}
+                                </div>
+
+                                {/* Project Description */}
+                                {project.description && (
+                                    <p className="project-description">{project.description}</p>
+                                )}
+
+                                {/* Tech Stack Tags */}
                                 <div className="project-tags">
                                     {project.tags.map((tag, index) => (
                                         <span key={index} className="project-tag">{tag}</span>
                                     ))}
                                 </div>
+
+                                {/* Role Tag & Action Button */}
                                 <div className="project-footer">
-                                    <h3 className="project-title">{project.title}</h3>
+                                    {project.role && (
+                                        <span className="project-role">{project.role}</span>
+                                    )}
                                     <a href="#" className="project-action-btn" aria-label="View Project">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>

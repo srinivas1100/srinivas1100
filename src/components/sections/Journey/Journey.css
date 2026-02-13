@@ -3,7 +3,7 @@
    =================================== */
 
 .journey {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-primary);
     /* Changed to White to match clean look usually, or keep secondary? Screenshot looks white background. */
     padding: 100px 0;
 }
@@ -14,6 +14,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Animation initial state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.journey-header.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .journey-subtitle {
@@ -23,7 +32,7 @@
     font-size: 24px;
     /* Increased from 18px */
     font-weight: 500;
-    color: #000000;
+    color: var(--color-text-dark);
     /* Black */
 }
 
@@ -32,20 +41,20 @@
     display: block;
     width: 20px;
     height: 2px;
-    background-color: #F5A623;
+    background-color: var(--color-primary);
     /* Yellow dash */
 }
 
 .journey-title {
     font-size: 48px;
     font-weight: 700;
-    color: #000000;
+    color: var(--color-text-dark);
     line-height: 1.2;
     margin-top: 10px;
 }
 
 .journey-highlight {
-    color: #F5A623;
+    color: var(--color-primary);
     /* Yellow */
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
@@ -60,6 +69,15 @@
     display: flex;
     gap: var(--space-6);
     position: relative;
+    /* Animation initial state */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.journey-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .journey-marker {
@@ -99,7 +117,7 @@
     display: inline-block;
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    color: var(--color-primary-dark);
+    color: var(--color-secondary);
     background-color: var(--color-primary);
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-full);
@@ -141,4 +159,48 @@
     .journey-role {
         font-size: var(--text-lg);
     }
+}
+
+/* Experience Summary Footer */
+.journey-footer {
+    text-align: center;
+    margin-top: 50px;
+    /* Animation initial state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+}
+
+.journey-footer.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.journey-summary {
+    display: inline-block;
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    background: linear-gradient(135deg, rgba(255, 213, 0, 0.15), rgba(0, 196, 180, 0.1));
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    letter-spacing: 0.5px;
+}
+
+/* Dot pulse animation on hover */
+@keyframes dot-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 3px var(--color-primary);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(255, 213, 0, 0.4);
+    }
+}
+
+.journey-item.animate-in .journey-dot {
+    animation: dot-pulse 2s ease-in-out infinite;
 }
