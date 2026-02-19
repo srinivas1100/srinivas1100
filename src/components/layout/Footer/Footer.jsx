@@ -111,7 +111,7 @@ const Footer = () => {
                 <div className="footer-bottom-bar">
                     <div className="footer-bottom-content">
                         <p className="copyright" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            Copyright © {currentYear} <span className="script-name" style={{ fontSize: '42px', opacity: 1, color: 'var(--color-primary-accent)', transform: 'none', marginLeft: '4px' }}>Srinivas.</span> All Rights Reserved.
+                            Copyright © {currentYear} <span className="script-name" style={{ fontSize: '42px', opacity: 1, color: 'var(--color-primary-accent)', transform: 'none', marginLeft: '4px' }}>Srinivasu.</span> All Rights Reserved.
                         </p>
                         <div className="footer-legal">
                             <a href="#">User Terms & Conditions</a>

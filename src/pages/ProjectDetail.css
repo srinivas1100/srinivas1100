@@ -1,0 +1,513 @@
+.project-detail-page {
+    background-color: #FFF;
+    padding-top: 50px;
+}
+
+.page-header {
+    background-color: #FFF;
+    padding: 0px 20px 0px;
+    text-align: center;
+}
+
+.v4-breadcrumb-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #666;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.breadcrumb-link {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumb-separator {
+    color: #DDD;
+}
+
+/* Marquee Strip */
+.v4-project-marquee {
+    margin-top: 0 !important;
+    padding: 10px 0 !important;
+    margin-bottom: 40px !important;
+    max-width: 100%;
+    z-index: 10;
+}
+
+.breadcrumb-current {
+    color: #111;
+    font-weight: 500;
+}
+
+/* Showcase Section - Mobile screens row */
+.v4-showcase-section {
+    padding: 10px 0 10px;
+    background-color: #FFF;
+    overflow: hidden;
+}
+
+.v4-showcase-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.v4-showcase-card-mobile {
+    flex: 1;
+    max-width: 220px;
+    aspect-ratio: 9/19;
+    background-color: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.v4-showcase-card-mobile.active {
+    z-index: 2;
+}
+
+.v4-showcase-card-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.v4-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.v4-play-triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #111;
+    margin-left: 4px;
+}
+
+/* Main Content Area */
+.v4-main-section {
+    padding: 60px 0 40px;
+}
+
+.v4-title-container {
+    margin-bottom: 30px;
+}
+
+.v4-project-title {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #F5A623 !important;
+    margin: 0 0 30px 0;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+    text-transform: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+.v4-project-title .v4-highlight {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+/* Intro Text Area */
+.v4-content-row {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+    /* Reduced spacing to Challenge section */
+    align-items: flex-start;
+}
+
+.v4-content-left {
+    flex: 1;
+}
+
+.v4-intro-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.v4-avatar-circle {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background-color: #405244;
+    /* Matched olive green from screenshot */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.v4-intro-text {
+    flex: 1;
+}
+
+.v4-text-normal {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #777 !important;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Metadata Box Refined */
+.v4-metadata-box {
+    width: 380px;
+    background-color: #405244 !important;
+    /* Matched olive green from screenshot */
+    padding: 45px;
+    border-radius: 20px;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+    /* Tiny adjustment to align top of text in card with heading */
+}
+
+.v4-meta-item {
+    margin-bottom: 25px;
+}
+
+.v4-meta-label {
+    display: block;
+    color: #FFFFFF !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px;
+    opacity: 1 !important;
+}
+
+.v4-meta-value {
+    display: block;
+    color: #F5A623 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2;
+}
+
+/* Section Blocks */
+.v4-details-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* Reduced gap between blocks */
+    margin-top: 20px;
+    /* Reduced spacing from intro */
+}
+
+.v4-detail-block {
+    width: 100%;
+}
+
+.v4-section-heading {
+    font-size: 30px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    font-family: 'Outfit', sans-serif;
+}
+
+.v4-text-description {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #777 !important;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Project Gallery */
+.v4-project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 0;
+}
+
+.v4-gallery-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.v4-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Solution Grid - 4 Columns */
+.v4-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px 40px;
+    /* Precise gap for 4 columns */
+    margin-top: 40px;
+}
+
+.v4-check-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.v4-orange-check-circle {
+    width: 24px;
+    height: 24px;
+    background-color: #F5A623;
+    /* Yellow circle as requested */
+    color: #405244;
+    /* Green checkmark stroke as requested */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.v4-orange-check-circle svg {
+    width: 14px;
+    height: 14px;
+}
+
+.v4-solution-point-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Testimonial v3 */
+.v4-testimonial-v3 {
+    background-color: #F8F9F8;
+    padding: 70px;
+    border-radius: 50px;
+    margin-top: 100px;
+}
+
+.v4-stars {
+    color: #FFB800;
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.v4-rating-num {
+    color: #111;
+    font-weight: 800;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.v4-testimonial-content {
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: #111;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.v4-testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.v4-user-avatar {
+    width: 65px;
+    height: 65px;
+    background-color: #E0E4E0;
+    color: #2D3E33;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.v4-user-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.v4-user-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+}
+
+.v4-user-role {
+    font-size: 15px;
+    color: #666;
+}
+
+/* Benefit Section */
+.benefits-section {
+    padding: 20px 0 60px;
+    background-color: #FFF;
+}
+
+.benefit-point {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.benefit-icon {
+    width: 14px;
+    height: 14px;
+    background-color: #F5A623;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    border-radius: 50%;
+    left: 50%;
+}
+
+.benefit-point p {
+    font-size: 15px;
+    color: #555555;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Dark Contact Section Overrides --- */
+.contact-wrapper-dark {
+    background-color: #2D3E33;
+    /* Adjusted to match site's dark theme */
+}
+
+.contact-wrapper-dark .contact-section {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .v4-solution-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .v4-content-row {
+        flex-direction: column;
+    }
+
+    .v4-metadata-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .v4-project-title {
+        font-size: 30px;
+    }
+
+    .v4-solution-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .v4-testimonial-v3 {
+        padding: 40px;
+    }
+
+    .v4-testimonial-content {
+        font-size: 18px;
+    }
+
+    .benefits-section {
+        padding: 40px 0;
+    }
+}
+
+/* View Other Projects Section */
+.view-other-projects-section {
+    padding: 20px 0;
+    background-color: #FFF;
+}
+
+.v4-other-projects-header {
+    text-align: center;
+    margin: 80px 0 60px;
+}
+
+.v4-other-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.v4-other-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+}
+
+.v4-highlight-yellow {
+    color: #F5A623;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+.v4-other-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
