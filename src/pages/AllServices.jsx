@@ -68,13 +68,16 @@ const AllServices = () => {
                                         </ul>
                                     </div>
                                 )}
-                                <Link to={`/services/${service.id}`} className="learn-more-full">
+                                <Link to={service.link} className="learn-more-full">
                                     Learn more
-                                    <div
-                                        className="learn-more-arrow-icon"
+                                    <img
+                                        src={arrowRight}
+                                        alt="Arrow Right"
                                         style={{
-                                            maskImage: `url(${arrowRight})`,
-                                            WebkitMaskImage: `url(${arrowRight})`
+                                            width: '20px',
+                                            height: '20px',
+                                            objectFit: 'contain',
+                                            filter: 'brightness(0) saturate(100%) invert(69%) sepia(35%) saturate(3000%) hue-rotate(1deg) brightness(101%) contrast(105%) drop-shadow(0 0 0.5px #F5A623)'
                                         }}
                                     />
                                 </Link>

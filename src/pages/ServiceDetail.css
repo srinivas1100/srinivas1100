@@ -1,24 +1,32 @@
-/* ServiceDetail.css - Fully Refined */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 .service-detail-page {
-    background-color: #FFFFFF;
-    color: #1A1A1A;
-    min-height: 100vh;
+    background-color: #FAFAFA;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Page Header - Shared with AllServices */
-.page-header {
+/* --- Page Header --- */
+.service-detail-page .page-header {
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 60px;
-    background-color: #F9F9F9;
+    padding-top: 120px;
+    /* Reduced from 150px to bring title up slightly too */
+    padding-bottom: 30px;
+    /* Reduced from 60px */
+    background-color: #FFFFFF;
 }
 
 .main-page-title {
     font-size: 56px;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: 15px;
+    font-weight: 800;
+    color: #1A1A1A;
+    margin-bottom: 5px;
+}
+
+.service-main-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+    font-weight: 500;
 }
 
 .breadcrumb {
@@ -46,39 +54,21 @@
 
 .breadcrumb-current {
     color: #1A1A1A;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-/* Service Hero Image Section */
+/* Marquee Section matched with All Services page */
+.all-services-marquee {
+    margin-top: 0 !important;
+    padding: 20px 0 !important;
+    /* Reduced from 40px */
+    max-width: 100%;
+}
+
+/* --- Hero Section --- */
 .service-hero-image-section {
-    padding: 60px 0;
-    background-color: #FFFFFF;
-}
-
-.service-hero-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-image-placeholder {
-    width: 100%;
-    height: 500px;
-    border-radius: 24px;
-    overflow: hidden;
-    background-color: #F0F0F0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Section Common */
-.section-padding {
-    padding: 80px 0;
+    padding: 30px 0 20px;
+    /* Reduced bottom padding from 60px to 20px */
 }
 
 .service-container {
@@ -87,132 +77,237 @@
     padding: 0 20px;
 }
 
-.section-title-with-icon {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
+.service-hero-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
 
-.info-badge {
-    width: 32px;
-    height: 32px;
-    background-color: #F5A623;
-    color: white;
+.hero-image-placeholder {
+    width: 100%;
+    height: 550px;
+    background-color: #F5F5F5;
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.play-button-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid #2D4033;
+    margin-left: 5px;
+}
+
+/* --- About Section & Services Include --- */
+.about-service-section {
+    padding: 30px 0 0;
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
-    color: #1A1A1A;
+    color: #333333;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.about-intro-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.service-initial-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #F5A623;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
 }
 
 .text-content {
-    color: #555;
-    line-height: 1.8;
-    font-size: 16px;
-    max-width: 900px;
+    font-size: 19px;
+    color: #444444;
+    line-height: 1.7;
+    max-width: 100%;
+    font-weight: 400;
 }
 
-/* Services Include Section */
+.services-include-section {
+    margin-top: 15px;
+}
+
+.services-include-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.services-include-desc {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
 .services-include-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 12px 15px;
 }
 
 .include-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: #1A1A1A;
+    gap: 10px;
+    font-size: 14px;
     font-weight: 500;
+    color: #444444;
 }
 
 .check-icon {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     background-color: #F5A623;
-    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #2F4F2F;
+    /* Theme Green */
     flex-shrink: 0;
+    padding: 4px;
 }
 
-/* Gallery Section */
+.check-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Gallery --- */
 .service-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 60px;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 .gallery-image {
-    width: 100%;
-    height: 350px;
-    border-radius: 20px;
+    height: 380px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
 }
 
 .gallery-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .gallery-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Industries Section */
+/* --- Industries --- */
 .industries-section {
-    background: #F9F9F9;
+    padding: 20px 0 10px;
+}
+
+.industries-main-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.industries-main-desc {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 35px;
+    font-weight: 400;
 }
 
 .industries-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 50px;
+    gap: 25px;
 }
 
 .industry-card {
     background: #FFFFFF;
-    padding: 40px 30px;
-    border-radius: 16px;
-    transition: all 0.3s;
-    border: 1px solid transparent;
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .industry-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-    border-color: #F5A623;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .industry-number {
-    width: 44px;
-    height: 44px;
-    background-color: #2D4033;
-    color: #F5A623;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #002B1D;
+    /* Darker green for contrast */
+    border-radius: 50%;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
+    color: #F5A623;
     margin-bottom: 25px;
 }
 
@@ -220,53 +315,86 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #1A1A1A;
+    color: #222222;
 }
 
 .industry-desc {
-    font-size: 14px;
-    color: #777;
+    font-size: 15px;
+    color: #666666;
     line-height: 1.6;
+    font-weight: 400;
 }
 
-/* Benefits Section */
+/* --- Benefits --- */
+.benefits-section {
+    padding: 10px 0 60px;
+}
+
 .benefit-point {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 20px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
 }
 
 .benefit-icon {
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     background-color: #F5A623;
-    color: white;
+    /* Sun/Circle Color */
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
-    font-size: 12px;
-    margin-top: 4px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
+.benefit-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2F4F2F;
+    /* Moon Color */
+    border-radius: 50%;
+    left: 50%;
+    /* Creates the crescent effect */
+}
 
-    .services-include-grid,
+.benefit-point p {
+    font-size: 14px;
+    color: #555555;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+    .services-include-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .industries-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     .services-include-grid,
     .industries-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .service-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .services-include-grid,
+    .industries-grid,
     .service-gallery {
         grid-template-columns: 1fr;
     }
@@ -275,19 +403,11 @@
         height: 350px;
     }
 
-    .main-page-title {
-        font-size: 42px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .services-include-grid,
-    .industries-grid {
-        grid-template-columns: 1fr;
+    .section-title {
+        font-size: 30px;
     }
 
-    .main-page-title {
-        font-size: 32px;
+    .service-nav-content {
+        gap: 20px;
     }
 }

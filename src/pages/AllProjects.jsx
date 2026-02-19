@@ -4,6 +4,7 @@ import { projects } from '../data/content';
 import Contact from '../components/sections/Contact/Contact';
 import ProjectCTA from '../components/sections/CTA/ProjectCTA';
 import Marquee from '../components/common/Marquee/Marquee';
+import arrowRightIcon from '../assets/arrow-right.png';
 import './AllProjects.css';
 
 const AllProjects = () => {
@@ -47,19 +48,30 @@ const AllProjects = () => {
                                     />
                                 </div>
                                 <div className="project-content">
+                                    <div className="project-header">
+                                        <h3 className="project-title">{project.title}</h3>
+                                        {project.subtitle && (
+                                            <p className="project-subtitle">{project.subtitle}</p>
+                                        )}
+                                    </div>
+
+                                    {project.description && (
+                                        <p className="project-description">{project.description}</p>
+                                    )}
+
                                     <div className="project-tags">
                                         {project.tags.map((tag, idx) => (
                                             <span key={idx} className="project-tag">{tag}</span>
                                         ))}
                                     </div>
+
                                     <div className="project-footer">
-                                        <h3 className="project-title">{project.title}</h3>
-                                        <a href="#" className="project-action-btn" aria-label="View Project">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </a>
+                                        {project.role && (
+                                            <span className="project-role">{project.role}</span>
+                                        )}
+                                        <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label="View Project">
+                                            <img src={arrowRightIcon} alt="Go" className="project-arrow-icon" />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -60,7 +60,7 @@ const Services = () => {
 
                             <div className="service-footer-spacer"></div>
 
-                            <Link to={`/services/${service.id}`} className="service-learn-more">
+                            <Link to={service.link} className="service-learn-more">
                                 Learn more
                                 <img src={arrowRightIcon} alt="Arrow Right" style={{ width: '20px', height: '20px', objectFit: 'contain', filter: 'brightness(0) saturate(100%) invert(69%) sepia(35%) saturate(3000%) hue-rotate(1deg) brightness(101%) contrast(105%) drop-shadow(0 0 0.5px #F5A623)' }} />
                             </Link>

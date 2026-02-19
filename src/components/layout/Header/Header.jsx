@@ -27,8 +27,6 @@ const Header = () => {
         } else if (location.pathname === '/projects') {
             setActiveSection('projects');
         } else if (location.pathname === '/') {
-            // Logic to update active section based on scroll (could be re-enabled here)
-            // For now, if hash is present, set it
             const hash = location.hash.replace('#', '');
             if (hash) setActiveSection(hash);
             else setActiveSection('home');
@@ -41,41 +39,28 @@ const Header = () => {
 
     const handleNavClick = (e, href) => {
         e.preventDefault();
-
-        // If it's a hash link
         if (href.startsWith('#')) {
             const targetId = href.substring(1);
-
-            // If on home page
             if (location.pathname === '/') {
                 const element = document.getElementById(targetId);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                     setActiveSection(targetId === 'home' ? 'home' : (href === '#services' ? 'services' : (href === '#about' ? 'about' : (href === '#works' ? 'projects' : targetId))));
-                    // Note: 'Projects' label maps to #works usually, need to check consistency.
-                    // content.js: { label: "Projects", href: "#works" } -> activeSection matches label lowercased usually?
-                    // Previous code: activeSection === item.label.toLowerCase()
                 }
             } else {
-                // Not on home page, navigate to home with hash
                 navigate(`/${href}`);
             }
         } else {
-            // Standard link
             navigate(href);
         }
-
         setIsMobileMenuOpen(false);
     };
 
-    // Helper to check if active
     const isActive = (item) => {
         if (location.pathname === '/all-services' && item.label === 'Services') return true;
         if (location.pathname === '/projects' && item.label === 'Projects') return true;
         if (location.pathname === '/' && activeSection === item.label.toLowerCase()) return true;
-        // Correct mismatch for Projects/Works if needed
         if (item.label === 'Projects' && activeSection === 'projects') return true;
-
         return false;
     };
 
@@ -102,10 +87,8 @@ const Header = () => {
                                     href={item.href}
                                     className={`nav-link ${isActive(item) ? 'active' : ''}`}
                                     onClick={(e) => {
-                                        // Special handling for labels to match scroll spy or manually set
                                         if (item.label === 'Projects') setActiveSection('projects');
                                         else setActiveSection(item.label.toLowerCase());
-
                                         handleNavClick(e, item.href);
                                     }}
                                 >
