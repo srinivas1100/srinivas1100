@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "srinivas1100-569d0"
-  }
+  },
+  "targets": {
+    "srinivas1100-569d0": {
+      "hosting": {
+        "srinivas1100": [
+          "srinivas1100"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
