@@ -2,8 +2,9 @@
    Hero Section Styles - New Design
    =================================== */
 
+/* Hero = 3 parts: (1) left content, (2) image, (3) strip. Large: 1+2 side by side, strip below. Mobile: 1, then 2, then strip. */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     padding-top: 0;
@@ -11,36 +12,66 @@
     position: relative;
     overflow: visible;
     transform: translateZ(0);
-    /* GPU acceleration */
+}
+
+/* Part 3: Strip always below parts 1+2 – no overlap on any screen */
+.hero .hero-strip {
+    flex-shrink: 0;
+}
+.hero .hero-strip .common-marquee-wrapper,
+.hero .common-marquee-wrapper {
+    margin-top: 0;
 }
 
 .hero-container {
     width: 100%;
-    flex: 1;
+    max-width: 100%;
+    flex: 0 1 auto;
+    min-height: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
+/* Base: mobile single column (content above, image below). Web view uses min-width: 769px for side-by-side. */
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     gap: var(--space-8);
     align-items: center;
+    justify-items: center;
     width: 100%;
-    margin-top: -300px;
-    padding-top: var(--space-8);
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-8);
     transform: translateZ(0);
-    /* GPU acceleration */
+    box-sizing: border-box;
+}
+
+.hero-text {
+    order: 1;
+}
+
+.hero-image {
+    order: 2;
 }
 
 /* ===================================
    Hero Text Content
    =================================== */
 .hero-text {
-    max-width: 700px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-text.animate-in {
@@ -112,10 +143,12 @@
 .hero-title {
     font-size: clamp(1.75rem, 3.5vw, 2.8rem);
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.15;
     margin-bottom: var(--space-4);
     color: var(--color-text-primary);
     letter-spacing: -0.03em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-name {
@@ -131,6 +164,7 @@
 
 .hero-role {
     display: inline;
+    font-size: clamp(0.9em, 2.5vw, 1em);
 }
 
 /* Hero Subtitle */
@@ -146,17 +180,20 @@
 
 /* Hero Description */
 .hero-description {
+    display: block;
     font-size: var(--text-base);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-10);
     max-width: 700px;
+    overflow-wrap: break-word;
 }
 
 /* CTA Buttons */
 .hero-cta {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
     align-items: center;
 }
 
@@ -364,17 +401,19 @@
     justify-content: center;
     position: relative;
     z-index: 1;
+    min-width: 0;
 }
 
 .hero-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    height: 600px;
+    max-width: min(300px, 85vw);
+    height: min(300px, 85vw);
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 /* Organic Blob Background */
@@ -384,8 +423,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 420px;
-    height: 350px;
+    max-width: min(260px, 70vw);
+    height: min(230px, 60vw);
     background-color: #FDB714;
     border-radius: 25% 75% 60% 20% / 30% 45% 55% 70%;
     transform: translate(-50%, -50%) rotate(-10deg);
@@ -589,34 +628,24 @@
 /* ===================================
    Responsive Styles
    =================================== */
+
+/* Tablet (web view): refinements only – side-by-side comes from min-width: 769px */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
-        padding-bottom: var(--space-12);
-        margin-top: 0;
-        /* Reset negative margin on tablet */
-    }
-
-    .hero-text {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
     }
 
     .hero-image-wrapper {
-        max-width: 400px;
-        height: 400px;
+        max-width: min(400px, 85vw);
+        width: 100%;
+        height: min(400px, 85vw);
+        margin-top: 0;
     }
 
     .hero-blob-bg {
-        width: 320px;
-        height: 280px;
+        max-width: min(320px, 70vw);
+        width: 100%;
+        height: min(280px, 60vw);
     }
 
     .hire-me-badge {
@@ -637,74 +666,320 @@
     }
 }
 
+/* Web view (tablet + desktop): side-by-side layout, no scroll container */
+@media (min-width: 769px) {
+    .hero {
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 0.9fr;
+        grid-template-rows: auto;
+        justify-items: stretch;
+        align-items: center;
+        gap: var(--space-8);
+        padding-bottom: var(--space-8);
+    }
+
+    .hero-text {
+        order: 1;
+        max-width: 700px;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-image {
+        order: 2;
+        justify-content: center;
+        margin-top: 0;
+    }
+}
+
+/* Desktop (large web): full side-by-side with negative margin and larger image */
+@media (min-width: 1025px) {
+    .hero-content {
+        margin-top: -300px;
+        padding-top: var(--space-4);
+        padding-bottom: 0;
+    }
+
+    .hero-image {
+        justify-content: flex-end;
+    }
+
+    .hero-image-wrapper {
+        max-width: 600px;
+        height: 600px;
+        margin-top: 50px;
+    }
+
+    .hero-blob-bg {
+        max-width: 420px;
+        height: 350px;
+    }
+
+    .hire-me-badge {
+        width: 130px;
+        height: 130px;
+        top: 25%;
+        right: 5%;
+    }
+
+    .hire-me-inner {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hire-me-text text {
+        font-size: 8.2px;
+    }
+}
+
+/* Mobile only: stacked layout – content above, image below, then marquee */
 @media (max-width: 768px) {
     .hero {
-        padding-top: 0;
+        padding-top: var(--space-2);
+        padding-bottom: var(--space-16);
         min-height: auto;
+        justify-content: flex-start;
+    }
+
+    .hero-container {
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        align-items: stretch;
         text-align: center;
+        gap: var(--space-8);
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        padding-top: var(--space-2);
+        padding-bottom: var(--space-10);
     }
 
     .hero-text {
         max-width: 100%;
-        order: 2;
-    }
-
-    .hero-image {
+        width: 100%;
         order: 1;
-        margin-bottom: var(--space-8);
-        /* Increase margin to separate from text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
     }
 
-    .hero-image-wrapper {
-        max-width: 300px;
-        height: 300px;
-        margin: 0 auto;
+    .hero-greeting {
+        margin-bottom: var(--space-4);
     }
 
-    .hero-blob-bg {
-        width: 260px;
-        height: 230px;
+    /* Match desktop: HELLO THERE! box with dotted border and corner accents */
+    .greeting-badge {
+        padding: 8px 20px;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
     }
 
     .hero-title {
-        font-size: clamp(1.75rem, 6vw, 2.5rem);
+        text-align: center;
+        font-size: clamp(1.5rem, 5.5vw, 2.25rem);
+        line-height: 1.2;
+        margin-bottom: var(--space-4);
     }
 
+    .hero-role {
+        font-size: clamp(0.9em, 3vw, 1em);
+    }
+
+    /* Same grey description as desktop */
     .hero-description {
-        font-size: var(--text-sm);
+        display: block;
+        text-align: center;
+        font-size: var(--text-base);
+        color: var(--color-text-secondary);
         max-width: 100%;
+        padding: 0 var(--space-2);
+        margin-top: 0;
+        margin-bottom: var(--space-8);
+        line-height: 1.6;
     }
 
+    /* Same two buttons: View My Portfolio (green + play) and Hire Me (white border) */
     .hero-cta {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 0;
     }
 
-    .floating-badge {
-        display: none;
+    .btn-portfolio-wrapper,
+    .btn-hire {
+        flex: 0 1 auto;
+        min-width: 0;
+        justify-content: center;
     }
 
+    .btn-portfolio {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+
+    .btn-hire {
+        padding: 0 28px;
+        height: 52px;
+        font-size: 15px;
+    }
+
+    .hero-image {
+        order: 2;
+        margin-top: var(--space-4);
+        margin-bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        max-width: min(320px, 80vw);
+        width: 100%;
+        height: min(320px, 80vw);
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+
+    .hero-blob-bg {
+        max-width: min(280px, 70vw);
+        width: 100%;
+        height: min(250px, 62vw);
+    }
+
+    /* Circular HIRE ME badge – same style, scaled */
     .hire-me-badge {
-        width: 70px;
-        height: 70px;
-        top: 0;
-        right: -10px;
+        width: 80px;
+        height: 80px;
+        top: 15%;
+        right: 2%;
+        border-width: 4px;
     }
 
     .hire-me-inner {
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 28px;
     }
 
     .hire-me-text text {
-        font-size: 7px;
+        font-size: 6.5px;
+    }
+
+    /* Show both skill tags on mobile – same design, repositioned to fit */
+    .floating-badge {
+        display: inline-flex;
+        font-size: 12px;
+        padding: 10px 18px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .badge-uiux-designer {
+        right: 0;
+        top: 60%;
+        left: auto;
+    }
+
+    .badge-product-designer {
+        bottom: 15%;
+        left: 0;
+        right: auto;
+    }
+
+    .badge-cursor svg {
+        width: 20px;
+        height: 20px;
     }
 
     .hero-decorative-accent {
         display: none;
+    }
+}
+
+/* Extra small devices: same hero design, tighter spacing; description + CTAs above yellow stripe */
+@media (max-width: 480px) {
+    .hero {
+        padding-bottom: var(--space-12);
+    }
+
+    .hero .hero-container.container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    .hero-content {
+        gap: var(--space-6);
+        padding-bottom: var(--space-8);
+    }
+
+    .hero-title {
+        font-size: clamp(1.35rem, 5vw, 2rem);
+    }
+
+    .hero-role {
+        display: block;
+        margin-top: 0.25em;
+    }
+
+    .hero-description {
+        font-size: var(--text-sm);
+    }
+
+    .hero-image-wrapper {
+        max-width: min(280px, 88vw);
+        height: min(280px, 88vw);
+    }
+
+    .hero-blob-bg {
+        max-width: min(240px, 60vw);
+        height: min(210px, 52vw);
+    }
+
+    .hire-me-badge {
+        width: 64px;
+        height: 64px;
+        top: 10%;
+        right: 0;
+    }
+
+    .hire-me-inner {
+        width: 22px;
+        height: 22px;
+    }
+
+    .floating-badge {
+        font-size: 11px;
+        padding: 8px 14px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-portfolio-wrapper,
+    .btn-hire {
+        width: 100%;
+    }
+
+    .greeting-badge {
+        font-size: 12px;
+        padding: 6px 16px;
     }
 }

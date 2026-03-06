@@ -29,8 +29,7 @@ const Hero = () => {
 
 
                         <p className="hero-description">
-                            I build production-grade mobile and web applications used by real users,
-                            with end-to-end ownership from architecture to deployment.
+                            {personalInfo.heroDescription}
                         </p>
 
                         <div className="hero-cta">
@@ -112,7 +111,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            <Marquee />
+            <div className="hero-strip">
+                <Marquee />
+            </div>
         </section>
     );
 };
