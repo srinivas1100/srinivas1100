@@ -12,6 +12,8 @@
     position: relative;
     overflow: visible;
     transform: translateZ(0);
+    /* Prevent section from being cut off: ensure content is in flow and visible */
+    box-sizing: border-box;
 }
 
 /* Part 3: Strip always below parts 1+2 – no overlap on any screen */
@@ -31,6 +33,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    /* Ensure container doesn’t clip when hero has negative margin on desktop */
+    overflow: visible;
 }
 
 /* Base: mobile single column (content above, image below). Web view uses min-width: 769px for side-by-side. */
@@ -696,12 +700,17 @@
     }
 }
 
-/* Desktop (large web): full side-by-side with negative margin and larger image */
+/* Desktop (large web): full side-by-side, responsive so section is never cut in half */
 @media (min-width: 1025px) {
-    .hero-content {
-        margin-top: -300px;
+    .hero {
+        min-height: auto;
         padding-top: var(--space-4);
-        padding-bottom: 0;
+    }
+
+    .hero-content {
+        margin-top: 0;
+        padding-top: var(--space-4);
+        padding-bottom: var(--space-8);
     }
 
     .hero-image {
@@ -709,14 +718,16 @@
     }
 
     .hero-image-wrapper {
-        max-width: 600px;
-        height: 600px;
-        margin-top: 50px;
+        max-width: min(600px, 42vw);
+        width: 100%;
+        height: min(600px, 42vw);
+        aspect-ratio: 1;
+        margin-top: 24px;
     }
 
     .hero-blob-bg {
-        max-width: 420px;
-        height: 350px;
+        max-width: min(420px, 32vw);
+        height: min(350px, 28vw);
     }
 
     .hire-me-badge {
