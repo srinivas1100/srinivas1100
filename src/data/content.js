@@ -2,6 +2,9 @@
 // Static Content Data
 // ===================================
 
+// Single source for experience duration (update here to reflect everywhere)
+export const experienceYears = "4.8";
+
 export const personalInfo = {
   name: "Srinivasu",
   lastName: "Vadlamudi",
@@ -13,7 +16,7 @@ export const personalInfo = {
   heroDescription:
     "I build production-grade mobile and web applications used by real users, with end-to-end ownership from architecture to deployment.",
   aboutMe: [
-    "I’m a Senior Mobile Engineer & Tech Lead with 4.5+ years of experience building production-ready mobile and web applications.",
+    `I'm a Senior Mobile Engineer & Tech Lead with ${experienceYears}+ years of experience building production-ready mobile and web applications.`,
     "My expertise spans Flutter, native iOS, backend systems, and AI integrations, with a strong focus on performance, scalability, and product reliability.",
   ],
 };
@@ -100,10 +103,12 @@ export const projects = [
     subtitle: "AI-Driven Fintech & Investment App",
     description:
       "AI-powered financial companion delivering investment insights, trading ideas, and real-time alerts to retail users.",
-    image: "/projects/richie.jpg",
+    image: "/projects/richie.png",
     tags: ["Flutter", "Node.js", "React.js", "MongoDB", "AI"],
     role: "Tech Lead · End-to-End Ownership",
     category: "Mobile App",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chasealpha.richie",
+    appStoreUrl: "https://apps.apple.com/in/app/richie-stocks-options-app/id1659006578",
   },
   {
     id: 2,
@@ -111,10 +116,12 @@ export const projects = [
     subtitle: "AI City & Travel Audio Guide",
     description:
       "Personalized AI-powered audio guide application for cities, monuments, and cultural experiences worldwide.",
-    image: "/projects/guidel.jpg",
+    image: "/projects/guidel.png",
     tags: ["Flutter", "GPT-4", "Google Maps", "Firebase"],
     role: "Lead Developer · AI Personalization",
     category: "Mobile App",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.cityguide.guidel",
+    appStoreUrl: "https://apps.apple.com/us/app/guidel-ai-audio-city-guide/id6479697130",
   },
   {
     id: 3,
@@ -122,7 +129,7 @@ export const projects = [
     subtitle: "Native iOS Appointment Booking App",
     description:
       "Appointment scheduling platform for beauty and hair professionals with service management and payments.",
-    image: "/projects/shiftbookd.jpg",
+    image: "/projects/shiftbookd.png",
     tags: ["Swift", "UIKit", "Core Data", "REST APIs"],
     role: "iOS Front-End Developer",
     category: "Mobile App",
@@ -137,6 +144,7 @@ export const projects = [
     tags: ["Flutter", "Charts", "In-App Purchases", "Notifications"],
     role: "Lead Developer · Architecture & Subscriptions",
     category: "Mobile App",
+    hideDetailLink: true,
   },
   {
     id: 5,
@@ -159,6 +167,30 @@ export const projects = [
     tags: ["React.js", "Flutter Web", "OpenAI", "Automation"],
     role: "Lead Developer · AI Workflows",
     category: "Web App",
+  },
+  {
+    id: 7,
+    title: "Sparks Dating App",
+    subtitle: "Dating & Connection Platform for Single Parents",
+    description:
+      "Dating app for single parents to connect for relationships and friendships, with secure profiles, match browsing, and in-app chat.",
+    image: "/projects/sparks.png",
+    tags: ["Flutter", "Node.js", "ChatGPT", "AWS", "Real-Time Chat"],
+    role: "Full-Stack Lead · Mobile & Backend",
+    category: "Mobile App",
+  },
+  {
+    id: 8,
+    title: "AI Crix",
+    subtitle: "AI Cricket Match Prediction Application",
+    description:
+      "ML-powered cricket app that analyzes match data to predict outcomes, with real-time sync and stats visualization.",
+    image: "/projects/aicrix.png",
+    tags: ["Flutter", "Supabase", "Python", "NumPy", "ML"],
+    role: "Full-Stack · Mobile, Backend & AI Model",
+    category: "Mobile App",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.veloria.aicrix",
+    appStoreUrl: "https://apps.apple.com/pk/app/aicrix-ai-cricket-predictions/id6759485224",
   },
 ];
 
@@ -224,14 +256,14 @@ export const journey = [
   },
 ];
 
-// Experience summary for footer/badge
+// Experience summary for footer/badge (uses experienceYears)
 export const experienceSummary =
-  "4.3+ years experience · 20+ production apps · Fintech, Healthcare, Consumer";
+  `${experienceYears}+ years experience · 20+ production apps · Fintech, Healthcare, Consumer`;
 
 export const stats = [
   { value: "20+", label: "Production Apps" },
   { value: "5+", label: "Product Domains" },
-  { value: "4.5+", label: "Years Experience" },
+  { value: `${experienceYears}+`, label: "Years Experience" },
 ];
 
 export const testimonials = [
@@ -468,7 +500,7 @@ export const serviceDetails = {
     about: {
       title: "Building Production-Grade Mobile Experiences",
       description:
-        "With over 4.5 years of experience and 20+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.",
+        `With over ${experienceYears} years of experience and 20+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.`,
     },
     servicesInclude: [
       "Cross-Platform Flutter Development",
@@ -987,37 +1019,60 @@ export const projectDetails = {
   1: {
     id: 1,
     title: "Richie",
-    subtitle: "AI-Driven Fintech & Investment App",
+    subtitle: "AI-Powered Financial Learning & Advisory Platform",
     heroImage:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
-    category: "Mobile App Design",
-    client: "Richie AI Team",
-    duration: "12 Months",
-    country: "United States",
+    category: "AI-Powered Fintech Mobile Application",
+    client: "Chase Alpha Private Limited",
+    duration: "",
+    country: "India / Global Users",
+    summary:
+      "Richie Solution is an AI-driven mobile platform designed to simplify financial learning and investment decision-making for retail investors. The platform combines AI-powered assistance with structured educational content such as courses, live mentorship sessions, and expert advisory programs. Many beginner and intermediate investors struggle to understand financial markets, trading strategies, and risk management. Educational content is often scattered across different platforms, and users have difficulty finding reliable, structured guidance. To address this, Richie Solution integrates an intelligent AI assistant that answers frequently asked questions, provides contextual explanations about financial concepts, and guides users toward relevant courses, live mentorship sessions, and advisory services. The goal of the platform is to create a centralized ecosystem where users can learn, ask questions, receive expert guidance, and continuously improve their investment knowledge.",
     challenge:
-      "Traditional retail investors often struggle to interpret complex market data and sentiment trends. The challenge was to create an AI-powered companion that simplifies investment insights and provides actionable trading ideas in real-time, making high-level financial analysis accessible to everyone.",
+      "Retail investors often face multiple barriers when entering financial markets: difficulty understanding complex financial terminology and strategies, lack of structured and reliable learning resources, limited access to professional mentorship and advisory services, and information overload from fragmented sources across the internet. The key challenge was building a system that could combine AI-powered assistance with structured financial education while maintaining a clean and intuitive user experience. Another technical challenge involved designing an AI system capable of answering frequently asked questions, guiding users through financial concepts, and recommending appropriate courses or mentorship programs based on user queries.",
     solution:
-      "We built a core AI engine integrated with real-time financial news and market data. The solution featured a clean, intuitive 'chat-first' interface where users can ask questions about stocks and receive data-backed insights immediately.",
+      "We developed a Flutter-based mobile platform integrated with AI-powered knowledge assistance to help users learn about finance and trading in a structured way. The platform uses an AI-based FAQ assistant that allows users to ask questions about financial concepts, trading strategies, or investment principles. The system processes these queries and provides relevant explanations, course recommendations, or directs users to mentorship sessions. In addition to AI assistance, the platform includes a structured ecosystem of financial education services including courses, live mentorship programs, and expert advisory sessions.",
     solutionPoints: [
-      "Real-time market sentiment analysis engine.",
-      "AI-driven trading idea generation with risk assessment.",
-      "Comprehensive portfolio tracking and alerts.",
-      "Simplified data visualization for complex trends.",
-      "Secure API integrations with major trading platforms.",
-      "Personalized investment educational modules.",
+      "AI-powered FAQ assistant for financial queries.",
+      "Intelligent recommendation of courses based on user questions.",
+      "Live mentorship sessions with financial experts.",
+      "Advisory programs for guided learning and strategy discussions.",
+      "Structured financial learning modules for beginners and intermediate investors.",
+      "Interactive mobile-first learning experience.",
+      "Secure backend infrastructure for managing educational content and user data.",
     ],
     showcaseImages: [
       "https://images.unsplash.com/photo-1611974714014-99a7161b9a91?auto=format&fit=crop&q=80&w=2070",
       "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=2070",
       "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?auto=format&fit=crop&q=80&w=2070",
     ],
+    detailGalleryImages: [
+      "/projects/richie-ps1.webp",
+      "/projects/richie-ps2.webp",
+      "/projects/richie-ps3.webp",
+    ],
     impact:
-      "Richie saw a 45% increase in user engagement within the first three months. The AI assistant successfully resolved over 70% of user queries about stock performance without manual intervention, leading to higher confidence among retail investors and a significant growth in daily active users.",
+      "The platform significantly improved accessibility to financial education by combining AI assistance with structured learning resources. Key outcomes include: faster access to financial knowledge through AI-powered query responses, reduced dependency on manual support for common user questions, increased user engagement through guided learning pathways, and improved accessibility to mentorship and advisory services. The AI assistant successfully handles a majority of user queries related to financial education topics, allowing users to quickly find relevant learning materials and expert guidance.",
+    techStack: [
+      "Mobile: Flutter, Dart",
+      "Backend: Supabase",
+      "AI Integration: LLM-based FAQ assistant with structured knowledge base",
+      "Database: PostgreSQL (Supabase)",
+      "Architecture: Clean Architecture with modular feature structure",
+      "State Management: BLoC",
+    ],
+    projectBenefits: [
+      "Scalable architecture supporting future expansion of learning modules.",
+      "Cross-platform mobile performance using Flutter.",
+      "Reduced operational support through AI-assisted FAQ automation.",
+      "Modular architecture allowing new financial programs to be added easily.",
+      "Smooth and responsive user experience optimized for mobile learning.",
+    ],
     testimonial: {
-      text: "The AI implementation transformed how our users interact with the market. Srinivasu didn't just build a feature; he built the core of our user experience.",
-      name: "Courtney Henry",
-      role: "CEO, Richie AI Team",
-      avatar: "CH",
+      text: "The platform combines AI assistance with structured learning resources for retail investors.",
+      name: "Chase Alpha Private Limited",
+      role: "Client",
+      avatar: "RC",
       rating: 5.0,
     },
   },
@@ -1031,6 +1086,8 @@ export const projectDetails = {
     client: "Guidel Travel",
     duration: "8 Months",
     country: "Global",
+    summary:
+      "Guidel is an AI-powered mobile application that delivers personalized audio stories for cities, monuments, and cultural sites. Using GPT-4 and location services, it gives travelers context-aware historical and cultural content on demand, with offline support and multi-language options for a seamless experience worldwide.",
     challenge:
       "Travelers often miss out on the rich history and cultural context of the places they visit because traditional audio guides are static, expensive, or boring. The challenge was to create a dynamic, AI-powered guide that translates any monument into a personalized audio story.",
     solution:
@@ -1203,6 +1260,84 @@ export const projectDetails = {
       name: "James Wilson",
       role: "Chief Content Officer",
       avatar: "JW",
+      rating: 5.0,
+    },
+  },
+  7: {
+    id: 7,
+    title: "Sparks Dating App",
+    subtitle: "Dating & Connection Platform for Single Parents",
+    heroImage:
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=2070",
+    category: "Mobile App Development",
+    client: "Sparks Dating",
+    duration: "10 Months",
+    country: "United States",
+    summary:
+      "Sparks is a dedicated dating and connection platform for single parents, built with Flutter and a Node.js backend. It offers secure profiles, intelligent match browsing, real-time chat, and ChatGPT-powered conversation starters to help users find meaningful relationships and friendships in a safe, inclusive environment.",
+    challenge:
+      "Single parents often struggle to find dating platforms that understand their unique needs and schedules. The goal was to build a secure, inclusive app where single parents could connect for relationships, friendships, and meaningful connections without the friction of generic dating apps.",
+    solution:
+      "We developed a Flutter mobile app with a Node.js backend, featuring secure registration, rich profiles, intelligent match browsing, and real-time chat. ChatGPT integration powers conversation starters and compatibility insights. AWS services handle scalability, storage, and recommendation algorithms for better matches.",
+    solutionPoints: [
+      "Flutter cross-platform app with smooth onboarding and profile creation.",
+      "Node.js REST API and real-time chat with WebSockets.",
+      "ChatGPT integration for icebreakers and compatibility suggestions.",
+      "AWS infrastructure: Lambda, S3, and recommendation algorithms.",
+      "Secure authentication and privacy controls for single-parent users.",
+      "Match browsing, filters, and in-app messaging.",
+    ],
+    showcaseImages: [
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=2070",
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=2070",
+      "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=2070",
+    ],
+    impact:
+      "Sparks Dating App provided single parents a dedicated space to connect, with strong engagement on profile completion and conversation rates. The AI-enhanced experience helped users find like-minded matches more efficiently.",
+    testimonial: {
+      text: "Building Sparks was about more than tech—it was about creating a safe, welcoming place for single parents to find connection. The team delivered exactly that.",
+      name: "Sparks Product Lead",
+      role: "Sparks Dating",
+      avatar: "SP",
+      rating: 5.0,
+    },
+  },
+  8: {
+    id: 8,
+    title: "AI Crix",
+    subtitle: "AI Cricket Match Prediction Application",
+    heroImage:
+      "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2070",
+    category: "Mobile & ML Engineering",
+    client: "AI Crix",
+    duration: "8 Months",
+    country: "India",
+    summary:
+      "AI Crix is an ML-powered cricket application that analyzes match and historical data to deliver predictions and statistics in real time. The Flutter app is backed by Supabase and a Python/NumPy-based prediction model, giving cricket fans and analysts data-driven insights and a clear, responsive mobile experience.",
+    challenge:
+      "Cricket fans and analysts needed a reliable way to get data-driven match predictions. The challenge was to build an ML-powered system that processes historical cricket statistics and surfaces predictions in a fast, real-time mobile experience.",
+    solution:
+      "We built a Flutter mobile app with scalable architecture, integrated Supabase for backend, authentication, and real-time data storage. A Python/NumPy-based machine learning model analyzes cricket statistics to generate predictions; APIs connect the model to the app for live prediction results and match statistics visualization.",
+    solutionPoints: [
+      "Flutter mobile app with scalable architecture and optimized UI for live results.",
+      "Supabase integration for authentication, database, and real-time sync.",
+      "Machine learning prediction model using Python and NumPy for cricket statistics.",
+      "APIs connecting the AI model outputs to the Flutter application.",
+      "Match statistics visualization and prediction history for users.",
+      "Optimized data fetching and UI updates for real-time prediction delivery.",
+    ],
+    showcaseImages: [
+      "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2070",
+      "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?auto=format&fit=crop&q=80&w=2070",
+      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=2070",
+    ],
+    impact:
+      "AI Crix delivered ML-driven cricket predictions in a user-friendly mobile experience, with real-time synchronization and clear statistics visualization, enabling users to access data-backed match insights on the go.",
+    testimonial: {
+      text: "The combination of Flutter, Supabase, and the custom ML model made AI Crix both powerful and easy to use. Predictions feel grounded in real data.",
+      name: "AI Crix Team",
+      role: "Product",
+      avatar: "AC",
       rating: 5.0,
     },
   },

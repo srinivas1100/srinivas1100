@@ -50,6 +50,45 @@
     font-weight: 500;
 }
 
+/* Detail gallery — three images same size (e.g. Richie screen 1, 2, 3) */
+.v4-detail-gallery {
+    padding: 40px 0 30px;
+    background-color: #FFF;
+}
+
+.v4-detail-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    max-width: 100%;
+}
+
+.v4-detail-gallery-item {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+}
+
+.v4-detail-gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .v4-detail-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .v4-detail-gallery-item {
+        height: 300px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
 /* Showcase Section - Mobile screens row */
 .v4-showcase-section {
     padding: 10px 0 10px;
@@ -140,8 +179,7 @@
 .v4-content-row {
     display: flex;
     gap: 50px;
-    margin-bottom: 30px;
-    /* Reduced spacing to Challenge section */
+    margin-bottom: 12px;
     align-items: flex-start;
 }
 
@@ -223,9 +261,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    /* Reduced gap between blocks */
-    margin-top: 20px;
-    /* Reduced spacing from intro */
+    margin-top: 4px;
 }
 
 .v4-detail-block {
