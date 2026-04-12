@@ -44,23 +44,40 @@ const ProjectDetail = () => {
             {/* Decorative Stripe */}
             <Marquee className="v4-project-marquee" />
 
-            {/* Showcase Visual Set at the top */}
-            <div className="v4-showcase-section">
-                <div className="container">
-                    <div className="v4-showcase-list">
-                        {[...project.showcaseImages, ...project.showcaseImages].slice(0, 5).map((img, index) => (
-                            <div key={index} className={`v4-showcase-card-mobile ${index === 2 ? 'active' : ''}`}>
-                                <img src={img} alt={`${project.title} screen ${index + 1}`} />
-                                {index === 2 && (
-                                    <div className="v4-play-button">
-                                        <div className="v4-play-triangle"></div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+            {/* Detail gallery images (e.g. Richie PS1–PS3) — after yellow stripe */}
+            {project.detailGalleryImages && project.detailGalleryImages.length > 0 && (
+                <div className="v4-detail-gallery">
+                    <div className="container">
+                        <div className="v4-detail-gallery-grid">
+                            {project.detailGalleryImages.map((src, index) => (
+                                <div key={index} className="v4-detail-gallery-item">
+                                    <img src={src} alt={`${project.title} ${index + 1}`} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
+
+            {/* Showcase Visual Set — hidden when project has detail gallery (e.g. Richie) */}
+            {(!project.detailGalleryImages || project.detailGalleryImages.length === 0) && (
+                <div className="v4-showcase-section">
+                    <div className="container">
+                        <div className="v4-showcase-list">
+                            {[...project.showcaseImages, ...project.showcaseImages].slice(0, 5).map((img, index) => (
+                                <div key={index} className={`v4-showcase-card-mobile ${index === 2 ? 'active' : ''}`}>
+                                    <img src={img} alt={`${project.title} screen ${index + 1}`} />
+                                    {index === 2 && (
+                                        <div className="v4-play-button">
+                                            <div className="v4-play-triangle"></div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <section className="v4-main-section">
                 <div className="container">
@@ -71,40 +88,50 @@ const ProjectDetail = () => {
                                 {project.title} <span className="v4-highlight">Solution</span>
                             </h1>
 
-                            <div className="v4-intro-group">
-                                <div className="v4-avatar-circle">
-                                    {project.testimonial.avatar}
-                                </div>
-                                <div className="v4-intro-text">
+                            {project.summary && (
+                                <p className="v4-text-normal" style={{ marginBottom: '1rem' }}>
+                                    {project.summary}
+                                </p>
+                            )}
+                            {!project.summary && (
+                                <>
+                                    <div className="v4-intro-group">
+                                        <div className="v4-avatar-circle">
+                                            {project.testimonial?.avatar}
+                                        </div>
+                                        <div className="v4-intro-text">
+                                            <p className="v4-text-normal">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+                                            </p>
+                                        </div>
+                                    </div>
                                     <p className="v4-text-normal">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+                                        {project.challenge?.split('. ')[0]}. {project.solution?.split('. ')[0]}. {project.challenge?.split('. ').slice(1, 4).join('. ')}
                                     </p>
-                                </div>
-                            </div>
-
-                            <p className="v4-text-normal">
-                                {project.challenge.split('. ')[0]}. {project.solution.split('. ')[0]}. {project.challenge.split('. ').slice(1, 4).join('. ')}
-                            </p>
-                            <p className="v4-text-normal">
-                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam.
-                            </p>
+                                    <p className="v4-text-normal">
+                                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                    </p>
+                                </>
+                            )}
                         </div>
 
                         <div className="v4-metadata-box">
                             <div className="v4-meta-item">
-                                <span className="v4-meta-label">Project Cotegory :</span>
-                                <span className="v4-meta-value">{project.category} Design</span>
+                                <span className="v4-meta-label">Project Category :</span>
+                                <span className="v4-meta-value">{project.category}{(!project.category?.includes('Design') && !project.category?.includes('Application')) ? ' Design' : ''}</span>
                             </div>
                             <div className="v4-meta-item">
                                 <span className="v4-meta-label">Client :</span>
                                 <span className="v4-meta-value">{project.testimonial?.name || project.client}</span>
                             </div>
+                            {project.duration && (
+                                <div className="v4-meta-item">
+                                    <span className="v4-meta-label">Duration :</span>
+                                    <span className="v4-meta-value">{project.duration}</span>
+                                </div>
+                            )}
                             <div className="v4-meta-item">
-                                <span className="v4-meta-label">Duration :</span>
-                                <span className="v4-meta-value">{project.duration}</span>
-                            </div>
-                            <div className="v4-meta-item">
-                                <span className="v4-meta-label">County :</span>
+                                <span className="v4-meta-label">Country :</span>
                                 <span className="v4-meta-value">{project.country}</span>
                             </div>
                         </div>
@@ -149,6 +176,46 @@ const ProjectDetail = () => {
                             <h2 className="v4-section-heading">The Impact</h2>
                             <p className="v4-text-description">{project.impact}</p>
                         </div>
+
+                        {project.techStack && project.techStack.length > 0 && (
+                            <div className="v4-detail-block">
+                                <h2 className="v4-section-heading">Technology Stack</h2>
+                                <div className="v4-solution-grid">
+                                    {project.techStack.map((item, index) => (
+                                        <div key={index} className="v4-solution-card">
+                                            <div className="v4-check-row">
+                                                <div className="v4-orange-check-circle">
+                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <span className="v4-solution-point-text">{item}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {project.projectBenefits && project.projectBenefits.length > 0 && (
+                            <div className="v4-detail-block">
+                                <h2 className="v4-section-heading">Project Benefits</h2>
+                                <div className="v4-solution-grid">
+                                    {project.projectBenefits.map((point, index) => (
+                                        <div key={index} className="v4-solution-card">
+                                            <div className="v4-check-row">
+                                                <div className="v4-orange-check-circle">
+                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <span className="v4-solution-point-text">{point}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                 </div>

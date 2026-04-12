@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/content';
+import { PlayStoreIcon, AppStoreIcon } from '../components/common/StoreIcons/StoreIcons';
 import Contact from '../components/sections/Contact/Contact';
 import ProjectCTA from '../components/sections/CTA/ProjectCTA';
 import Marquee from '../components/common/Marquee/Marquee';
@@ -42,9 +43,9 @@ const AllProjects = () => {
                             <div key={project.id} className="project-card">
                                 <div className="project-image-container">
                                     <img
-                                        src={`https://picsum.photos/600/500?random=${project.id + 10}`}
+                                        src={project.image || `https://picsum.photos/600/500?random=${project.id + 10}`}
                                         alt={project.title}
-                                        className="project-img"
+                                        className={`project-img ${project.id === 4 ? 'project-img--contain' : ''}`}
                                     />
                                 </div>
                                 <div className="project-content">
@@ -65,13 +66,31 @@ const AllProjects = () => {
                                         ))}
                                     </div>
 
+                                    {(project.playStoreUrl || project.appStoreUrl) && (
+                                        <div className="project-store-links">
+                                            {project.playStoreUrl && (
+                                                <a href={project.playStoreUrl} target="_blank" rel="noopener noreferrer" className="project-store-link">
+                                                    <PlayStoreIcon className="project-store-icon" /> Play Store
+                                                </a>
+                                            )}
+                                            {project.playStoreUrl && project.appStoreUrl && <span className="project-store-sep">·</span>}
+                                            {project.appStoreUrl && (
+                                                <a href={project.appStoreUrl} target="_blank" rel="noopener noreferrer" className="project-store-link">
+                                                    <AppStoreIcon className="project-store-icon" /> App Store
+                                                </a>
+                                            )}
+                                        </div>
+                                    )}
+
                                     <div className="project-footer">
                                         {project.role && (
                                             <span className="project-role">{project.role}</span>
                                         )}
-                                        <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label="View Project">
-                                            <img src={arrowRightIcon} alt="Go" className="project-arrow-icon" />
-                                        </Link>
+                                        {!project.hideDetailLink && (
+                                            <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label="View Project">
+                                                <img src={arrowRightIcon} alt="Go" className="project-arrow-icon" />
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>

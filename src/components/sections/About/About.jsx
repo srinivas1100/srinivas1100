@@ -113,9 +113,6 @@ const About = () => {
                                     <img src={arrowRightIcon} alt="Arrow Right" style={{ width: '24px', height: '24px', objectFit: 'contain', filter: 'brightness(0) saturate(100%) drop-shadow(0px 0px 0.5px rgba(0,0,0,1))' }} />
                                 </div>
                             </a>
-                            <div className="signature-area-subtle">
-                                <span className="signature-font-faded">— {personalInfo.name}</span>
-                            </div>
                         </div>
                     </div>
                 </div>
