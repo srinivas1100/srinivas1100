@@ -1,5 +1,5 @@
 import { personalInfo } from '../../../data/content';
-import heroProfile from '../../../assets/images/without_bg_imge.png';
+import heroProfile from '../../../assets/images/hero-profile-v2.png';
 import './Hero.css';
 import Marquee from '../../common/Marquee/Marquee';
 

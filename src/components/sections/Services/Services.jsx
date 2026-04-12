@@ -76,48 +76,27 @@ export const ServiceIcon = ({ name }) => {
     switch (name) {
         case 'ai':
             return (
-                /* Gear Network AI Icon - Refined Version */
+                /* Gear Network AI Icon - Lighter stroke for card harmony */
                 <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Radiating Network Lines and Nodes */}
-
-                    {/* Top Center */}
-                    <path d="M12 2V5" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="12" cy="2" r="1.5" fill="#F5A623" />
-
-                    {/* Top Right */}
-                    <path d="M19 5L17 7" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="20" cy="4" r="1.5" fill="#F5A623" />
-
-                    {/* Right Center */}
-                    <path d="M22 12H19" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="22" cy="12" r="1.5" fill="#F5A623" />
-
-                    {/* Bottom Right */}
-                    <path d="M19 19L17 17" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="20" cy="20" r="1.5" fill="#F5A623" />
-
-                    {/* Bottom Center */}
-                    <path d="M12 22V19" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="12" cy="22" r="1.5" fill="#F5A623" />
-
-                    {/* Bottom Left */}
-                    <path d="M5 19L7 17" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="4" cy="20" r="1.5" fill="#F5A623" />
-
-                    {/* Left Center */}
-                    <path d="M2 12H5" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="2" cy="12" r="1.5" fill="#F5A623" />
-
-                    {/* Top Left */}
-                    <path d="M5 5L7 7" stroke="#2D4033" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="4" cy="4" r="1.5" fill="#F5A623" />
-
-                    {/* Central Gear */}
+                    <path d="M12 2V5" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="12" cy="2" r="1.25" fill="#F5A623" />
+                    <path d="M19 5L17 7" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="20" cy="4" r="1.25" fill="#F5A623" />
+                    <path d="M22 12H19" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="22" cy="12" r="1.25" fill="#F5A623" />
+                    <path d="M19 19L17 17" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="20" cy="20" r="1.25" fill="#F5A623" />
+                    <path d="M12 22V19" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="12" cy="22" r="1.25" fill="#F5A623" />
+                    <path d="M5 19L7 17" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="4" cy="20" r="1.25" fill="#F5A623" />
+                    <path d="M2 12H5" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="2" cy="12" r="1.25" fill="#F5A623" />
+                    <path d="M5 5L7 7" stroke="#2D4033" strokeWidth="1.25" strokeLinecap="round" />
+                    <circle cx="4" cy="4" r="1.25" fill="#F5A623" />
                     <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="#2D4033" />
                     <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="white" />
-
-                    {/* 'AI' Text */}
-                    <text x="12" y="13.5" textAnchor="middle" fontSize="5" fontWeight="bold" fill="#2D4033" style={{ fontFamily: 'Arial, sans-serif' }}>AI</text>
+                    <text x="12" y="13.5" textAnchor="middle" fontSize="5" fontWeight="600" fill="#2D4033" style={{ fontFamily: 'Arial, sans-serif' }}>AI</text>
                 </svg>
             );
         case 'leadership':
@@ -143,18 +122,18 @@ export const ServiceIcon = ({ name }) => {
         case 'app':
             return (
                 <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="6" y="2" width="12" height="20" rx="2.5" stroke="#2D4033" strokeWidth="2.5" fill="none" />
-                    <path d="M10 5H14" stroke="#2D4033" strokeWidth="2.5" strokeLinecap="round" />
-                    <circle cx="12" cy="18" r="1.5" fill="#F5A623" />
+                    <rect x="6" y="2" width="12" height="20" rx="2.5" stroke="#2D4033" strokeWidth="1.5" fill="none" />
+                    <path d="M10 5H14" stroke="#2D4033" strokeWidth="1.5" strokeLinecap="round" />
+                    <circle cx="12" cy="18" r="1.25" fill="#F5A623" />
                 </svg>
             );
         case 'code':
             return (
-                /* Bold Code Tags < /> - Universal Symbol for Dev/Full-Stack */
+                /* Code Tags < /> - Lighter stroke to match card design */
                 <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 6L3 12L8 18" stroke="#2D4033" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M16 6L21 12L16 18" stroke="#2D4033" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M13 4L11 20" stroke="#F5A623" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M8 6L3 12L8 18" stroke="#2D4033" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 6L21 12L16 18" stroke="#2D4033" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M13 4L11 20" stroke="#F5A623" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
             );
         case 'web':
