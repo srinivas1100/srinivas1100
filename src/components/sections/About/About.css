@@ -1,30 +1,27 @@
 /* ===================================
-   About Section - Senior Refined
+   About Section - Circle Session Design
    =================================== */
 
 .about-section {
     background-color: var(--color-secondary);
-    padding: var(--space-16) 0;
-    /* Tightened vertical space */
+    padding: var(--space-20) 0;
     color: var(--color-text-light);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 0.6fr 1.4fr;
-    /* Visual is even smaller/side-supporting */
-    gap: var(--space-20);
+    grid-template-columns: 0.55fr 1.45fr;
+    gap: var(--space-24);
     align-items: center;
 }
 
-/* Visual Column - Subtle & Supporting */
+/* Visual Column - Circle Session */
 .about-visual {
     display: flex;
     justify-content: center;
     position: relative;
-    opacity: 0.8;
-    /* Reduced prominence */
+    opacity: 1;
 }
 
 .animate-on-load {
@@ -35,131 +32,217 @@
     from {
         opacity: 0;
         transform: translateY(10px);
-        /* Slight upward motion */
     }
-
     to {
-        opacity: 0.8;
+        opacity: 1;
         transform: translateY(0);
     }
 }
 
-.jar-container-small {
+/* ===== Circle Session Container ===== */
+.circle-session-container {
     position: relative;
-    width: 240px;
-    /* Scaled down by ~15% */
-    height: 185px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 500px;
+    height: 500px;
 }
 
-.glass-jar-subtle {
+/* Yellow Circle Background */
+.yellow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    background: #FFD600; /* Vibrant Yellow */
+    border-radius: 50%;
+    box-shadow: 0 20px 60px rgba(255, 214, 0, 0.25);
+    z-index: 1;
+}
+
+/* Image Wrapper - Circle Design */
+.image-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 440px; 
+    height: 440px;
+    border-radius: 50%;
+    overflow: hidden; /* Contain the image and badges */
+    z-index: 2;
+    background: #FFD600;
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.15);
+}
+
+.about-image-overflow {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.12));
-    animation: jarBreathe 6s ease-in-out infinite;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transform: scale(1.05);
 }
 
-@keyframes jarBreathe {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateY(-3px) scale(1.01);
-    }
-}
-
-.glass-reflection {
-    opacity: 0.6;
-    animation: reflectionPulse 4s ease-in-out infinite;
-}
-
-@keyframes reflectionPulse {
-
-    0%,
-    100% {
-        opacity: 0.4;
-        stroke-width: 4;
-    }
-
-    50% {
-        opacity: 0.8;
-        stroke-width: 6;
-    }
-}
-
-.tech-pills-container {
+/* ===== Skills Clustered Layout (Matches Reference SS) ===== */
+.skills-overlay-cluster {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    z-index: 10;
 }
 
-.tech-pill-subtle {
+.skill-badge {
     position: absolute;
-    left: 50%;
-    top: var(--y-pos);
-    transform: translateX(calc(-50% + var(--x-pos)));
-    font-size: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-size: 15px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.7);
-    /* Brighter text */
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    background-color: rgba(255, 255, 255, 0.05);
-    /* Subtle background for pills */
-    padding: 4px 8px;
-    border-radius: 4px;
-    border-left: 1.5px solid var(--color-primary);
-    /* Hint of primary color */
-    animation: fadeInStatic 0.8s ease-out forwards, floatingPill 4s ease-in-out infinite;
+    white-space: nowrap;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    border: 2px solid #FFFFFF; /* High-contrast white border */
+    transition: all var(--transition-base);
+    pointer-events: auto;
     opacity: 0;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+    /* Combined falling animation */
+    animation: dropSettle 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.tech-pill-subtle:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--color-primary);
-    transform: translateX(calc(-50% + var(--x-pos))) translateY(-2px) scale(1.05);
+.skill-badge:hover {
+    transform: translateY(-3px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(1.05) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    z-index: 20;
 }
 
-@keyframes floatingPill {
-
-    0%,
-    100% {
-        transform: translateX(calc(-50% + var(--x-pos))) translateY(0);
-    }
-
-    50% {
-        transform: translateX(calc(-50% + var(--x-pos))) translateY(-8px);
-    }
+.skill-yellow {
+    background: var(--color-primary); /* Vibrant Yellow */
+    color: var(--color-secondary);
 }
 
+.skill-green {
+    background: #2F4D37;
+    color: #ffffff;
+}
 
-@keyframes fadeInStatic {
+/* Precise Clustered Positions - Tight Center & Higher up for full containment */
+.skill-badge[data-position="0"] { /* AI agents (Top Center) */
+    --tx: -50%;
+    --rot: 2deg;
+    top: 55%;
+    left: 50%;
+    transform: translateX(var(--tx)) rotate(var(--rot));
+    animation-delay: 0.1s;
+    z-index: 25;
+}
+
+.skill-badge[data-position="1"] { /* Flutter (Mid Left) */
+    --tx: 0;
+    --rot: -10deg;
+    top: 63%;
+    left: 24%; 
+    transform: rotate(var(--rot));
+    animation-delay: 0.2s;
+    z-index: 20;
+}
+
+.skill-badge[data-position="2"] { /* React js (Mid Right) */
+    --tx: 0;
+    --rot: 10deg;
+    top: 62%;
+    right: 20%;
+    transform: rotate(var(--rot));
+    animation-delay: 0.3s;
+    z-index: 19;
+}
+
+.skill-badge[data-position="3"] { /* System Design (Center) */
+    --tx: -50%;
+    --rot: 0deg;
+    top: 73%;
+    left: 52%;
+    padding: 10px 24px;
+    font-size: 14px;
+    transform: translateX(var(--tx)) rotate(var(--rot));
+    animation-delay: 0.4s;
+    z-index: 22;
+}
+
+.skill-badge[data-position="4"] { /* Swift (Bottom Left) */
+    --tx: 0;
+    --rot: -15deg;
+    top: 72%;
+    left: 18%;
+    transform: rotate(var(--rot));
+    animation-delay: 0.5s;
+    z-index: 18;
+}
+
+.skill-badge[data-position="5"] { /* Nodejs (Bottom Right) */
+    --tx: 0;
+    --rot: 22deg;
+    top: 71%;
+    right: 17% ; 
+    transform: rotate(var(--rot));
+    animation-delay: 0.6s;
+    z-index: 17;
+}
+
+.skill-badge[data-position="6"] { /* Firebase (Bottom Center) */
+    --tx: -50%;
+    --rot: 0deg;
+    top: 82%;
+    left: 50%;
+    transform: translateX(var(--tx)) rotate(var(--rot));
+    animation-delay: 0.7s;
+    z-index: 16;
+}
+
+/* Falling Animation that respects individual positions/rotations */
+@keyframes dropSettle {
     from {
         opacity: 0;
-        transform: translateX(calc(-50% + var(--x-pos))) translateY(5px);
+        transform: translateY(-80px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(0.9);
     }
-
     to {
         opacity: 1;
-        transform: translateX(calc(-50% + var(--x-pos))) translateY(0);
+        transform: translateY(0) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(1);
     }
 }
 
-/* Content Column - Central Focus */
+/* Subtle continuous floating after landing */
+@keyframes continuousFloat {
+    from { transform: translateY(0) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)); }
+    to { transform: translateY(-5px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)); }
+}
+
+/* Add lifecycle animation if desired, but for now dropSettle is the priority */
+
+/* ===== Content Column - Central Focus ===== */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 60px;
+    max-width: 620px;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 0;
+}
+
 .about-subtitle {
     display: flex;
     align-items: center;
     font-size: 16px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     gap: 8px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -180,30 +263,41 @@
     color: var(--color-text-light);
 }
 
-.script-name {
-    font-family: 'Dancing Script', cursive;
-    color: var(--color-primary);
-    font-weight: 400;
+.about-heading-new {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 0 0;
+    color: var(--color-text-light);
+}
+
+.name-italic {
+    font-style: italic;
+    color: var(--color-primary-light);
 }
 
 .about-text-container {
-    margin-bottom: 36px;
+    margin: 0;
+    padding: 0;
 }
 
 .about-text-short {
     font-size: 18px;
-    line-height: 1.5;
-    /* Tightened line-height */
+    line-height: 1.55;
     color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 16px;
+    margin: 0;
     max-width: 95%;
 }
 
-/* Stats Row - Minimal & Clean */
+.about-text-short:first-child {
+    margin-top: 0;
+}
+
 .stats-row-senior {
     display: flex;
-    gap: 56px;
-    margin-bottom: 44px;
+    gap: 32px;
+    margin-top: 6px;
+    margin-bottom: 20px;
 }
 
 .stat-item-clean {
@@ -274,16 +368,12 @@
     transition: all var(--transition-base);
 }
 
-
-.signature-font-faded {
+.signature-text {
     font-family: 'Dancing Script', cursive;
-    font-size: 34px;
+    font-size: 28px;
     color: var(--color-primary);
-    opacity: 0.35;
-    /* Tone down signature */
     font-weight: 400;
-    transform: rotate(-2deg);
-    display: inline-block;
+    margin-left: 20px;
 }
 
 /* Responsive Overrides */
@@ -323,7 +413,6 @@
 
     .stats-row-senior {
         flex-direction: row;
-        /* Keep row unless very narrow */
         flex-wrap: wrap;
         justify-content: center;
         gap: 24px;
@@ -332,58 +421,16 @@
     .stat-value-small {
         font-size: 28px;
     }
-}
 
-/* Bubble Animations */
-.jar-bubbles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.bubble {
-    position: absolute;
-    bottom: -10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: bubbleRise var(--duration) ease-in infinite;
-    opacity: 0;
-}
-
-@keyframes bubbleRise {
-    0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0;
+    .circle-session-container {
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
     }
 
-    20% {
-        opacity: 0.4;
-    }
-
-    80% {
-        opacity: 0.1;
-    }
-
-    100% {
-        transform: translateY(-150px) scale(1.2);
-        opacity: 0;
-    }
-}
-
-.glass-rim {
-    opacity: 0.3;
-    animation: rimGlow 5s ease-in-out infinite;
-}
-
-@keyframes rimGlow {
-
-    0%,
-    100% {
-        opacity: 0.2;
-    }
-
-    50% {
-        opacity: 0.5;
+    .image-wrapper {
+        width: 280px;
+        height: 320px;
+        border-radius: 16px;
     }
 }
