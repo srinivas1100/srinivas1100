@@ -107,8 +107,10 @@ export const projects = [
     tags: ["Flutter", "Node.js", "React.js", "MongoDB", "AI"],
     role: "Tech Lead · End-to-End Ownership",
     category: "Mobile App",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chasealpha.richie",
-    appStoreUrl: "https://apps.apple.com/in/app/richie-stocks-options-app/id1659006578",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.chasealpha.richie",
+    appStoreUrl:
+      "https://apps.apple.com/in/app/richie-stocks-options-app/id1659006578",
   },
   {
     id: 2,
@@ -120,8 +122,10 @@ export const projects = [
     tags: ["Flutter", "GPT-4", "Google Maps", "Firebase"],
     role: "Lead Developer · AI Personalization",
     category: "Mobile App",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.cityguide.guidel",
-    appStoreUrl: "https://apps.apple.com/us/app/guidel-ai-audio-city-guide/id6479697130",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.cityguide.guidel",
+    appStoreUrl:
+      "https://apps.apple.com/us/app/guidel-ai-audio-city-guide/id6479697130",
   },
   {
     id: 3,
@@ -189,8 +193,10 @@ export const projects = [
     tags: ["Flutter", "Supabase", "Python", "NumPy", "ML"],
     role: "Full-Stack · Mobile, Backend & AI Model",
     category: "Mobile App",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.veloria.aicrix",
-    appStoreUrl: "https://apps.apple.com/pk/app/aicrix-ai-cricket-predictions/id6759485224",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.veloria.aicrix",
+    appStoreUrl:
+      "https://apps.apple.com/pk/app/aicrix-ai-cricket-predictions/id6759485224",
   },
 ];
 
@@ -240,7 +246,7 @@ export const journey = [
   },
   {
     id: 3,
-    year: "2022 – 2023",
+    year: "2021 – 2023",
     role: "Software Engineer → Tech Lead",
     company: "Appknit",
     description:
@@ -248,17 +254,16 @@ export const journey = [
   },
   {
     id: 4,
-    year: "2021 – 2022",
-    role: "Flutter Developer",
-    company: "CloudNext",
+    year: "2021 (3 Months)",
+    role: "Mobile App Intern",
+    company: "Unio Labs",
     description:
-      "Built healthcare mobile applications focused on doctor discovery and appointment booking workflows.",
+      "Developed a Home Automation mobile application (APK), focusing on smart device control and real-time connectivity.",
   },
 ];
 
 // Experience summary for footer/badge (uses experienceYears)
-export const experienceSummary =
-  `${experienceYears}+ years experience · 20+ production apps · Fintech, Healthcare, Consumer`;
+export const experienceSummary = `${experienceYears}+ years experience · 20+ production apps · Fintech, Healthcare, Consumer`;
 
 export const stats = [
   { value: "20+", label: "Production Apps" },
@@ -499,8 +504,7 @@ export const serviceDetails = {
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=2070",
     about: {
       title: "Building Production-Grade Mobile Experiences",
-      description:
-        `With over ${experienceYears} years of experience and 20+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.`,
+      description: `With over ${experienceYears} years of experience and 20+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.`,
     },
     servicesInclude: [
       "Cross-Platform Flutter Development",

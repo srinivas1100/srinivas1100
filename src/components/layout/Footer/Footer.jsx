@@ -21,8 +21,8 @@ const Footer = () => {
                     {/* Column 1: Brand / Bio */}
                     <div className="footer-brand">
                         <a href="#home" className="footer-logo">
-                            <span className="logo-icon">S</span>
-                            <span className="logo-text" style={{ color: 'var(--color-secondary)' }}>Srinivasu.</span>
+                            <img src="/favicon.png" alt="S Logo" className="logo-icon" />
+                            <span className="script-name name-prominent">Srinivasu.</span>
                         </a>
                         <p className="footer-description">
                             Senior Mobile Engineer & Tech Lead focused on building production-grade mobile and web applications with strong performance, scalability, and reliability.
@@ -111,7 +111,7 @@ const Footer = () => {
                 <div className="footer-bottom-bar">
                     <div className="footer-bottom-content">
                         <p className="copyright" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            Copyright © {currentYear} <span className="script-name" style={{ fontSize: '42px', opacity: 1, color: 'var(--color-primary-accent)', transform: 'none', marginLeft: '4px' }}>Srinivasu.</span> All Rights Reserved.
+                            Copyright © {currentYear} <span className="script-name name-prominent">Srinivasu.</span> All Rights Reserved.
                         </p>
                         <div className="footer-legal">
                             <a href="#">User Terms & Conditions</a>

@@ -102,10 +102,9 @@
     width: 32px;
     height: 32px;
     background-color: var(--color-primary-accent);
-    color: var(--color-text-dark);
     border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 4px;
+    object-fit: contain;
 }
 
 .footer-description {
@@ -283,6 +282,25 @@
 
 .text-highlight {
     color: var(--color-primary-accent);
+}
+
+.script-name {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    color: var(--color-primary-accent);
+    background: linear-gradient(135deg, var(--color-primary-accent), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.name-prominent {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.script-name:hover {
+    transform: scale(1.05) rotate(-1deg);
 }
 
 .footer-legal {

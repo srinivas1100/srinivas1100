@@ -1,4 +1,13 @@
+import React from 'react';
 import './Skills.css';
+import aiIcon from '../../../assets/images/ai-icon.png';
+import flutterLogo from '../../../assets/images/flutter-logo.png';
+import nodejsLogo from '../../../assets/images/nodejs-logo.png';
+import firebaseLogo from '../../../assets/images/firebase-logo.png';
+import supabaseLogo from '../../../assets/images/supabase-logo.png';
+import cloudLogo from '../../../assets/images/cloud-logo.png';
+import mongodbLogo from '../../../assets/images/mongodb-logo.png';
+import postgresqlLogo from '../../../assets/images/postgresql-logo.png';
 
 const Skills = () => {
     const coreTools = [
@@ -6,8 +15,13 @@ const Skills = () => {
         { name: 'iOS (Swift)', subtitle: 'Native Development', icon: 'swift' },
         { name: 'Node.js', subtitle: 'Backend & APIs', icon: 'nodejs' },
         { name: 'React.js', subtitle: 'Web Dashboards', icon: 'react' },
+        { name: 'Supabase', subtitle: 'Backend / Auth', icon: 'supabase' },
+        { name: 'Firebase', subtitle: 'BaaS / Auth', icon: 'firebase' },
         { name: 'AI & LLMs', subtitle: 'Intelligent Features', icon: 'ai' },
-        { name: 'Cloud & DevOps', subtitle: 'Infrastructure', icon: 'cloud' },
+        { name: 'Cloud', subtitle: 'Cloud Infrastructure', icon: 'cloud' },
+        { name: 'DevOps', subtitle: 'CI/CD & Automation', icon: 'devops' },
+        { name: 'MongoDB', subtitle: 'NoSQL Database', icon: 'mongodb' },
+        { name: 'PostgreSQL', subtitle: 'SQL Database', icon: 'postgresql' },
     ];
 
     return (
@@ -40,9 +54,7 @@ const Skills = () => {
 const SkillIcon = ({ name }) => {
     const icons = {
         flutter: (
-            <svg viewBox="0 0 24 24" width="40" height="40">
-                <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" fill="#0175C2" />
-            </svg>
+            <img src={flutterLogo} alt="Flutter" width="40" height="40" style={{ objectFit: 'contain' }} />
         ),
         swift: (
             <svg viewBox="0 0 24 24" width="40" height="40">
@@ -50,10 +62,19 @@ const SkillIcon = ({ name }) => {
             </svg>
         ),
         nodejs: (
-            <svg viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#339933" d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z" />
-                <path fill="#fff" d="M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z" />
-            </svg>
+            <img src={nodejsLogo} alt="Node.js" width="40" height="40" style={{ objectFit: 'contain' }} />
+        ),
+        supabase: (
+            <img src={supabaseLogo} alt="Supabase" width="40" height="40" style={{ objectFit: 'contain' }} />
+        ),
+        firebase: (
+            <img src={firebaseLogo} alt="Firebase" width="40" height="40" style={{ objectFit: 'contain' }} />
+        ),
+        mongodb: (
+            <img src={mongodbLogo} alt="MongoDB" width="40" height="40" style={{ objectFit: 'contain' }} />
+        ),
+        postgresql: (
+            <img src={postgresqlLogo} alt="PostgreSQL" width="40" height="40" style={{ objectFit: 'contain' }} />
         ),
         react: (
             <svg viewBox="0 0 24 24" width="40" height="40">
@@ -61,13 +82,15 @@ const SkillIcon = ({ name }) => {
             </svg>
         ),
         ai: (
-            <svg viewBox="0 0 24 24" width="40" height="40">
-                <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5153-4.9066 6.0462 6.0462 0 0 0-3.9991-3.1202 6.006 6.006 0 0 0-5.1477 1.0568 6.012 6.012 0 0 0-4.2683-1.8519 6.022 6.022 0 0 0-5.0908 2.8108 6.0147 6.0147 0 0 0-1.3347 5.076 6.0108 6.0108 0 0 0-1.854 4.2658 6.008 6.008 0 0 0 2.8016 5.0932 6.012 6.012 0 0 0-1.071 5.158 6.012 6.012 0 0 0 3.1215 3.9936 6.005 6.005 0 0 0 4.9038.5134 6.0035 6.0035 0 0 0 4.269 1.8544 6.002 6.002 0 0 0 5.0933-2.8028 6.0041 6.0041 0 0 0 1.3347-5.0772 6.0147 6.0147 0 0 0 1.8519-4.267 6.012 6.012 0 0 0-2.8028-5.0945zM12.011 15.1118a1.944 1.944 0 0 1-1.0964-.3382l-5.6307-3.2533a1.8825 1.8825 0 0 1-.8335-1.0328 1.912 1.912 0 0 1 .2091-1.3147 1.9142 1.9142 0 0 1 1.0396-.837l5.6307-3.2533a1.895 1.895 0 0 1 1.912.0135l5.6307 3.2533a1.895 1.895 0 0 1 .8335 1.0328 1.9114 1.9114 0 0 1-.2092 1.3147 1.9147 1.9147 0 0 1-1.0397.837l-5.6307 3.2533a1.9125 1.9125 0 0 1-.8204.1802zm-6.849-1.9288a1.902 1.902 0 0 1-.2023-1.3159l.8601-4.9912.8601 4.9912a1.887 1.887 0 0 1-.2024 1.3159zm2.1469-8.4842l3.4144 1.9714a.9475.9475 0 0 1 .4737.8204v3.9427l-3.8881-2.2443v-4.4902zM12 18.2562l-3.4144-1.9714a.9475.9475 0 0 1-.4737-.8204v-3.9427l3.8881 2.2443v4.4902zm4.8825-1.9365a1.887 1.887 0 0 1-.8601.8601l-4.9912-.8601 4.9912-.8601a1.887 1.887 0 0 1 .8601.8601zm-.4681-4.3483l-3.4144-1.9714a.9475.9475 0 0 1-.4737-.8204V5.237l3.8881 2.2443v4.4902z" fill="#10A37F" />
-            </svg>
+            <img src={aiIcon} alt="AI & ML" width="40" height="40" style={{ objectFit: 'contain' }} id="ai-ml-icon" />
         ),
         cloud: (
-            <svg viewBox="0 0 24 24" width="40" height="40">
-                <path d="M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006-.007-.007.03a6.717 6.717 0 0 0 4.077 1.356h5.173l.03.03h5.192c6.687.053 9.376-8.605 3.835-12.35a9.365 9.365 0 0 0-2.821-4.552l-.043.043.006-.05A9.344 9.344 0 0 0 12.19 2.38zm-.358 4.146c1.244-.04 2.518.368 3.486 1.15a5.186 5.186 0 0 1 1.862 4.078v.518c3.53-.07 3.53 5.262 0 5.193h-5.193l-.008.009v-.04H6.785a2.59 2.59 0 0 1-1.067-.23h.001a2.597 2.597 0 1 1 3.437-3.437l3.013-3.012A6.747 6.747 0 0 0 8.11 8.24c.018-.01.04-.026.054-.023a5.186 5.186 0 0 1 3.67-1.69z" fill="#4285F4" />
+            <img src={cloudLogo} alt="Cloud" width="40" height="40" style={{ objectFit: 'contain' }} />
+        ),
+        devops: (
+            <svg viewBox="0 0 24 24" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c-2-2.5-4-4.5-6.5-4.5C3 7.5 1 9.5 1 12s2 4.5 4.5 4.5c2.5 0 4.5-2 6.5-4.5" stroke="#EAB308" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M12 12c2 2.5 4 4.5 6.5 4.5 2.5 0 4.5-2 4.5-4.5s-2-4.5-4.5-4.5c-2.5 0-4.5 2-6.5 4.5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round"/>
             </svg>
         ),
     };
