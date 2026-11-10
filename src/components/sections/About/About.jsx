@@ -18,31 +18,19 @@ const About = () => {
         <section className="about-section" id="about">
             <div className="container">
                 <div className="about-grid">
-                    {/* Circle Visual with Image & Skills */}
-                    <div className="about-visual animate-on-load">
-                        <div className="circle-session-container">
-                            {/* About Me Image - Cropped & Clipped Skills */}
-                            <div className="image-wrapper">
-                                <img 
-                                    src={aboutMeImage} 
-                                    alt="About Me"
-                                    className="about-image-overflow"
-                                />
-
-                                {/* Skill labels clustered and clipped at bottom */}
-                                <div className="skills-overlay-cluster">
-                                    {skillBadges.map((skill, index) => (
-                                        <div
-                                            key={index}
-                                            className={`skill-badge skill-${skill.color}`}
-                                            data-position={skill.position}
-                                        >
-                                            {skill.label}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                    {/* Keep the original portrait uncropped; skills sit below, not over the face. */}
+                    <div className="about-visual">
+                        <img
+                            src={aboutMeImage}
+                            alt="Srinivasu Vadlamudi"
+                            className="about-portrait"
+                            loading="lazy"
+                            width="1080"
+                            height="1080"
+                        />
+                        <ul className="about-skills" aria-label="Engineering skills">
+                            {skillBadges.map(skill => <li key={skill.label}>{skill.label}</li>)}
+                        </ul>
                     </div>
 
                     {/* Content Column */}
@@ -90,3 +78,4 @@ const About = () => {
 };
 
 export default About;
+
