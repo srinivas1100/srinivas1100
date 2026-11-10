@@ -343,3 +343,10 @@
         font-size: var(--text-4xl);
     }
 }
+
+.projects-grid > *, .project-content { min-width: 0; }
+@media (max-width: 600px) {
+    .project-content { padding: 20px; }
+    .project-image-container { padding: 16px 16px 0; }
+    .project-role { overflow-wrap: anywhere; }
+}

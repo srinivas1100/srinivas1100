@@ -388,3 +388,12 @@
         display: none;
     }
 }
+
+.mobile-menu-btn { flex-shrink: 0; }
+.nav-mobile.open { pointer-events: auto; max-height: calc(100dvh - 110px); overflow-y: auto; }
+@media (max-width: 768px) {
+    .header, .header-scrolled { padding: 12px 12px; }
+    .header-container, .header-scrolled .header-container { padding: 8px 12px; }
+    .mobile-menu-btn { width: 44px; height: 44px; }
+    .nav-mobile { left: 0; right: 0; top: 72px; padding: 16px; }
+}

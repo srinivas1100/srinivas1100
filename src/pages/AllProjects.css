@@ -1,25 +1,25 @@
 .all-projects-page {
     background-color: var(--color-bg-primary);
-    padding-top: 80px;
+    padding-top: 16px;
     /* Space for fixed header */
 }
 
 /* Page Header & Breadcrumbs */
-.page-header {
+.all-projects-page .page-header {
     background-color: var(--color-bg-secondary);
-    padding: 60px 20px 10px;
+    padding: 24px 20px 10px;
     text-align: center;
     border: none;
 }
 
-.main-page-title {
+.all-projects-page .main-page-title {
     font-size: 48px;
     font-weight: 700;
     color: var(--color-secondary);
     margin: 0;
 }
 
-.breadcrumb {
+.all-projects-page .breadcrumb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,21 +30,21 @@
     padding-bottom: 30px;
 }
 
-.breadcrumb-link {
+.all-projects-page .breadcrumb-link {
     color: var(--color-text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.breadcrumb-link:hover {
+.all-projects-page .breadcrumb-link:hover {
     color: var(--color-primary);
 }
 
-.breadcrumb-separator {
+.all-projects-page .breadcrumb-separator {
     color: var(--color-border);
 }
 
-.breadcrumb-current {
+.all-projects-page .breadcrumb-current {
     color: var(--color-secondary);
     font-weight: 500;
 }
@@ -60,7 +60,7 @@
     padding: 10px 0 50px;
     background-color: var(--color-bg-secondary);
     /* Match header grey */
-    overflow: visible;
+    overflow: hidden;
 }
 
 /* Ensure the background stripe is visible and properly layered */
@@ -68,7 +68,7 @@
     display: block !important;
     background-color: var(--color-secondary) !important;
     z-index: 1;
-    transform: translateY(-50%) rotate(-2.5deg) scale(1.1);
+    transform: translate(-50%, -50%) rotate(-2.5deg) scale(1.1);
 }
 
 .all-projects-page .common-marquee {
@@ -382,7 +382,7 @@
 }
 
 @media (max-width: 768px) {
-    .main-page-title {
+    .all-projects-page .main-page-title {
         font-size: 36px;
     }
 
@@ -396,3 +396,15 @@
 }
 
 .portfolio-count { text-align: center; margin-top: 40px; color: #555; }
+
+.all-projects-grid > *, .all-projects-grid .project-content { min-width: 0; }
+@media (max-width: 600px) {
+    .all-projects-grid { gap: 24px; }
+    .all-projects-grid-section { padding-top: 24px; padding-bottom: 40px; }
+    .projects-header-center { margin-bottom: 28px; }
+    .all-projects-grid .project-content { padding: 20px; gap: 12px; }
+    .all-projects-grid .project-image-container { padding: 16px 16px 0; }
+    .all-projects-grid .project-title { font-size: 25px; }
+    .all-projects-grid .project-role { padding: 6px 10px; letter-spacing: .4px; }
+    .all-projects-grid .project-tag { padding: 6px 10px; }
+}

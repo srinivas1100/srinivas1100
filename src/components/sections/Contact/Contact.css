@@ -227,3 +227,12 @@
         gap: 20px;
     }
 }
+
+.contact-grid > *, .form-row > *, .form-group { min-width: 0; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; min-width: 0; font-size: 16px; }
+.contact-text, .contact-text a { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+    .contact-section { padding-block: 48px; }
+    .contact-title { font-size: clamp(30px, 8vw, 38px); line-height: 1.2; }
+    .contact-grid { gap: 32px; }
+}

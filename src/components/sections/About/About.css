@@ -419,3 +419,22 @@
         border-radius: 16px;
     }
 }
+
+/* Keep the illustration and actions within narrow phone viewports. */
+.about-grid > * { min-width: 0; }
+.about-actions-row { flex-wrap: wrap; gap: 24px; }
+@media (max-width: 768px) {
+    .about-heading-new { font-size: clamp(30px, 8vw, 38px); }
+    .about-text-short { max-width: 100%; font-size: 16px; }
+    .about-actions-row { justify-content: center; gap: 20px; }
+    .signature-text { margin-left: 0; }
+    .circle-session-container { width: min(100%, 320px); height: auto; aspect-ratio: 1; }
+    .image-wrapper { max-width: 100%; }
+}
+@media (max-width: 480px) {
+    .about-actions-row { flex-direction: column; width: 100%; }
+    .about-section .btn-portfolio-wrapper { max-width: 100%; }
+}
+@media (max-width: 1024px) {
+    .about-content { padding-left: 0; max-width: 680px; margin-inline: auto; }
+}

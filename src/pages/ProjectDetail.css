@@ -1,9 +1,9 @@
 .project-detail-page {
     background-color: #FFF;
-    padding-top: 50px;
+    padding-top: 24px;
 }
 
-.page-header {
+.project-detail-page .page-header {
     background-color: #FFF;
     padding: 0px 20px 0px;
     text-align: center;
@@ -16,7 +16,7 @@
     margin: 0;
 }
 
-.breadcrumb {
+.project-detail-page .breadcrumb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,12 +27,12 @@
     padding-bottom: 30px;
 }
 
-.breadcrumb-link {
+.project-detail-page .breadcrumb-link {
     color: #666;
     text-decoration: none;
 }
 
-.breadcrumb-separator {
+.project-detail-page .breadcrumb-separator {
     color: #DDD;
 }
 
@@ -45,7 +45,7 @@
     z-index: 10;
 }
 
-.breadcrumb-current {
+.project-detail-page .breadcrumb-current {
     color: #111;
     font-weight: 500;
 }
@@ -571,3 +571,17 @@
 @media (max-width: 600px) { .v4-breadcrumb-title { font-size: 34px; overflow-wrap: anywhere; } .breadcrumb { flex-wrap: wrap; } .portfolio-metric dd { font-size: 28px; } }
 
 @media (max-width: 600px) { .v4-other-projects-grid { grid-template-columns: 1fr; } }
+
+.v4-content-left, .v4-detail-block, .v4-metadata-box, .portfolio-metric { min-width: 0; overflow-wrap: anywhere; }
+.v4-content-row { gap: 32px; }
+@media (max-width: 600px) {
+    .v4-main-section { padding: 24px 0; }
+    .v4-metadata-box { padding: 24px; }
+    .v4-section-heading { font-size: 26px; line-height: 1.25; }
+    .v4-project-title { font-size: 26px !important; }
+    .v4-details-stack { gap: 32px; }
+    .portfolio-detail-visual { margin-block: 24px 32px; }
+    .v4-other-projects-grid { gap: 24px; margin-bottom: 32px; }
+    .portfolio-tech { gap: 8px; }
+    .portfolio-tech li { padding: 8px 14px; }
+}

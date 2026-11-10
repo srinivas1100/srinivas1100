@@ -110,7 +110,9 @@ const Header = () => {
                 <button
                     className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
                     onClick={toggleMobileMenu}
-                    aria-label="Toggle menu"
+                    aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isMobileMenuOpen}
+                    aria-controls="mobile-navigation"
                 >
                     <span className="hamburger-line"></span>
                     <span className="hamburger-line"></span>
@@ -118,7 +120,7 @@ const Header = () => {
                 </button>
 
                 {/* Mobile Navigation */}
-                <nav className={`nav-mobile ${isMobileMenuOpen ? 'open' : ''}`}>
+                <nav id="mobile-navigation" aria-label="Mobile navigation" className={`nav-mobile ${isMobileMenuOpen ? 'open' : ''}`}>
                     <ul className="nav-list-mobile">
                         {navigation.map((item, index) => (
                             <li key={index} className="nav-item-mobile" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -144,3 +146,4 @@ const Header = () => {
 };
 
 export default Header;
+
