@@ -547,3 +547,27 @@
     gap: 40px;
     margin-bottom: 80px;
 }
+
+/* Evidence-based project overview, using the existing portfolio design tokens. */
+.project-status { display: inline-block; background: #f5df57; color: #111; padding: 7px 12px; border-radius: 20px; font-size: 14px; margin-bottom: 16px; }
+.project-evidence-note { color: #555; font-size: 15px; line-height: 1.7; margin: 16px 0; }
+.project-resource-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.project-resource-links a, .portfolio-detail-link { color: #111; text-decoration: underline; text-underline-offset: 5px; display: inline-block; margin: 12px 0; }
+.project-resource-links a { padding: 10px 14px; border: 1px solid #aaa; border-radius: 8px; }
+.v4-metadata-box dd { margin: 0; }
+.portfolio-detail-visual { max-width: 800px; margin: 32px auto 48px; border-radius: 16px; overflow: hidden; background: #f6f3e8; }
+.portfolio-detail-visual .project-img { display: block; max-height: 480px; width: 100%; object-fit: contain; }
+.portfolio-contributions { padding-left: 24px; color: #444; line-height: 1.8; }
+.portfolio-contributions li { margin-bottom: 12px; }
+.portfolio-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 18px; margin: 24px 0; }
+.portfolio-metric { padding: 24px; background: #f6f3e8; border: 1px solid #e5e1d3; border-radius: 14px; }
+.portfolio-metric dt { color: #444; font-weight: 600; }
+.portfolio-metric dd { margin: 12px 0; color: #111; font-size: 32px; font-weight: 700; }
+.portfolio-metric p { font-weight: 400; font-size: 14px; line-height: 1.6; color: #555; }
+.portfolio-tech { display: flex; gap: 12px; flex-wrap: wrap; padding: 0; list-style: none; }
+.portfolio-tech li { padding: 12px 18px; border-radius: 24px; background: #f6f3e8; color: #111; }
+.portfolio-gallery-image { max-width: 100%; height: auto; }
+.project-not-found { text-align: center; padding: 140px 24px 80px; }
+@media (max-width: 600px) { .v4-breadcrumb-title { font-size: 34px; overflow-wrap: anywhere; } .breadcrumb { flex-wrap: wrap; } .portfolio-metric dd { font-size: 28px; } }
+
+@media (max-width: 600px) { .v4-other-projects-grid { grid-template-columns: 1fr; } }
