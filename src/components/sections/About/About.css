@@ -271,3 +271,46 @@
 @media (max-width: 1024px) {
     .about-content { padding-left: 0; max-width: 680px; margin-inline: auto; }
 }
+
+/* Explicit reading order keeps the heading, portrait, and skills together. */
+.about-grid {
+    grid-template-areas: "portrait heading" "portrait biography";
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    column-gap: clamp(32px, 5vw, 72px);
+    row-gap: 20px;
+}
+.about-heading-block { grid-area: heading; }
+.about-visual { grid-area: portrait; align-self: center; }
+.about-content { grid-area: biography; }
+.about-skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 420px);
+    gap: 10px;
+}
+.about-skills li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    text-align: center;
+    overflow-wrap: anywhere;
+    border-radius: 12px;
+}
+.about-skills li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "heading" "portrait" "biography";
+        grid-template-rows: auto;
+        row-gap: 28px;
+    }
+    .about-heading-block { justify-self: center; }
+    .about-heading-block .about-subtitle { justify-content: center; }
+    .about-visual, .about-content { order: initial; }
+}
+@media (max-width: 600px) {
+    .about-skills { max-width: 320px; gap: 8px; }
+    .about-skills li { padding: 8px 10px; }
+}

@@ -18,6 +18,14 @@ const About = () => {
         <section className="about-section" id="about">
             <div className="container">
                 <div className="about-grid">
+                        <div className="content-header about-heading-block">
+                            <span className="about-subtitle">About Me</span>
+                            <h2 className="about-heading-new">
+                                Who is <span className="name-italic">{personalInfo.name}</span> ?
+                            </h2>
+                        </div>
+
+
                     {/* Keep the original portrait uncropped; skills sit below, not over the face. */}
                     <div className="about-visual">
                         <img
@@ -35,13 +43,6 @@ const About = () => {
 
                     {/* Content Column */}
                     <div className="about-content">
-                        <div className="content-header">
-                            <span className="about-subtitle">About Me</span>
-                            <h2 className="about-heading-new">
-                                Who is <span className="name-italic">{personalInfo.name}</span> ?
-                            </h2>
-                        </div>
-
                         <div className="about-text-container">
                             {personalInfo.aboutMe.map((paragraph, idx) => (
                                 <p key={idx} className="about-text-short">
