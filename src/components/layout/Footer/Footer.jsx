@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,10 +21,10 @@ const Footer = () => {
                 <div className="footer-content">
                     {/* Column 1: Brand / Bio */}
                     <div className="footer-brand">
-                        <a href="#home" className="footer-logo">
+                        <Link to="/#home" className="footer-logo">
                             <img src="/favicon.png" alt="S Logo" className="logo-icon" />
                             <span className="script-name name-prominent">Srinivasu.</span>
-                        </a>
+                        </Link>
                         <p className="footer-description">
                             Senior Mobile Engineer & Tech Lead focused on building production-grade mobile and web applications with strong performance, scalability, and reliability.
                         </p>
@@ -53,11 +54,11 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4 className="footer-heading">Navigation</h4>
                         <ul className="footer-links">
-                            <li><a href="#home" className="footer-link">Home</a></li>
-                            <li><a href="#about" className="footer-link">About</a></li>
-                            <li><a href="#works" className="footer-link">Projects</a></li>
-                            <li><a href="#journey" className="footer-link">Experience</a></li>
-                            <li><a href="#contact" className="footer-link">Contact</a></li>
+                            <li><Link to="/#home" className="footer-link">Home</Link></li>
+                            <li><Link to="/#about" className="footer-link">About</Link></li>
+                            <li><Link to="/#works" className="footer-link">Projects</Link></li>
+                            <li><Link to="/#journey" className="footer-link">Experience</Link></li>
+                            <li><Link to="/#contact" className="footer-link">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -90,19 +91,8 @@ const Footer = () => {
                     <div className="footer-column newsletter-column">
                         <h4 className="footer-heading">Stay Connected</h4>
                         <div className="newsletter-wrapper">
-                            <form className="newsletter-form-inline" onSubmit={(e) => e.preventDefault()}>
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="newsletter-input-inline"
-                                />
-                                <button type="submit" className="newsletter-btn-inline" title="Connect">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                    </svg>
-                                </button>
-                            </form>
+                            <p className="footer-description">Have a role or project in mind? Get in touch directly.</p>
+                            <a href="mailto:srinu11112000@gmail.com" className="footer-link">Email me →</a>
                         </div>
                     </div>
                 </div>
@@ -126,3 +116,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

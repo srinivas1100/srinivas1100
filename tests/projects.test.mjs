@@ -63,3 +63,19 @@ test('experience chronology and summary match the approved résumé', async () =
     assert.equal(stats.find(item => item.label === 'Production Apps').value, '13+');
     assert.doesNotMatch(JSON.stringify(journey), /Parallel|15\+|six months/);
 });
+
+
+test('contact and footer controls expose honest working destinations', async () => {
+    const { readFileSync } = await import('node:fs');
+    const source = path => readFileSync(new URL(path, import.meta.url), 'utf8');
+    const contact = source('../src/components/sections/Contact/Contact.jsx');
+    assert.match(contact, /onSubmit={openEmailDraft}/);
+    assert.match(contact, /mailto:srinu11112000@gmail.com\?subject=/);
+    assert.match(contact, /this website does not send or store your message/);
+    for (const field of ['name', 'email', 'message']) assert.match(contact, new RegExp('name="' + field + '"'));
+    const footer = source('../src/components/layout/Footer/Footer.jsx');
+    for (const hash of ['home','about','works','journey','contact']) assert.ok(footer.includes('to="/#' + hash + '"'));
+    assert.doesNotMatch(footer, /<form|href="#(?:home|about|works|journey|contact)"/);
+    assert.match(footer, /mailto:srinu11112000@gmail.com/);
+    assert.match(source('../src/App.jsx'), /target.scrollIntoView/);
+});

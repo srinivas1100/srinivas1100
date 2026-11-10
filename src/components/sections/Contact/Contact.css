@@ -236,3 +236,5 @@
     .contact-title { font-size: clamp(30px, 8vw, 38px); line-height: 1.2; }
     .contact-grid { gap: 32px; }
 }
+
+.contact-delivery-note { color: rgba(255,255,255,.8); font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
