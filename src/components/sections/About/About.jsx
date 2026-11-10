@@ -26,19 +26,25 @@ const About = () => {
                         </div>
 
 
-                    {/* Keep the original portrait uncropped; skills sit below, not over the face. */}
+                    {/* Layered pill cluster over the lower portrait, keeping the face clear. */}
                     <div className="about-visual">
-                        <img
-                            src={aboutMeImage}
-                            alt="Srinivasu Vadlamudi"
-                            className="about-portrait"
-                            loading="lazy"
-                            width="1080"
-                            height="1080"
-                        />
-                        <ul className="about-skills" aria-label="Engineering skills">
-                            {skillBadges.map(skill => <li key={skill.label}>{skill.label}</li>)}
-                        </ul>
+                        <div className="about-portrait-stage">
+                            <img
+                                src={aboutMeImage}
+                                alt="Srinivasu Vadlamudi"
+                                className="about-portrait"
+                                loading="lazy"
+                                width="1080"
+                                height="1080"
+                            />
+                            <ul className="about-stone-chips" aria-label="Engineering skills">
+                                {skillBadges.map(skill => (
+                                    <li key={skill.label} className={`about-stone about-stone-${skill.position} about-stone-${skill.color}`}>
+                                        {skill.label}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
                     {/* Content Column */}
