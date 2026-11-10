@@ -2,8 +2,9 @@
 // Static Content Data
 // ===================================
 
-// Single source for experience duration (update here to reflect everywhere)
-export const experienceYears = "4.8";
+// Résumé-aligned experience, including the Sep–Dec 2021 internship.
+// Use completed years, not decimal years or summed overlapping roles.
+export const experienceYears = "5";
 
 export const personalInfo = {
   name: "Srinivasu",
@@ -16,7 +17,7 @@ export const personalInfo = {
   heroDescription:
     "I build production-grade mobile and web applications used by real users, with end-to-end ownership from architecture to deployment.",
   aboutMe: [
-    `I'm a Senior Mobile Engineer & Tech Lead with ${experienceYears}+ years of experience building production-ready mobile and web applications.`,
+    `I'm a Senior Mobile Engineer & Tech Lead with ${experienceYears}+ years of experience, including my 2021 internship, building production-ready mobile and web applications.`,
     "My expertise spans Flutter, native iOS, backend systems, and AI integrations, with a strong focus on performance, scalability, and product reliability.",
   ],
 };
@@ -127,44 +128,44 @@ export const expertise = [
 
 export const journey = [
   {
-    id: 1,
-    year: "2023 – Present",
-    role: "Senior Mobile Engineer & Tech Lead",
-    company: "Chase Alpha",
+    id: 2,
+    year: "Mar 2026 – Present",
+    role: "Senior Product Engineer",
+    company: "Veloria Tech (OPC) Pvt. Ltd.",
     description:
-      "Leading the development of a production fintech mobile application with ownership of Flutter architecture, feature delivery, and releases.",
+      "Own end-to-end mobile and supporting backend delivery for AiCrix and Arentzo, including architecture, API integrations, monetisation, releases, and production support.",
   },
   {
-    id: 2,
-    year: "2025 – Present (Parallel)",
-    role: "Founder & Lead Engineer",
-    company: "Product Initiative",
+    id: 1,
+    year: "Jul 2023 – Mar 2026",
+    role: "Tech Lead & Product Lead",
+    company: "Chase Alpha (Richie App)",
     description:
-      "Building and shipping mobile products end-to-end, including architecture, development, AI integrations, and mentoring interns.",
+      "Led four engineers and end-to-end engineering and product delivery for Richie, with hands-on Flutter development, backend integrations, and two-week release cycles.",
   },
   {
     id: 3,
-    year: "2021 – 2023",
-    role: "Software Engineer → Tech Lead",
-    company: "Appknit",
+    year: "Dec 2021 – Jul 2023",
+    role: "Senior Flutter Developer & iOS Developer",
+    company: "AppKnit",
     description:
-      "Delivered 15+ mobile applications across client projects and progressed from developer to tech lead within six months.",
+      "Delivered nine production applications across Flutter and native iOS. Promoted from Flutter Developer to Senior Developer within one year, with responsibility for project delivery, code reviews, and mentoring.",
   },
   {
     id: 4,
-    year: "2021 (3 Months)",
-    role: "Mobile App Intern",
-    company: "Unio Labs",
+    year: "15 Sep 2021 – 15 Dec 2021",
+    role: "Intern – Flutter Application Developer",
+    company: "UnoLabs Private Limited",
     description:
-      "Developed a Home Automation mobile application (APK), focusing on smart device control and real-time connectivity.",
+      "Completed a three-month internship building responsive Flutter screens and REST API integrations for an IoT home-automation application, with debugging and UI testing support.",
   },
 ];
 
 // Experience summary for footer/badge (uses experienceYears)
-export const experienceSummary = `${experienceYears}+ years experience · 20+ production apps · Fintech, Healthcare, Consumer`;
+export const experienceSummary = `${experienceYears}+ years experience, including internship · 13+ production apps · Fintech, Healthcare, Consumer`;
 
 export const stats = [
-  { value: "20+", label: "Production Apps" },
+  { value: "13+", label: "Production Apps" },
   { value: "5+", label: "Product Domains" },
   { value: `${experienceYears}+`, label: "Years Experience" },
 ];
@@ -402,7 +403,7 @@ export const serviceDetails = {
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=2070",
     about: {
       title: "Building Production-Grade Mobile Experiences",
-      description: `With over ${experienceYears} years of experience and 20+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.`,
+      description: `With ${experienceYears}+ years of experience, including my 2021 internship, and 13+ production apps delivered, I specialize in building robust, offline-first mobile applications that scale. My focus is on creating seamless user experiences using Flutter and Native Swift, ensuring high performance, security, and maintainability for millions of users.`,
     },
     servicesInclude: [
       "Cross-Platform Flutter Development",

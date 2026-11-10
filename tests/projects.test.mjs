@@ -45,3 +45,21 @@ test('native stacks and delivered-version scope are explicit', () => {
     assert.match(projectDetails[13].scopeNote, /different product positioning/);
     assert.equal(projectDetails[13].appStoreUrl, undefined);
 });
+
+
+test('experience chronology and summary match the approved résumé', async () => {
+    const { journey, experienceYears, experienceSummary, personalInfo, stats } = await import('../src/data/content.js');
+    assert.equal(experienceYears, '5');
+    assert.deepEqual(journey.map(item => [item.company, item.year]), [
+        ['Veloria Tech (OPC) Pvt. Ltd.', 'Mar 2026 – Present'],
+        ['Chase Alpha (Richie App)', 'Jul 2023 – Mar 2026'],
+        ['AppKnit', 'Dec 2021 – Jul 2023'],
+        ['UnoLabs Private Limited', '15 Sep 2021 – 15 Dec 2021'],
+    ]);
+    assert.equal(journey[1].year, projectDetails[1].period);
+    assert.match(personalInfo.aboutMe[0], /5\+ years.*internship/);
+    assert.match(experienceSummary, /5\+ years.*internship/);
+    assert.equal(stats.find(item => item.label === 'Years Experience').value, '5+');
+    assert.equal(stats.find(item => item.label === 'Production Apps').value, '13+');
+    assert.doesNotMatch(JSON.stringify(journey), /Parallel|15\+|six months/);
+});

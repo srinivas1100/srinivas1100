@@ -32,3 +32,8 @@ Unrelated homepage/service copy remains outside this change and should be review
 Do not merge or deploy until the content questions and review are resolved.
 
 Browser interaction and visual QA were attempted but blocked: Chromium cannot create its process-singleton socket in this execution environment. Server-side rendering checks cover the catalogue, all 13 detail routes, retired IDs and invalid routes; they do not replace browser layout or Back/Forward testing.
+
+
+## Experience chronology correction (10 Nov 2026)
+
+The approved résumé (Mobile iOS Resume, version 11) records Veloria Mar 2026–Present; Chase Alpha Jul 2023–Mar 2026; AppKnit Dec 2021–Jul 2023; and UnoLabs 15 Sep–15 Dec 2021. The home timeline now uses these months, employer names and roles, replacing the incorrect Chase Alpha Present date and generic parallel role. The summary uses 5+ completed years including the internship, rather than 4.8 decimal years; overlapping transition months are not added together. AppKnit delivery/promotion wording and the 13+ application summary now match that résumé. Project-specific metrics and later approved native-stack corrections remain unchanged.
