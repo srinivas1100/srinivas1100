@@ -4,8 +4,8 @@ export const projects = [
     "id": 1,
     "title": "Richie",
     "subtitle": "Leading product and engineering for a 50,000+ user fintech app",
-    "description": "At Chase Alpha, I combined hands-on Flutter development with technical and product leadership for Richie: advisory, broker-connected trading, learning, social feeds and subscriptions across iOS and Android.",
-    "role": "Tech Lead & Product Lead",
+    "description": "As Tech Lead and Lead Mobile Application Developer at Chase Alpha, I led Richie’s engineering delivery while building its Flutter mobile experience across iOS and Android: advisory, broker-connected trading, learning, social feeds and subscriptions.",
+    "role": "Tech Lead & Lead Mobile Application Developer",
     "tags": [
       "Flutter",
       "Dart",
@@ -62,27 +62,27 @@ export const projects = [
     ],
     "status": "Delivered project",
     "scopeNote": "",
-    "ownership": "Led a four-engineer team and owned technical delivery, product priorities and production releases.",
+    "ownership": "Led a four-engineer team while owning hands-on mobile development, architecture decisions, backend integrations and release delivery.",
     "headline": "Led four engineers · 50,000+ users",
     "architecture": [
-      "Flutter client with authenticated backend APIs for financial workflows.",
-      "User-shared implementation excerpts show GoRouter/ShellRoute navigation, Riverpod state and shared API response handling.",
-      "Broker integrations: Zerodha and Angel One; payments and subscriptions: Razorpay.",
-      "Product engagement: Firebase Analytics, MoEngage, FCM, Branch.io and LinkRunner."
+      "Clean, modular mobile architecture with Riverpod for state management.",
+      "GoRouter and ShellRoute for shared tab navigation and URL-driven destinations.",
+      "Shared API handling, routing, utilities and reusable UI components.",
+      "Broker integrations with Zerodha and Angel One; Razorpay payments and subscriptions.",
+      "Firebase Analytics, MoEngage, FCM, Branch.io and LinkRunner for engagement and attribution."
     ],
     "delivery": [
       "Two-week sprints and a matching release cadence, including planning and code reviews.",
       "App Store and Google Play submission, versioning and production hotfix ownership.",
       "Shorebird code-push patches for critical fixes."
     ],
-    "automationNote": "CI/CD pipelines for deployments and release management are documented in the Chase Alpha experience record. Shorebird critical patches and two-week store releases are also documented; the provider, pipeline stages and automated test gates are not specified.",
+    "automationNote": "Used CI/CD pipelines for deployment and release management, with two-week store releases and Shorebird critical patches.",
     "outcome": "Delivered advisory, trading, learning and subscription features for a fintech audience.",
-    "architectureNote": "Richie code shared in September 2025 demonstrates GoRouter/ShellRoute navigation, Riverpod screen state, Firebase Analytics navigation observation and a shared client-side ApiHelper with ApiSuccess/ApiError handling. These development excerpts establish implementation choices, not a complete architecture audit or proof of production deployment. The email-verification snapshot includes unfinished verification logic.",
     "platform": "Flutter · iOS & Android",
     "caseStudy": {
       "brief": "Richie combines investment advisory, social feeds, academy content, brokerage connections and subscription plans in one mobile product. My work covered the customer-facing app, its backend integrations, delivery coordination and production support.",
       "challenge": "Coordinate connected financial and content journeys across iOS and Android, while shipping on a two-week rhythm and responding to production issues.",
-      "accountability": "I translated stakeholder requirements into technical specifications and prioritised roadmaps, planned work, reviewed code and stayed hands-on in Flutter. My remit also included backend architecture, authentication, APIs and store-release management.",
+      "accountability": "I combined technical leadership with mobile implementation: turning stakeholder requirements into technical specifications, guiding the team’s architecture and code quality, and taking features through integration, releases and production support.",
       "workstreams": [
         {
           "title": "Broker-connected trading",
@@ -110,9 +110,9 @@ export const projects = [
           "title": "Customer-facing application",
           "items": [
             "Flutter / Dart on iOS and Android",
-            "GoRouter + ShellRoute around tab navigation",
-            "Riverpod in the email-verification flow",
-            "Query-driven advice, feed and academy destinations"
+            "Riverpod for application state management",
+            "GoRouter + ShellRoute for shared tab navigation",
+            "URL-driven content destinations and filters"
           ]
         },
         {
@@ -142,33 +142,28 @@ export const projects = [
       ],
       "decisions": [
         {
-          "title": "Use a shared navigation shell for product journeys",
-          "approach": "Richie’s shared router uses GoRouter and ShellRoute around its tab interface. Route parameters carry advice filters, feed filters and academy quick-access destinations; startup routing considers login state and a saved destination. These route definitions were also the basis for a marketing-team request to target campaign links at specific app screens.",
-          "result": "Explicit destinations for Feed, Advices, Home, Trades and Academy, plus payment-return parameters for course, webinar and mentorship flows, are present in the shared router."
+          "title": "Keep the mobile architecture modular",
+          "approach": "Used Riverpod for state management, shared API handling for client requests and reusable UI components for common interactions.",
+          "result": "Clear responsibilities for application state, integrations, navigation and reusable interface elements."
         },
         {
-          "title": "Keep verification state and API outcomes explicit",
-          "approach": "The shared email-verification flow uses Riverpod state and a common ApiHelper, with distinct ApiSuccess and ApiError handling. OTP resend/countdown and progression into personal-details or KYC screens are represented in that code.",
-          "result": "The development excerpt shows separate API success/failure handling, state-driven resend timing and routing within a profile/KYC journey. Its OTP-verification implementation was unfinished in that snapshot, so it is not presented as proof of a completed verification feature."
+          "title": "Make product navigation explicit",
+          "approach": "Organised tab navigation with GoRouter and ShellRoute, using route parameters for content destinations, filters and campaign links.",
+          "result": "A shared navigation structure across Feed, Advices, Home, Trades and Academy."
         },
         {
-          "title": "Pair planned releases with a critical-fix path",
-          "approach": "Managed two-week store releases and used Shorebird code-push patches for critical fixes.",
-          "result": "The résumé records shipping critical fixes without waiting for store review. A measured reduction in release lead time is not available."
+          "title": "Connect technical leadership to delivery",
+          "approach": "Translated stakeholder needs into technical specifications and prioritised work, then led planning, allocation, mentoring and code reviews for four engineers.",
+          "result": "A two-week delivery rhythm with hands-on mobile engineering throughout."
         },
         {
-          "title": "Connect product planning to engineering execution",
-          "approach": "Translated stakeholder requirements into prioritised roadmaps and technical specifications, then coordinated four engineers through planning, allocation and reviews.",
-          "result": "Release cadence stayed aligned with two-week sprint cycles while I remained hands-on in development."
-        },
-        {
-          "title": "Make production stability part of delivery ownership",
-          "approach": "Combined proactive debugging, rapid hotfixes and release management with ownership of store submissions and versioning.",
-          "result": "The résumé reports 100% crash-free performance for Richie. The reporting window, app versions and denominator have not been supplied."
+          "title": "Pair planned releases with urgent fixes",
+          "approach": "Managed store submissions and versioning alongside CI/CD release workflows, with Shorebird patches for critical issues.",
+          "result": "Regular store releases and a fast path for critical fixes without waiting for store review."
         }
       ],
       "support": {
-        "description": "I built Rasabot, a Python-based support and sales bot. This was a separate automation contribution alongside mobile delivery, with the following results reported in my résumé.",
+        "description": "Built Rasabot, a Python-based support and sales bot, alongside mobile delivery and team leadership.",
         "metrics": [
           {
             "value": "92%",
@@ -183,7 +178,7 @@ export const projects = [
             "label": "Reported support-time reduction"
           }
         ],
-        "note": "Historical résumé-reported results. Reporting dates, sample sizes, comparison baselines and measurement method are not available; these are not current live measurements or independently verified causal estimates."
+        "note": "Historical résumé-reported outcomes; reporting periods and comparison baselines are not available."
       },
       "galleryCaptions": [
         "Broker-account connection and account controls, shown in existing Richie promotional artwork.",
@@ -194,29 +189,34 @@ export const projects = [
         "practices": [
           {
             "title": "Clean, modular implementation",
-            "evidence": "Project experience",
-            "detail": "Contributed to architecture decisions and clean, modular codebases for long-term scalability. Shared code separates API handling, route names, constants, loading utilities and reusable input/feedback widgets into dedicated modules."
+            "detail": "Contributed to clean, modular architecture, separating shared API handling, routes, constants, loading utilities and reusable input/feedback widgets."
           },
           {
-            "title": "Explicit state and API boundaries",
-            "evidence": "Shared implementation",
-            "detail": "Riverpod manages screen state; a shared ApiHelper exposes explicit ApiSuccess/ApiError outcomes. The screen’s cleanup cancels timers and disposes controllers and focus nodes."
+            "title": "State management and resource lifecycle",
+            "detail": "Used Riverpod for mobile application state management. Shared API handling exposes explicit success/error outcomes, with timer, controller and focus-node cleanup for screen resources."
           },
           {
             "title": "Performance and memory diagnostics",
-            "evidence": "Project experience",
             "detail": "Performed time profiling and memory-leak analysis to identify and resolve performance bottlenecks. Production monitoring, debugging and rapid hotfixes supported ongoing stability."
           },
           {
             "title": "Code review and engineering guidance",
-            "evidence": "Leadership responsibility",
             "detail": "Led four engineers with mentoring, task allocation and code reviews while remaining hands-on in Flutter development. Requirements and technical specifications were connected to prioritised sprint work."
           }
         ],
-        "testing": "Tracked route-validation scenarios and combined debugging, performance profiling and production monitoring with issue resolution. The development record includes partial scenario checks; automated test-suite evidence is not available.",
-        "cicd": "Used CI/CD pipelines for deployments and release management. Delivery combined a two-week store cadence, submission/versioning ownership and Shorebird patches for urgent fixes.",
-        "limits": "Clean/modular code, CI/CD pipeline use, time profiling and memory-leak analysis are project-specific experience claims. GoRouter, Riverpod and typed API outcomes are visible in shared development excerpts. Route comments record partial scenario testing, not comprehensive coverage. A named Clean Architecture layering scheme, test reports, pipeline configuration and measured performance benchmarks have not been established. The verification excerpt was unfinished, so it is not presented as a fully validated production flow."
-      }
+        "testing": "Combined scenario validation, debugging, performance profiling and production monitoring with issue resolution and rapid hotfixes.",
+        "cicd": "Used CI/CD pipelines for deployments and release management. Delivery combined a two-week store cadence, submission/versioning ownership and Shorebird patches for urgent fixes."
+      },
+      "leadership": [
+        "Led and mentored four engineers through planning, task allocation and code reviews.",
+        "Translated stakeholder requirements into technical specifications and prioritised delivery plans.",
+        "Guided architecture decisions, production issue resolution and two-week releases."
+      ],
+      "mobileEngineering": [
+        "Built Flutter features across advisory, trading, learning, social feeds and subscriptions.",
+        "Used Riverpod for state management within a clean, modular mobile architecture.",
+        "Owned API integrations, store submissions, versioning and production fixes."
+      ]
     }
   },
   {

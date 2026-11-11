@@ -82,7 +82,7 @@ test('contact and footer controls expose honest working destinations', async () 
 
 test('case studies distinguish ownership, engineering evidence and delivery claims', () => {
     for (const project of projects) {
-        for (const field of ['ownership', 'headline', 'outcome', 'platform', 'automationNote', 'architectureNote']) assert.ok(project[field], `${project.title}: ${field}`);
+        for (const field of ['ownership', 'headline', 'outcome', 'platform', 'automationNote']) assert.ok(project[field], `${project.title}: ${field}`);
         assert.ok(project.architecture.length && project.delivery.length);
         assert.doesNotMatch(project.architecture.join(' '), /\b(MVVM|MVC|Clean Architecture|BLoC)\b/);
         if (project.id !== 1) assert.doesNotMatch(project.architecture.join(' '), /Riverpod/);
@@ -108,8 +108,8 @@ test('Richie narrative uses direct implementation evidence without inventing met
     const richie = projectDetails[1];
     assert.ok(richie.tags.includes('Riverpod') && richie.tags.includes('GoRouter'));
     assert.equal(richie.caseStudy.workstreams.length, 4);
-    assert.match(richie.architectureNote, /September 2025/);
-    assert.match(richie.architectureNote, /not a complete architecture audit/);
+    assert.equal(richie.role, 'Tech Lead & Lead Mobile Application Developer');
+    assert.match(richie.architecture.join(' '), /Riverpod for state management/);
     assert.match(richie.caseStudy.support.note, /comparison baselines/);
     assert.deepEqual(richie.caseStudy.support.metrics.map(item => item.value), ['92%', '15%', '90%']);
     assert.doesNotMatch(JSON.stringify(richie), /GitHub Actions|Jenkins|Fastlane|MVVM/);
@@ -117,12 +117,13 @@ test('Richie narrative uses direct implementation evidence without inventing met
 });
 
 
-test('Richie quality section separates project claims from missing testing evidence', () => {
+test('Richie states the corrected role and architecture without public audit commentary', () => {
     const richie = projectDetails[1];
-    assert.equal(richie.caseStudy.quality.practices.length, 4);
-    assert.match(richie.caseStudy.quality.practices[0].detail, /clean, modular codebases/);
-    assert.match(richie.caseStudy.quality.testing, /debugging, performance profiling and production monitoring/);
-    assert.match(richie.caseStudy.quality.testing, /automated test-suite evidence is not available/);
-    assert.match(richie.caseStudy.quality.cicd, /Used CI\/CD pipelines/);
-    assert.match(richie.caseStudy.quality.limits, /have not been established/);
+    assert.equal(richie.role, 'Tech Lead & Lead Mobile Application Developer');
+    assert.equal(richie.caseStudy.leadership.length, 3);
+    assert.equal(richie.caseStudy.mobileEngineering.length, 3);
+    assert.match(richie.caseStudy.mobileEngineering.join(' '), /Riverpod for state management/);
+    assert.equal(richie.architectureNote, undefined);
+    assert.equal(richie.caseStudy.quality.limits, undefined);
+    assert.doesNotMatch(JSON.stringify(richie.caseStudy), /email.verification|unfinished|evidence limits|available sources|test-suite evidence|not established/i);
 });

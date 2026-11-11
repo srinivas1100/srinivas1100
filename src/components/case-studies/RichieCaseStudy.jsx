@@ -14,7 +14,9 @@ export default function RichieCaseStudy({ project }) {
         </section>
         <section id="contribution">
             <span className="case-eyebrow">01 · What I owned</span>
-            <h2 className="v4-section-heading">Hands-on engineering, with team and product ownership</h2>
+            <h2 className="v4-section-heading">Tech Lead & Lead Mobile Application Developer</h2>
+            <div className="richie-role-grid"><article><h3>As Tech Lead</h3><ul>{story.leadership.map(point => <li key={point}>{point}</li>)}</ul></article><article><h3>As Lead Mobile Application Developer</h3><ul>{story.mobileEngineering.map(point => <li key={point}>{point}</li>)}</ul></article></div>
+            <h3 className="richie-workstreams-heading">Key delivery areas</h3>
             <div className="richie-workstreams">{story.workstreams.map((item, index) => <article key={item.title}>
                 <span className="richie-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.work}</p>
                 <p className="richie-result"><strong>Delivered:</strong> {item.result}</p>
@@ -23,28 +25,25 @@ export default function RichieCaseStudy({ project }) {
         <section id="engineering">
             <span className="case-eyebrow">02 · System scope</span>
             <h2 className="v4-section-heading">The product and services I connected</h2>
-            <p className="project-evidence-note">A capability map of the documented implementation, not a production network diagram.</p>
+            <p>Clean, modular mobile architecture, with Riverpod managing application state and shared components supporting navigation, integrations and interface consistency.</p>
             <div className="richie-system-map">{story.system.map(layer => <article key={layer.title}><h3>{layer.title}</h3><ul>{layer.items.map(item => <li key={item}>{item}</li>)}</ul></article>)}</div>
-            <details className="case-evidence"><summary>Architecture detail and evidence limits</summary><p>{project.architectureNote}</p><p>The available material does not establish database topology, service boundaries, backend service internals or security/compliance certification. Those are not inferred from my broader skill set.</p></details>
         </section>
         <section id="quality">
             <span className="case-eyebrow">03 · Engineering quality</span>
             <h2 className="v4-section-heading">Code quality, testing & delivery discipline</h2>
-            <p className="project-evidence-note">The practices below separate implementation evidence, team responsibilities and release operations.</p>
             <div className="richie-quality-grid">{story.quality.practices.map(item => <article key={item.title}>
-                <span className="richie-evidence-type">{item.evidence}</span><h3>{item.title}</h3><p>{item.detail}</p>
+                <h3>{item.title}</h3><p>{item.detail}</p>
             </article>)}</div>
             <div className="richie-validation-grid">
                 <article><h3>Testing & validation</h3><p>{story.quality.testing}</p></article>
                 <article><h3>CI/CD & release automation</h3><p>{story.quality.cicd}</p></article>
             </div>
-            <details className="case-evidence richie-quality-evidence"><summary>Scope of the available quality evidence</summary><p>{story.quality.limits}</p></details>
         </section>
         <section id="delivery">
             <span className="case-eyebrow">04 · Engineering choices in practice</span>
             <h2 className="v4-section-heading">Shipping features while operating a live product</h2>
-            <div className="richie-decisions">{story.decisions.map(item => <article key={item.title}><h3>{item.title}</h3><p>{item.approach}</p><details className="case-evidence"><summary>Documented result & evidence</summary><p>{item.result}</p></details></article>)}</div>
-            <p className="case-automation-note">{project.automationNote} Shorebird hotfix delivery is distinct from CI validation or automatic store submission.</p>
+            <div className="richie-decisions">{story.decisions.map(item => <article key={item.title}><h3>{item.title}</h3><p>{item.approach}</p><p className="richie-result">{item.result}</p></article>)}</div>
+            
         </section>
         <section className="richie-support">
             <span className="case-eyebrow">A second engineering surface</span><h2 className="v4-section-heading">Rasabot: automating support and sales</h2>

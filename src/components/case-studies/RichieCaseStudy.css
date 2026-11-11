@@ -41,3 +41,10 @@
 .richie-snapshot dt { font-size: 14px; color: #45533e; }
 .richie-snapshot dd { font-size: clamp(24px,3.5vw,36px); font-weight: 700; color: #203c2a; margin: 6px 0 0; line-height: 1.2; }
 @media(max-width:480px) { .richie-snapshot dl { grid-template-columns: 1fr; gap: 16px; } .richie-snapshot dl > div { display: flex; justify-content: space-between; align-items: center; gap: 16px; } .richie-snapshot dd { margin: 0; text-align: right; } }
+
+.richie-role-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-bottom: 32px; }
+.richie-role-grid article { background: #f2f5ee; border-radius: 16px; padding: 24px; }
+.richie-role-grid ul { padding-left: 20px; margin: 0; }
+.richie-role-grid li { margin-bottom: 10px; }
+.richie-workstreams-heading { margin-bottom: 20px !important; }
+@media(max-width:700px) { .richie-role-grid { grid-template-columns: 1fr; } }
