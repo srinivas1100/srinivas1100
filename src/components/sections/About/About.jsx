@@ -5,12 +5,12 @@ import aboutMeImage from '../../../assets/images/About_me.png';
 
 const About = () => {
     const skillBadges = [
-        { label: 'AI agents', color: 'yellow', position: 0 },
+        { label: 'Dart', color: 'yellow', position: 0 },
         { label: 'Flutter', color: 'green', position: 1 },
-        { label: 'React js', color: 'yellow', position: 2 },
-        { label: 'System Design', color: 'green', position: 3 },
+        { label: 'SwiftUI', color: 'yellow', position: 2 },
+        { label: 'Architecture', color: 'green', position: 3 },
         { label: 'Swift', color: 'yellow', position: 4 },
-        { label: 'Nodejs', color: 'green', position: 5 },
+        { label: 'Supabase', color: 'green', position: 5 },
         { label: 'Firebase', color: 'yellow', position: 6 },
     ];
 
