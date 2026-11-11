@@ -5,6 +5,23 @@
 .project-image-container .project-visual-placeholder { min-height: 0; font-size: clamp(18px, 4vw, 24px); gap: 10px; padding: 16px; }
 .project-image-container .project-visual-monogram { width: 64px; height: 64px; flex-shrink: 0; font-size: 26px; border-radius: 18px; }
 
-.project-concept-visual { position: relative; width: 100%; height: 100%; margin: 0; display: flex; flex-direction: column; }
-.project-concept-visual .project-img { min-height: 0; flex: 1; width: 100%; object-fit: cover; }
-.portfolio-detail-visual .project-concept-visual .project-img { max-height: 480px; object-fit: contain; }
+/* Editorial artwork fills its native 3:2 frame without inset gutters or cropping. */
+.project-image-container:has(.project-concept-visual),
+.all-projects-grid .project-image-container:has(.project-concept-visual) {
+    padding: 0;
+    aspect-ratio: 3 / 2;
+}
+.project-concept-visual { width: 100%; aspect-ratio: 3 / 2; margin: 0; overflow: hidden; }
+.project-concept-visual .project-img,
+.all-projects-grid .project-concept-visual .project-img,
+.portfolio-detail-visual .project-concept-visual .project-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+.project-card:hover .project-concept-visual .project-img { transform: none; }
