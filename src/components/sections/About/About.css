@@ -315,7 +315,8 @@
     .about-skills li { padding: 8px 10px; }
 }
 
-/* Separated tapered rows settle inside the lower portrait circle. */
+/* A flat pile of tangent capsules, settled against the portrait circle.
+   All dimensions scale together from a 420px reference portrait. */
 .about-portrait-stage {
     position: relative;
     width: min(100%, 420px);
@@ -326,45 +327,35 @@
 .about-portrait-stage .about-portrait { width: 100%; }
 .about-stone-chips {
     position: absolute;
-    inset: 68% 0 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-.about-stone-row {
-    display: flex;
-    justify-content: center;
-    gap: 1.5cqw;
-    height: 27.2727%;
+    inset: 0;
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.about-stone-row-0 { width: 68%; }
-.about-stone-row-1 { width: 52%; }
-.about-stone-row-2 { width: 34%; }
 .about-stone {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto;
-    min-width: 0;
-    padding-inline: 1.2cqw;
-    border: 1.5px solid #fff;
+    box-sizing: border-box;
+    height: 6.666667%;
+    border: .357143cqw solid #fff;
     border-radius: 999px;
-    font-size: clamp(9px, 3.1cqw, 13px);
+    font-size: 3.095238cqw;
     font-weight: 700;
     line-height: 1;
     white-space: nowrap;
-    box-shadow: 0 2px 4px rgba(0,0,0,.18);
+    transform: translate(-50%, -50%) rotate(var(--stone-angle));
 }
 .about-stone-yellow { background: var(--color-primary); color: #173623; }
 .about-stone-green { background: #2F4D37; color: #fff; }
-.about-stone-0, .about-stone-3 { transform: rotate(2deg); }
-.about-stone-1, .about-stone-4 { transform: rotate(-3deg); }
-.about-stone-2, .about-stone-5 { transform: rotate(3deg); }
-.about-stone-6 { transform: rotate(-2deg); }
+.about-stone-0 { width: 20.952381%; left: 51.721755%; top: 75.218863%; --stone-angle: -6.390786deg; }
+.about-stone-1 { width: 19.523810%; left: 31.803981%; top: 73.339848%; --stone-angle: 11.782817deg; }
+.about-stone-2 { width: 20.476190%; left: 72.035765%; top: 77.425758%; --stone-angle: 9.800913deg; }
+.about-stone-3 { width: 31.904762%; left: 37.557248%; top: 81.350133%; --stone-angle: 11.782816deg; }
+.about-stone-4 { width: 15.714286%; left: 38.175721%; top: 88.724678%; --stone-angle: 17.188734deg; }
+.about-stone-5 { width: 19.047619%; left: 55.263816%; top: 89.938239%; --stone-angle: -7.602329deg; }
+.about-stone-6 { width: 22.857143%; left: 64.071864%; top: 82.815429%; --stone-angle: 9.800913deg; }
 @media (max-width: 600px) {
     .about-portrait-stage { width: min(100%, 360px); }
 }
