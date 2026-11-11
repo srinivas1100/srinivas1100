@@ -55,10 +55,11 @@ const ProjectDetail = () => {
                             {project.period && <div className="v4-meta-item"><dt className="v4-meta-label">Engagement</dt><dd className="v4-meta-value">{project.period}</dd></div>}
                         </dl>
                     </div>
+                    {project.caseStudy && <div className="richie-snapshot"><p>Historical résumé-reported scope · Not live analytics</p><dl>{project.metrics.map(metric => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl></div>}
                     <div className="portfolio-detail-visual"><ProjectVisual key={project.id} project={project} /></div>
                     <div className="case-outcome"><span>Delivery outcome</span><p>{project.outcome}</p></div>
                     <nav className="case-jump-links" aria-label="Case study sections">
-                        {project.caseStudy && <a href="#brief">The brief</a>}<a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a><a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
+                        {project.caseStudy && <a href="#brief">The brief</a>}<a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a>{project.caseStudy && <a href="#quality">Code quality & testing</a>}<a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
                     </nav>
                     <div className="v4-details-stack">
                         {project.caseStudy ? <RichieCaseStudy project={project} /> : <>
@@ -82,7 +83,7 @@ const ProjectDetail = () => {
                         </div>
                         </>}
                         <section className="v4-detail-block" id="results">
-                            <span className="case-eyebrow">04 · Documented impact</span>
+                            <span className="case-eyebrow">{project.caseStudy ? '05' : '04'} · Documented impact</span>
                             <h2 className="v4-section-heading">Results & reliability</h2>
                             <p className="project-evidence-note">Figures below describe the documented project scope or résumé-reported results. They are not live analytics.</p>
                             {(project.metrics.length > 0 || project.reliability.value !== 'Not published') && <dl className="portfolio-metrics">

@@ -112,6 +112,17 @@ test('Richie narrative uses direct implementation evidence without inventing met
     assert.match(richie.architectureNote, /not a complete architecture audit/);
     assert.match(richie.caseStudy.support.note, /comparison baselines/);
     assert.deepEqual(richie.caseStudy.support.metrics.map(item => item.value), ['92%', '15%', '90%']);
-    assert.doesNotMatch(JSON.stringify(richie), /GitHub Actions|Jenkins|Fastlane|MVVM|Clean Architecture/);
+    assert.doesNotMatch(JSON.stringify(richie), /GitHub Actions|Jenkins|Fastlane|MVVM/);
     for (const p of projects.filter(p => p.id !== 1)) assert.equal(p.caseStudy, undefined);
+});
+
+
+test('Richie quality section separates project claims from missing testing evidence', () => {
+    const richie = projectDetails[1];
+    assert.equal(richie.caseStudy.quality.practices.length, 4);
+    assert.match(richie.caseStudy.quality.practices[0].detail, /clean, modular codebases/);
+    assert.match(richie.caseStudy.quality.testing, /debugging, performance profiling and production monitoring/);
+    assert.match(richie.caseStudy.quality.testing, /automated test-suite evidence is not available/);
+    assert.match(richie.caseStudy.quality.cicd, /Used CI\/CD pipelines/);
+    assert.match(richie.caseStudy.quality.limits, /have not been established/);
 });

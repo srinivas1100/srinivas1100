@@ -55,3 +55,14 @@ The narrative now distinguishes the product brief, four areas of ownership, a ca
 User-authored Richie code shared on 16 September 2025 establishes GoRouter/ShellRoute tab routing, URL-driven content filters, FirebaseAnalyticsObserver and payment-return route parameters. The accompanying request was to explain route destinations to marketing for campaign links; no conversion lift or completed spreadsheet is asserted. User-authored package:richie code shared on 30 September 2025 establishes Riverpod screen state and shared client API success/error handling. The verification routine was unfinished in that snapshot; this is explicitly disclosed and not used as proof of a shipped fix or complete authentication flow. These sources do not establish independent preserved tab stacks, backend topology, named architectural patterns, secure payment verification or compliance.
 
 Rasabot figures (92% queries resolved, 15% sales increase, 90% support-time reduction) are from the later user-authored experience statement and résumé, with missing reporting dates, baselines and methodology disclosed. No Richie-specific CI vendor or pipeline was found.
+
+
+## Richie quality evidence and review
+
+A newly reviewed user-authored October 2026 résumé explicitly lists CI/CD for Richie and clean/modular architecture, debugging, performance profiling and production monitoring at Chase Alpha. A February 2026 Flutter résumé also records CI/CD pipeline use, time profiling and memory-leak analysis. The previous “no project-specific CI evidence” statement is superseded for general pipeline participation only: vendor/configuration, stages, triggers, test gates and automated store deployment are still unverified.
+
+The September 2025 screen code imports separate API, route, constants, utility and reusable widget modules; cleanup cancels timers and disposes controllers/focus nodes. Router comments record partially tested and dependency-blocked scenarios. These support concrete modularity/resource-cleanup/validation tracking, not comprehensive test coverage or a named Clean Architecture implementation. No Richie test suite, test report or performance benchmark has been found.
+
+Source-only review initially rated the case study 8.0/10 across role/outcomes, concrete engineering detail, evidence integrity, readability and readiness. Feedback applied: an opening historical-scope strip, shorter quality copy, collapsible result/evidence detail and corrected section numbering. Browser rendering remains unverified; portfolio test counts are not Richie product-test coverage.
+
+After those changes, independent source-only review rated the page 8.5/10: role/outcomes 9, engineering detail 9, evidence integrity 9, readability 9, verification/readiness 6.5 (equal weights). Readiness remains limited by missing rendered mobile/desktop QA and product-test/pipeline evidence. This is an editorial assessment, not a measured conversion score.

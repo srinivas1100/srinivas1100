@@ -75,7 +75,7 @@ export const projects = [
       "App Store and Google Play submission, versioning and production hotfix ownership.",
       "Shorebird code-push patches for critical fixes."
     ],
-    "automationNote": "Release automation: Shorebird patches are documented. A project-specific CI pipeline is not recorded.",
+    "automationNote": "CI/CD pipelines for deployments and release management are documented in the Chase Alpha experience record. Shorebird critical patches and two-week store releases are also documented; the provider, pipeline stages and automated test gates are not specified.",
     "outcome": "Delivered advisory, trading, learning and subscription features for a fintech audience.",
     "architectureNote": "Richie code shared in September 2025 demonstrates GoRouter/ShellRoute navigation, Riverpod screen state, Firebase Analytics navigation observation and a shared client-side ApiHelper with ApiSuccess/ApiError handling. These development excerpts establish implementation choices, not a complete architecture audit or proof of production deployment. The email-verification snapshot includes unfinished verification logic.",
     "platform": "Flutter · iOS & Android",
@@ -189,7 +189,34 @@ export const projects = [
         "Broker-account connection and account controls, shown in existing Richie promotional artwork.",
         "Investment-plan discovery and product detail, shown in existing Richie promotional artwork.",
         "Advisory and subscription benefits, shown in existing Richie promotional artwork."
-      ]
+      ],
+      "quality": {
+        "practices": [
+          {
+            "title": "Clean, modular implementation",
+            "evidence": "Project experience",
+            "detail": "Contributed to architecture decisions and clean, modular codebases for long-term scalability. Shared code separates API handling, route names, constants, loading utilities and reusable input/feedback widgets into dedicated modules."
+          },
+          {
+            "title": "Explicit state and API boundaries",
+            "evidence": "Shared implementation",
+            "detail": "Riverpod manages screen state; a shared ApiHelper exposes explicit ApiSuccess/ApiError outcomes. The screen’s cleanup cancels timers and disposes controllers and focus nodes."
+          },
+          {
+            "title": "Performance and memory diagnostics",
+            "evidence": "Project experience",
+            "detail": "Performed time profiling and memory-leak analysis to identify and resolve performance bottlenecks. Production monitoring, debugging and rapid hotfixes supported ongoing stability."
+          },
+          {
+            "title": "Code review and engineering guidance",
+            "evidence": "Leadership responsibility",
+            "detail": "Led four engineers with mentoring, task allocation and code reviews while remaining hands-on in Flutter development. Requirements and technical specifications were connected to prioritised sprint work."
+          }
+        ],
+        "testing": "Tracked route-validation scenarios and combined debugging, performance profiling and production monitoring with issue resolution. The development record includes partial scenario checks; automated test-suite evidence is not available.",
+        "cicd": "Used CI/CD pipelines for deployments and release management. Delivery combined a two-week store cadence, submission/versioning ownership and Shorebird patches for urgent fixes.",
+        "limits": "Clean/modular code, CI/CD pipeline use, time profiling and memory-leak analysis are project-specific experience claims. GoRouter, Riverpod and typed API outcomes are visible in shared development excerpts. Route comments record partial scenario testing, not comprehensive coverage. A named Clean Architecture layering scheme, test reports, pipeline configuration and measured performance benchmarks have not been established. The verification excerpt was unfinished, so it is not presented as a fully validated production flow."
+      }
     }
   },
   {

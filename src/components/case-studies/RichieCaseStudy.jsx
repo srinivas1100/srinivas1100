@@ -27,10 +27,23 @@ export default function RichieCaseStudy({ project }) {
             <div className="richie-system-map">{story.system.map(layer => <article key={layer.title}><h3>{layer.title}</h3><ul>{layer.items.map(item => <li key={item}>{item}</li>)}</ul></article>)}</div>
             <details className="case-evidence"><summary>Architecture detail and evidence limits</summary><p>{project.architectureNote}</p><p>The available material does not establish database topology, service boundaries, backend service internals or security/compliance certification. Those are not inferred from my broader skill set.</p></details>
         </section>
+        <section id="quality">
+            <span className="case-eyebrow">03 · Engineering quality</span>
+            <h2 className="v4-section-heading">Code quality, testing & delivery discipline</h2>
+            <p className="project-evidence-note">The practices below separate implementation evidence, team responsibilities and release operations.</p>
+            <div className="richie-quality-grid">{story.quality.practices.map(item => <article key={item.title}>
+                <span className="richie-evidence-type">{item.evidence}</span><h3>{item.title}</h3><p>{item.detail}</p>
+            </article>)}</div>
+            <div className="richie-validation-grid">
+                <article><h3>Testing & validation</h3><p>{story.quality.testing}</p></article>
+                <article><h3>CI/CD & release automation</h3><p>{story.quality.cicd}</p></article>
+            </div>
+            <details className="case-evidence richie-quality-evidence"><summary>Scope of the available quality evidence</summary><p>{story.quality.limits}</p></details>
+        </section>
         <section id="delivery">
-            <span className="case-eyebrow">03 · Engineering choices in practice</span>
+            <span className="case-eyebrow">04 · Engineering choices in practice</span>
             <h2 className="v4-section-heading">Shipping features while operating a live product</h2>
-            <div className="richie-decisions">{story.decisions.map(item => <article key={item.title}><h3>{item.title}</h3><dl><div><dt>Approach</dt><dd>{item.approach}</dd></div><div><dt>Documented result</dt><dd>{item.result}</dd></div></dl></article>)}</div>
+            <div className="richie-decisions">{story.decisions.map(item => <article key={item.title}><h3>{item.title}</h3><p>{item.approach}</p><details className="case-evidence"><summary>Documented result & evidence</summary><p>{item.result}</p></details></article>)}</div>
             <p className="case-automation-note">{project.automationNote} Shorebird hotfix delivery is distinct from CI validation or automatic store submission.</p>
         </section>
         <section className="richie-support">
