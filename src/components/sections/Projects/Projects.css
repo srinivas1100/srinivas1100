@@ -350,3 +350,5 @@
     .project-image-container { padding: 16px 16px 0; }
     .project-role { overflow-wrap: anywhere; }
 }
+
+.project-impact-summary { color: #24442f; background: #f2f5ee; border-left: 3px solid #d9ae42; padding: 10px 12px; font-weight: 600; font-size: 14px; line-height: 1.5; margin: 0 0 18px; }

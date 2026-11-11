@@ -39,7 +39,7 @@ const ProjectDetail = () => {
                 <div className="container">
                     <div className="v4-content-row">
                         <div className="v4-content-left">
-                            <span className="project-status">{project.status}</span>
+                            <div className="case-kicker"><span className="project-status">{project.status}</span><span className="case-platform">{project.platform}</span></div>
                             <h2 className="v4-project-title">{project.subtitle}</h2>
                             <p className="v4-text-description">{project.description}</p>
                             {project.scopeNote && <p className="project-evidence-note">{project.scopeNote}</p>}
@@ -49,25 +49,46 @@ const ProjectDetail = () => {
                         </div>
                         <dl className="v4-metadata-box">
                             <div className="v4-meta-item"><dt className="v4-meta-label">My role</dt><dd className="v4-meta-value">{project.role}</dd></div>
+                            <div className="v4-meta-item"><dt className="v4-meta-label">Ownership</dt><dd className="case-ownership">{project.ownership}</dd></div>
                             <div className="v4-meta-item"><dt className="v4-meta-label">Organization</dt><dd className="v4-meta-value">{project.organization}</dd></div>
                             {project.period && <div className="v4-meta-item"><dt className="v4-meta-label">Engagement</dt><dd className="v4-meta-value">{project.period}</dd></div>}
                         </dl>
                     </div>
                     <div className="portfolio-detail-visual"><ProjectVisual key={project.id} project={project} /></div>
+                    <div className="case-outcome"><span>Delivery outcome</span><p>{project.outcome}</p></div>
+                    <nav className="case-jump-links" aria-label="Case study sections">
+                        <a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a><a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
+                    </nav>
                     <div className="v4-details-stack">
-                        <section className="v4-detail-block">
-                            <h2 className="v4-section-heading">My contribution</h2>
+                        <section className="v4-detail-block" id="contribution">
+                            <span className="case-eyebrow">01 · Ownership in practice</span><h2 className="v4-section-heading">Role, responsibilities & contributions</h2>
                             <ul className="portfolio-contributions">{project.contributions.map(point => <li key={point}>{point}</li>)}</ul>
                         </section>
-                        <section className="v4-detail-block">
-                            <h2 className="v4-section-heading">Project statistics & reliability</h2>
+                        <div className="case-engineering-grid">
+                            <section className="case-engineering-panel" id="engineering">
+                                <span className="case-eyebrow">02 · Technical implementation</span>
+                                <h2 className="v4-section-heading">Architecture & integrations</h2>
+                                <ul className="portfolio-contributions">{project.architecture.map(point => <li key={point}>{point}</li>)}</ul>
+                                <details className="case-evidence"><summary>Architecture evidence</summary><p>{project.architectureNote}</p></details>
+                            </section>
+                            <section className="case-engineering-panel" id="delivery">
+                                <span className="case-eyebrow">03 · Shipping & operating</span>
+                                <h2 className="v4-section-heading">Delivery, quality & CI/CD</h2>
+                                <ul className="portfolio-contributions">{project.delivery.map(point => <li key={point}>{point}</li>)}</ul>
+                                <p className="case-automation-note">{project.automationNote}</p>
+                            </section>
+                        </div>
+                        <section className="v4-detail-block" id="results">
+                            <span className="case-eyebrow">04 · Documented impact</span>
+                            <h2 className="v4-section-heading">Results & reliability</h2>
                             <p className="project-evidence-note">Figures below describe the documented project scope or résumé-reported results. They are not live analytics.</p>
-                            <dl className="portfolio-metrics">
+                            {(project.metrics.length > 0 || project.reliability.value !== 'Not published') && <dl className="portfolio-metrics">
                                 {project.metrics.map(metric => <div className="portfolio-metric" key={metric.label}>
                                     <dt>{metric.label}</dt><dd><strong>{metric.value}</strong><p>{metric.note}</p></dd>
                                 </div>)}
-                                <div className="portfolio-metric"><dt>Crash-free performance</dt><dd><strong>{project.reliability.value}</strong><p>{project.reliability.note}</p></dd></div>
-                            </dl>
+                                {project.reliability.value !== 'Not published' && <div className="portfolio-metric"><dt>Crash-free performance</dt><dd><strong>{project.reliability.value}</strong><p>{project.reliability.note}</p></dd></div>}
+                            </dl>}
+                            {project.reliability.value === 'Not published' && <p className="case-automation-note"><strong>Reliability reporting:</strong> {project.reliability.note}</p>}
                         </section>
                         <section className="v4-detail-block">
                             <h2 className="v4-section-heading">Technologies & integrations</h2>

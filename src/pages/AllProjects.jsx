@@ -34,9 +34,9 @@ const AllProjects = () => {
                 <div className="container">
                     <div className="projects-header-center">
                         <span className="projects-subtitle-center">My Portfolio</span>
-                        <h1 className="projects-title-center">
+                        <h2 className="projects-title-center">
                             My Latest <span className="highlight">Projects</span>
-                        </h1>
+                        </h2>
                     </div>
 
                     <div className="all-projects-grid">
@@ -57,6 +57,7 @@ const AllProjects = () => {
                                         <p className="project-description">{project.description}</p>
                                     )}
 
+                                    <p className="project-impact-summary">{project.headline}</p>
                                     <div className="project-tags">
                                         {project.tags.map((tag, idx) => (
                                             <span key={idx} className="project-tag">{tag}</span>

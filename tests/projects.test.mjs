@@ -79,3 +79,25 @@ test('contact and footer controls expose honest working destinations', async () 
     assert.match(footer, /mailto:srinu11112000@gmail.com/);
     assert.match(source('../src/App.jsx'), /target.scrollIntoView/);
 });
+
+test('case studies distinguish ownership, engineering evidence and delivery claims', () => {
+    for (const project of projects) {
+        for (const field of ['ownership', 'headline', 'outcome', 'platform', 'automationNote', 'architectureNote']) assert.ok(project[field], `${project.title}: ${field}`);
+        assert.ok(project.architecture.length && project.delivery.length);
+        assert.doesNotMatch(project.architecture.join(' '), /\b(MVVM|MVC|Clean Architecture|BLoC|Riverpod)\b/);
+    }
+    assert.match(projectDetails[1].ownership, /four-engineer team/);
+    assert.match(projectDetails[8].ownership, /Solo engineer/);
+    assert.match(projectDetails[9].role, /End-to-End Owner/);
+    assert.match(projectDetails[8].automationNote, /GitHub Actions/);
+    assert.match(projectDetails[1].automationNote, /Shorebird/);
+    for (const id of [3, 4, 12]) assert.equal(projectDetails[id].platform, 'Native iOS');
+});
+
+test('new illustrative assets are explicitly conceptual, not app screenshots', () => {
+    for (const id of [9, 10, 11, 12]) {
+        assert.equal(projectDetails[id].visualKind, 'concept');
+        assert.match(projectDetails[id].image, /concept\.webp$/);
+        assert.ok(existsSync(`public${projectDetails[id].image}`));
+    }
+});

@@ -37,3 +37,12 @@ Browser interaction and visual QA were attempted but blocked: Chromium cannot cr
 ## Experience chronology correction (10 Nov 2026)
 
 The approved résumé (Mobile iOS Resume, version 11) records Veloria Mar 2026–Present; Chase Alpha Jul 2023–Mar 2026; AppKnit Dec 2021–Jul 2023; and UnoLabs 15 Sep–15 Dec 2021. The home timeline now uses these months, employer names and roles, replacing the incorrect Chase Alpha Present date and generic parallel role. The summary uses 5+ completed years including the internship, rather than 4.8 decimal years; overlapping transition months are not added together. AppKnit delivery/promotion wording and the 13+ application summary now match that résumé. Project-specific metrics and later approved native-stack corrections remain unchanged.
+
+
+## Recruiter case-study update
+
+All 13 entries now separate ownership, contribution, documented implementation, release practices and outcomes. Richie is the verified four-engineer leadership case; AiCrix is solo engineering ownership; Arentzo is end-to-end product engineering ownership, not an asserted team size. The user's reference to three team-led applications does not establish another named people-management assignment.
+
+ShiftBOOKD uses native Swift/Storyboards. Evexia and Groupia use native SwiftUI per the owner's later correction. CI evidence is specific: AiCrix has GitHub Actions checks, Richie has Shorebird patches. No automatic store deployment or named architecture/state-management pattern is invented for other apps. Only Richie carries the historical résumé-reported 100% crash-free figure, with missing measurement window/denominator disclosed.
+
+Missing product imagery is represented by explicitly labeled AI-generated concept illustrations, never passed off as actual app screenshots. The approved portrait chip layout and paused résumé PDF are unchanged.

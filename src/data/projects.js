@@ -52,7 +52,23 @@ export const projects = [
       "/projects/richie-ps3.webp"
     ],
     "status": "Delivered project",
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Led a four-engineer team and owned technical delivery, product priorities and production releases.",
+    "headline": "Led four engineers · 50,000+ users",
+    "architecture": [
+      "Flutter client with authenticated backend APIs for financial workflows.",
+      "Broker integrations: Zerodha and Angel One; payments and subscriptions: Razorpay.",
+      "Product engagement: Firebase Analytics, MoEngage, FCM, Branch.io and LinkRunner."
+    ],
+    "delivery": [
+      "Two-week sprints and a matching release cadence, including planning and code reviews.",
+      "App Store and Google Play submission, versioning and production hotfix ownership.",
+      "Shorebird code-push patches for critical fixes."
+    ],
+    "automationNote": "Release automation: Shorebird patches are documented. A project-specific CI pipeline is not recorded.",
+    "outcome": "Delivered advisory, trading, learning and subscription features for a fintech audience.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 2,
@@ -82,7 +98,19 @@ export const projects = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.cityguide.guidel",
     "status": "Delivered project",
     "gallery": [],
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Implemented and shipped the city-guide app within the AppKnit portfolio.",
+    "headline": "Flutter city-guide delivery",
+    "architecture": [
+      "Flutter/Dart mobile client integrated with REST APIs and backend services."
+    ],
+    "delivery": [
+      "Supported store-release delivery and production issue resolution."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered a cross-platform AI-based city-guide experience.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 3,
@@ -111,7 +139,20 @@ export const projects = [
     "appStoreUrl": "https://apps.apple.com/us/app/shiftbookd/id1507908655",
     "status": "Delivered project",
     "gallery": [],
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Owned native iOS feature development, API integration and App Store submission.",
+    "headline": "Native iOS · Storyboards",
+    "architecture": [
+      "Swift native iOS client with Storyboard-based interfaces.",
+      "Backend API integration for the salon-booking application."
+    ],
+    "delivery": [
+      "Handled feature development through App Store submission."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered native iOS salon-booking functionality.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Native iOS"
   },
   {
     "id": 4,
@@ -138,7 +179,20 @@ export const projects = [
     "organization": "AppKnit",
     "status": "Delivered project",
     "gallery": [],
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Implemented native iOS health-monitoring UI and backend integration.",
+    "headline": "Native iOS · SwiftUI",
+    "architecture": [
+      "Swift and SwiftUI native iOS application.",
+      "REST API integration with the health-monitoring backend."
+    ],
+    "delivery": [
+      "Supported testing, release delivery and maintenance."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered the native iOS health-monitoring application.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Native iOS"
   },
   {
     "id": 7,
@@ -166,14 +220,28 @@ export const projects = [
     "organization": "AppKnit",
     "status": "Delivered project",
     "gallery": [],
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Led application delivery from design handoff through store release.",
+    "headline": "End-to-end delivery owner",
+    "architecture": [
+      "Flutter/Dart cross-platform application backed by REST APIs.",
+      "Mobile integration with backend services for the dating experience."
+    ],
+    "delivery": [
+      "Owned delivery from design handoff to App Store and Google Play release.",
+      "Supported production stability and release fixes."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Shipped a dating application focused on single parents.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 8,
     "title": "AiCrix",
     "subtitle": "AI cricket analytics",
     "description": "A cricket analytics product connecting a mobile application with prediction services, subscriptions and the Aira chatbot.",
-    "role": "Solo Engineer · Mobile, Backend & AI",
+    "role": "Senior Product Engineer · Solo Engineering Owner",
     "tags": [
       "Flutter",
       "FastAPI",
@@ -221,14 +289,31 @@ export const projects = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.veloria.aicrix",
     "status": "Delivered project",
     "gallery": [],
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Solo engineer owning mobile, backend and AI service delivery, monetisation and production support.",
+    "headline": "Solo ownership · 5,000+ users",
+    "architecture": [
+      "Flutter client connected to FastAPI and Supabase services.",
+      "Backend services expose a 10-model ML ensemble, prediction records and the Aira chatbot.",
+      "RevenueCat subscriptions with server-side verification through Google Play Developer API and Supabase Edge Functions.",
+      "AdMob with Meta Audience Network mediation."
+    ],
+    "delivery": [
+      "Maintained GitHub Actions checks.",
+      "Monitored errors with Firebase Crashlytics and Sentry, and service availability with StatusCake.",
+      "Owned releases, subscription integration and production support."
+    ],
+    "automationNote": "CI: GitHub Actions checks are documented. Automatic store deployment is not established.",
+    "outcome": "Built a subscription-supported cricket analytics platform with 5,000+ registered users.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 9,
     "title": "Arentzo",
     "subtitle": "Peer-to-peer rental marketplace",
     "description": "A rental marketplace for cars, bikes, electronics and furniture, with listings, authentication, payments and subscriptions.",
-    "role": "Solo Engineer · Mobile & Backend",
+    "role": "Senior Product Engineer · End-to-End Owner",
     "tags": [
       "Mobile Development",
       "Supabase",
@@ -260,8 +345,23 @@ export const projects = [
     "status": "Pre-launch",
     "websiteUrl": "https://arentzo.com/",
     "gallery": [],
-    "image": null,
-    "scopeNote": ""
+    "image": "/projects/arentzo-rental-marketplace-concept.webp",
+    "scopeNote": "",
+    "ownership": "Owned mobile and backend delivery, from requirements to store-submission preparation.",
+    "headline": "End-to-end product ownership",
+    "architecture": [
+      "Mobile application integrated with Supabase.",
+      "Implemented listings, authentication, payments and subscription flows across four rental categories."
+    ],
+    "delivery": [
+      "Prepared App Store and Google Play submissions.",
+      "Researched 25+ competing platforms and prepared ASO metadata and a pre-launch waitlist."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Prepared a four-category rental marketplace for launch; adoption metrics are not yet reported.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Mobile + backend",
+    "visualKind": "concept"
   },
   {
     "id": 10,
@@ -289,8 +389,23 @@ export const projects = [
     "websiteUrl": "https://www.openkitchenapp.com/",
     "status": "Delivered project",
     "gallery": [],
-    "image": null,
-    "scopeNote": ""
+    "image": "/projects/openkitchen-food-community-concept.webp",
+    "scopeNote": "",
+    "ownership": "Led food-platform delivery from design handoff through store release.",
+    "headline": "End-to-end delivery owner",
+    "architecture": [
+      "Flutter/Dart client integrated with mobile REST APIs.",
+      "Backend integration supporting food delivery and food-focused community experiences."
+    ],
+    "delivery": [
+      "Owned delivery from design handoff through App Store and Google Play release.",
+      "Supported testing and release fixes."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered food ordering and community experiences in one mobile product.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android",
+    "visualKind": "concept"
   },
   {
     "id": 11,
@@ -317,8 +432,23 @@ export const projects = [
     "organization": "AppKnit",
     "status": "Delivered project",
     "gallery": [],
-    "image": null,
-    "scopeNote": ""
+    "image": "/projects/swisssense-basketball-concept.webp",
+    "scopeNote": "",
+    "ownership": "Led the basketball-coaching app from design handoff through store release.",
+    "headline": "End-to-end delivery owner",
+    "architecture": [
+      "Flutter/Dart mobile application with REST API integration.",
+      "Connected mobile coaching experiences to backend services."
+    ],
+    "delivery": [
+      "Owned delivery from design handoff through App Store and Google Play release.",
+      "Supported testing, production fixes and release delivery."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Shipped a basketball-coaching mobile application.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android",
+    "visualKind": "concept"
   },
   {
     "id": 12,
@@ -345,8 +475,22 @@ export const projects = [
     "websiteUrl": "https://www.groupia.com/groupia-app",
     "status": "Delivered project",
     "gallery": [],
-    "image": null,
-    "scopeNote": ""
+    "image": "/projects/groupia-events-concept.webp",
+    "scopeNote": "",
+    "ownership": "Implemented the native iOS event-booking application and backend integration.",
+    "headline": "Native iOS · SwiftUI",
+    "architecture": [
+      "Swift and SwiftUI native iOS application.",
+      "REST APIs connect the event-booking interface with backend services."
+    ],
+    "delivery": [
+      "Supported testing, release delivery and maintenance."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered native iOS event-booking experiences.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Native iOS",
+    "visualKind": "concept"
   },
   {
     "id": 13,
@@ -374,7 +518,19 @@ export const projects = [
     "scopeNote": "The current store listing describes a different product positioning. A store link is intentionally omitted until the delivered version is reconciled.",
     "status": "Delivered project",
     "gallery": [],
-    "image": null
+    "image": null,
+    "ownership": "Implemented and shipped the learning-platform version described in the résumé.",
+    "headline": "Flutter learning-platform delivery",
+    "architecture": [
+      "Flutter/Dart learning application connected to backend REST APIs."
+    ],
+    "delivery": [
+      "Supported store-release delivery and production issue resolution."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered a cross-platform learning app; later product positioning is outside this case study.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 14,
@@ -403,7 +559,19 @@ export const projects = [
     "status": "Delivered project",
     "gallery": [],
     "image": null,
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Implemented and shipped the cross-platform boxing-coaching application.",
+    "headline": "Flutter coaching-app delivery",
+    "architecture": [
+      "Flutter/Dart application with REST API and backend-service integration."
+    ],
+    "delivery": [
+      "Supported store-release delivery and production issue resolution."
+    ],
+    "automationNote": "Project-specific CI/CD tooling is not recorded.",
+    "outcome": "Delivered a mobile boxing-coaching application.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   },
   {
     "id": 15,
@@ -438,7 +606,20 @@ export const projects = [
     "status": "Internship project",
     "gallery": [],
     "image": null,
-    "scopeNote": ""
+    "scopeNote": "",
+    "ownership": "Contributed Flutter UI and API integration under senior developer guidance.",
+    "headline": "Internship · Responsive Flutter UI",
+    "architecture": [
+      "Reusable Flutter UI components for Android and iOS.",
+      "REST API integration with loading states and error handling."
+    ],
+    "delivery": [
+      "Assisted with debugging, UI testing and layout fixes during a three-month internship."
+    ],
+    "automationNote": "No independent release ownership or CI/CD implementation is claimed.",
+    "outcome": "Built responsive home-automation screens and reusable cross-platform components.",
+    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
+    "platform": "Flutter · iOS & Android"
   }
 ];
 

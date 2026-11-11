@@ -57,7 +57,8 @@ const Projects = () => {
                                 )}
 
                                 {/* Tech Stack Tags */}
-                                <div className="project-tags">
+                                <p className="project-impact-summary">{project.headline}</p>
+                                    <div className="project-tags">
                                     {project.tags.map((tag, index) => (
                                         <span key={index} className="project-tag">{tag}</span>
                                     ))}
