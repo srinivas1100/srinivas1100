@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectDetails, projects } from '../data/content';
 import ProjectVisual from '../components/common/ProjectVisual/ProjectVisual';
+import RichieCaseStudy from '../components/case-studies/RichieCaseStudy';
 import Contact from '../components/sections/Contact/Contact';
 import ProjectCTA from '../components/sections/CTA/ProjectCTA';
 import Marquee from '../components/common/Marquee/Marquee';
@@ -57,9 +58,10 @@ const ProjectDetail = () => {
                     <div className="portfolio-detail-visual"><ProjectVisual key={project.id} project={project} /></div>
                     <div className="case-outcome"><span>Delivery outcome</span><p>{project.outcome}</p></div>
                     <nav className="case-jump-links" aria-label="Case study sections">
-                        <a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a><a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
+                        {project.caseStudy && <a href="#brief">The brief</a>}<a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a><a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
                     </nav>
                     <div className="v4-details-stack">
+                        {project.caseStudy ? <RichieCaseStudy project={project} /> : <>
                         <section className="v4-detail-block" id="contribution">
                             <span className="case-eyebrow">01 · Ownership in practice</span><h2 className="v4-section-heading">Role, responsibilities & contributions</h2>
                             <ul className="portfolio-contributions">{project.contributions.map(point => <li key={point}>{point}</li>)}</ul>
@@ -78,6 +80,7 @@ const ProjectDetail = () => {
                                 <p className="case-automation-note">{project.automationNote}</p>
                             </section>
                         </div>
+                        </>}
                         <section className="v4-detail-block" id="results">
                             <span className="case-eyebrow">04 · Documented impact</span>
                             <h2 className="v4-section-heading">Results & reliability</h2>
@@ -96,7 +99,7 @@ const ProjectDetail = () => {
                         </section>
                         {project.gallery.length > 0 && <section className="v4-detail-block">
                             <h2 className="v4-section-heading">Application gallery</h2>
-                            <div className="v4-detail-gallery-grid">{project.gallery.map((src, index) => <img className="portfolio-gallery-image" key={src} src={src} alt={`${project.title} application screenshot ${index + 1}`} loading="lazy" />)}</div>
+                            <div className="v4-detail-gallery-grid">{project.gallery.map((src, index) => <figure className="richie-gallery-figure" key={src}><img className="portfolio-gallery-image" src={src} alt={project.caseStudy?.galleryCaptions[index] || `${project.title} application screenshot ${index + 1}`} loading="lazy" />{project.caseStudy?.galleryCaptions[index] && <figcaption className="richie-gallery-caption">{project.caseStudy.galleryCaptions[index]}</figcaption>}</figure>)}</div>
                         </section>}
                     </div>
                 </div>

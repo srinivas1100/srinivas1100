@@ -1,0 +1,29 @@
+.richie-case-study { display: grid; gap: clamp(32px, 5vw, 64px); }
+.richie-case-study p, .richie-case-study li, .richie-case-study dd { line-height: 1.7; color: #485446; }
+.richie-case-study h3 { color: #203c2a; font-size: 20px; line-height: 1.3; margin: 0 0 14px; }
+.richie-brief { border-top: 3px solid #c8a34e; padding-top: 28px; }
+.richie-brief > h2 { font-size: clamp(27px, 3.8vw, 42px); line-height: 1.18; max-width: 780px; color: #203c2a; margin-bottom: 20px; }
+.richie-brief > p { font-size: 18px; max-width: 900px; }
+.richie-brief-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin-top: 28px; }
+.richie-brief-grid > div { border-left: 2px solid #d7ddcf; padding-left: 22px; }
+.richie-workstreams { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.richie-workstreams article, .richie-decisions article { min-width: 0; border: 1px solid #dde3db; border-radius: 18px; padding: clamp(20px,3vw,30px); background: #fbfcf9; }
+.richie-number { display: block; color: #92711f; font-size: 15px; font-weight: 700; letter-spacing: .1em; margin-bottom: 12px; }
+.richie-result { border-top: 1px solid #dce3d7; padding-top: 14px; margin-top: 18px; font-size: 14px; }
+.richie-system-map { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border: 1px solid #d5ddcf; border-radius: 18px; overflow: hidden; margin: 24px 0; background: #f2f5ee; gap: 1px; }
+.richie-system-map article { min-width: 0; padding: 26px; background: #fbfcf9; }
+.richie-system-map ul { padding-left: 20px; margin: 0; }
+.richie-system-map li { padding-block: 4px; }
+.richie-decisions { display: grid; gap: 16px; }
+.richie-decisions dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin: 0; }
+.richie-decisions dt { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: #56684c; margin-bottom: 7px; }
+.richie-decisions dd { margin: 0; }
+.richie-support { background: #f6f3e8; border-radius: 20px; padding: clamp(20px,4vw,40px); }
+.richie-support .portfolio-metric { background: white; }
+.richie-case-study section { scroll-margin-top: 40px; }
+.richie-gallery-caption { font-size: 14px; line-height: 1.6; color: #53604d; padding: 12px 0; }
+.richie-gallery-figure { margin: 0; min-width: 0; }
+@media(max-width: 700px) { .richie-brief-grid, .richie-workstreams, .richie-system-map, .richie-decisions dl { grid-template-columns: 1fr; } .richie-brief > p { font-size: 16px; } }
+
+.richie-case-study { overflow-wrap: anywhere; }
+.richie-case-study article, .richie-case-study dl, .richie-case-study dl > div { min-width: 0; }

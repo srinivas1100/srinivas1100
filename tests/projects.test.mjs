@@ -84,7 +84,8 @@ test('case studies distinguish ownership, engineering evidence and delivery clai
     for (const project of projects) {
         for (const field of ['ownership', 'headline', 'outcome', 'platform', 'automationNote', 'architectureNote']) assert.ok(project[field], `${project.title}: ${field}`);
         assert.ok(project.architecture.length && project.delivery.length);
-        assert.doesNotMatch(project.architecture.join(' '), /\b(MVVM|MVC|Clean Architecture|BLoC|Riverpod)\b/);
+        assert.doesNotMatch(project.architecture.join(' '), /\b(MVVM|MVC|Clean Architecture|BLoC)\b/);
+        if (project.id !== 1) assert.doesNotMatch(project.architecture.join(' '), /Riverpod/);
     }
     assert.match(projectDetails[1].ownership, /four-engineer team/);
     assert.match(projectDetails[8].ownership, /Solo engineer/);
@@ -100,4 +101,17 @@ test('new illustrative assets are explicitly conceptual, not app screenshots', (
         assert.match(projectDetails[id].image, /concept\.webp$/);
         assert.ok(existsSync(`public${projectDetails[id].image}`));
     }
+});
+
+
+test('Richie narrative uses direct implementation evidence without inventing metrics or CI', () => {
+    const richie = projectDetails[1];
+    assert.ok(richie.tags.includes('Riverpod') && richie.tags.includes('GoRouter'));
+    assert.equal(richie.caseStudy.workstreams.length, 4);
+    assert.match(richie.architectureNote, /September 2025/);
+    assert.match(richie.architectureNote, /not a complete architecture audit/);
+    assert.match(richie.caseStudy.support.note, /comparison baselines/);
+    assert.deepEqual(richie.caseStudy.support.metrics.map(item => item.value), ['92%', '15%', '90%']);
+    assert.doesNotMatch(JSON.stringify(richie), /GitHub Actions|Jenkins|Fastlane|MVVM|Clean Architecture/);
+    for (const p of projects.filter(p => p.id !== 1)) assert.equal(p.caseStudy, undefined);
 });

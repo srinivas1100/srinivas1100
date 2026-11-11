@@ -3,14 +3,23 @@ export const projects = [
   {
     "id": 1,
     "title": "Richie",
-    "subtitle": "Fintech, learning & broker-connected trading",
-    "description": "A fintech mobile app combining investment advisory, social feeds, academy content, broker-connected trading and subscription plans.",
+    "subtitle": "Leading product and engineering for a 50,000+ user fintech app",
+    "description": "At Chase Alpha, I combined hands-on Flutter development with technical and product leadership for Richie: advisory, broker-connected trading, learning, social feeds and subscriptions across iOS and Android.",
     "role": "Tech Lead & Product Lead",
     "tags": [
       "Flutter",
       "Dart",
+      "Riverpod",
+      "GoRouter",
       "REST APIs",
-      "Razorpay"
+      "Razorpay",
+      "Shorebird",
+      "Firebase Analytics",
+      "MoEngage",
+      "FCM",
+      "Branch.io",
+      "LinkRunner",
+      "Python"
     ],
     "category": "Mobile App",
     "contributions": [
@@ -57,6 +66,7 @@ export const projects = [
     "headline": "Led four engineers · 50,000+ users",
     "architecture": [
       "Flutter client with authenticated backend APIs for financial workflows.",
+      "User-shared implementation excerpts show GoRouter/ShellRoute navigation, Riverpod state and shared API response handling.",
       "Broker integrations: Zerodha and Angel One; payments and subscriptions: Razorpay.",
       "Product engagement: Firebase Analytics, MoEngage, FCM, Branch.io and LinkRunner."
     ],
@@ -67,8 +77,120 @@ export const projects = [
     ],
     "automationNote": "Release automation: Shorebird patches are documented. A project-specific CI pipeline is not recorded.",
     "outcome": "Delivered advisory, trading, learning and subscription features for a fintech audience.",
-    "architectureNote": "Implementation scope is documented above. A named architecture pattern or project-specific state-management choice has not been confirmed.",
-    "platform": "Flutter · iOS & Android"
+    "architectureNote": "Richie code shared in September 2025 demonstrates GoRouter/ShellRoute navigation, Riverpod screen state, Firebase Analytics navigation observation and a shared client-side ApiHelper with ApiSuccess/ApiError handling. These development excerpts establish implementation choices, not a complete architecture audit or proof of production deployment. The email-verification snapshot includes unfinished verification logic.",
+    "platform": "Flutter · iOS & Android",
+    "caseStudy": {
+      "brief": "Richie combines investment advisory, social feeds, academy content, brokerage connections and subscription plans in one mobile product. My work covered the customer-facing app, its backend integrations, delivery coordination and production support.",
+      "challenge": "Coordinate connected financial and content journeys across iOS and Android, while shipping on a two-week rhythm and responding to production issues.",
+      "accountability": "I translated stakeholder requirements into technical specifications and prioritised roadmaps, planned work, reviewed code and stayed hands-on in Flutter. My remit also included backend architecture, authentication, APIs and store-release management.",
+      "workstreams": [
+        {
+          "title": "Broker-connected trading",
+          "work": "Integrated Zerodha and Angel One so users could connect brokerage accounts and trade within Richie. Owned the authentication and API integration work supporting financial workflows.",
+          "result": "Broker connections became part of the app’s trading journey."
+        },
+        {
+          "title": "Advisory, learning and subscriptions",
+          "work": "Shipped investment advisory, social feeds, academy content and subscription plans. Integrated Razorpay for payment flows and subscription payments.",
+          "result": "A connected product offering across advisory, content and paid access."
+        },
+        {
+          "title": "Engagement and attribution",
+          "work": "Integrated Firebase Analytics (GA4) and MoEngage for event tracking, FCM for notifications, and Branch.io and LinkRunner for deep linking and attribution.",
+          "result": "Instrumentation, messaging and link handling supported the mobile experience."
+        },
+        {
+          "title": "Team delivery and production ownership",
+          "work": "Led and mentored four engineers through sprint planning, task allocation and code review. Managed versioning, App Store and Google Play submissions, debugging and hotfixes.",
+          "result": "A documented two-week release cadence aligned with sprint cycles."
+        }
+      ],
+      "system": [
+        {
+          "title": "Customer-facing application",
+          "items": [
+            "Flutter / Dart on iOS and Android",
+            "GoRouter + ShellRoute around tab navigation",
+            "Riverpod in the email-verification flow",
+            "Query-driven advice, feed and academy destinations"
+          ]
+        },
+        {
+          "title": "Financial workflows",
+          "items": [
+            "Shared ApiHelper with explicit success/error response handling",
+            "Backend architecture and authentication ownership",
+            "Zerodha / Angel One connections; Razorpay payments"
+          ]
+        },
+        {
+          "title": "Engagement and measurement",
+          "items": [
+            "FirebaseAnalyticsObserver on navigation",
+            "Firebase Analytics (GA4), MoEngage and FCM",
+            "Branch.io and LinkRunner deep links / attribution"
+          ]
+        },
+        {
+          "title": "Operations and support",
+          "items": [
+            "App Store / Google Play submission and versioning",
+            "Shorebird code-push hotfixes",
+            "Python-based Rasabot for support and sales"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "title": "Use a shared navigation shell for product journeys",
+          "approach": "Richie’s shared router uses GoRouter and ShellRoute around its tab interface. Route parameters carry advice filters, feed filters and academy quick-access destinations; startup routing considers login state and a saved destination. These route definitions were also the basis for a marketing-team request to target campaign links at specific app screens.",
+          "result": "Explicit destinations for Feed, Advices, Home, Trades and Academy, plus payment-return parameters for course, webinar and mentorship flows, are present in the shared router."
+        },
+        {
+          "title": "Keep verification state and API outcomes explicit",
+          "approach": "The shared email-verification flow uses Riverpod state and a common ApiHelper, with distinct ApiSuccess and ApiError handling. OTP resend/countdown and progression into personal-details or KYC screens are represented in that code.",
+          "result": "The development excerpt shows separate API success/failure handling, state-driven resend timing and routing within a profile/KYC journey. Its OTP-verification implementation was unfinished in that snapshot, so it is not presented as proof of a completed verification feature."
+        },
+        {
+          "title": "Pair planned releases with a critical-fix path",
+          "approach": "Managed two-week store releases and used Shorebird code-push patches for critical fixes.",
+          "result": "The résumé records shipping critical fixes without waiting for store review. A measured reduction in release lead time is not available."
+        },
+        {
+          "title": "Connect product planning to engineering execution",
+          "approach": "Translated stakeholder requirements into prioritised roadmaps and technical specifications, then coordinated four engineers through planning, allocation and reviews.",
+          "result": "Release cadence stayed aligned with two-week sprint cycles while I remained hands-on in development."
+        },
+        {
+          "title": "Make production stability part of delivery ownership",
+          "approach": "Combined proactive debugging, rapid hotfixes and release management with ownership of store submissions and versioning.",
+          "result": "The résumé reports 100% crash-free performance for Richie. The reporting window, app versions and denominator have not been supplied."
+        }
+      ],
+      "support": {
+        "description": "I built Rasabot, a Python-based support and sales bot. This was a separate automation contribution alongside mobile delivery, with the following results reported in my résumé.",
+        "metrics": [
+          {
+            "value": "92%",
+            "label": "User queries resolved autonomously"
+          },
+          {
+            "value": "15%",
+            "label": "Reported sales increase"
+          },
+          {
+            "value": "90%",
+            "label": "Reported support-time reduction"
+          }
+        ],
+        "note": "Historical résumé-reported results. Reporting dates, sample sizes, comparison baselines and measurement method are not available; these are not current live measurements or independently verified causal estimates."
+      },
+      "galleryCaptions": [
+        "Broker-account connection and account controls, shown in existing Richie promotional artwork.",
+        "Investment-plan discovery and product detail, shown in existing Richie promotional artwork.",
+        "Advisory and subscription benefits, shown in existing Richie promotional artwork."
+      ]
+    }
   },
   {
     "id": 2,

@@ -46,3 +46,12 @@ All 13 entries now separate ownership, contribution, documented implementation, 
 ShiftBOOKD uses native Swift/Storyboards. Evexia and Groupia use native SwiftUI per the owner's later correction. CI evidence is specific: AiCrix has GitHub Actions checks, Richie has Shorebird patches. No automatic store deployment or named architecture/state-management pattern is invented for other apps. Only Richie carries the historical résumé-reported 100% crash-free figure, with missing measurement window/denominator disclosed.
 
 Missing product imagery is represented by explicitly labeled AI-generated concept illustrations, never passed off as actual app screenshots. The approved portrait chip layout and paused résumé PDF are unchanged.
+
+
+## Richie deep case study
+
+The narrative now distinguishes the product brief, four areas of ownership, a capability map, documented engineering choices and support automation. The existing three Richie promotional images receive descriptive captions. Other 12 project records are unchanged.
+
+User-authored Richie code shared on 16 September 2025 establishes GoRouter/ShellRoute tab routing, URL-driven content filters, FirebaseAnalyticsObserver and payment-return route parameters. The accompanying request was to explain route destinations to marketing for campaign links; no conversion lift or completed spreadsheet is asserted. User-authored package:richie code shared on 30 September 2025 establishes Riverpod screen state and shared client API success/error handling. The verification routine was unfinished in that snapshot; this is explicitly disclosed and not used as proof of a shipped fix or complete authentication flow. These sources do not establish independent preserved tab stacks, backend topology, named architectural patterns, secure payment verification or compliance.
+
+Rasabot figures (92% queries resolved, 15% sales increase, 90% support-time reduction) are from the later user-authored experience statement and résumé, with missing reporting dates, baselines and methodology disclosed. No Richie-specific CI vendor or pipeline was found.
