@@ -25,3 +25,21 @@
     border-radius: 0;
 }
 .project-card:hover .project-concept-visual .project-img { transform: none; }
+
+/* Original screenshots use their intrinsic shape: no padding, letterboxing or crop. */
+.project-image-container:has(> .project-img),
+.all-projects-grid .project-image-container:has(> .project-img) {
+    padding: 0;
+    aspect-ratio: auto;
+}
+.project-image-container > .project-img,
+.all-projects-grid .project-image-container > .project-img,
+.portfolio-detail-visual > .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 0;
+    object-fit: contain;
+}
+.project-card:hover .project-image-container > .project-img { transform: none; }
