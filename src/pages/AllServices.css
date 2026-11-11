@@ -15,15 +15,15 @@
 }
 
 /* Page Header */
-.page-header {
+.all-services-page .page-header {
     text-align: center;
-    padding-top: 150px;
+    padding-top: 40px;
     /* Account for fixed header */
     padding-bottom: 60px;
     background-color: #F9F9F9;
 }
 
-.main-page-title {
+.all-services-page .main-page-title {
     font-size: 56px;
     font-weight: 800;
     color: var(--color-text-primary);
@@ -37,7 +37,7 @@
     font-weight: 500;
 }
 
-.breadcrumb {
+.all-services-page .breadcrumb {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,21 +46,21 @@
     color: #666;
 }
 
-.breadcrumb-link {
+.all-services-page .breadcrumb-link {
     color: #666;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.breadcrumb-link:hover {
+.all-services-page .breadcrumb-link:hover {
     color: var(--color-primary);
 }
 
-.breadcrumb-separator {
+.all-services-page .breadcrumb-separator {
     color: #999;
 }
 
-.breadcrumb-current {
+.all-services-page .breadcrumb-current {
     color: var(--color-text-primary);
     font-weight: 500;
 }
@@ -139,7 +139,7 @@
     margin-bottom: 24px;
 }
 
-.service-icon {
+.all-services-page .service-icon {
     width: 80px;
     height: 80px;
     background-color: #F8F9FA;
@@ -150,7 +150,7 @@
 }
 
 /* Ensure reusable ServiceIcon fits well inside */
-.service-icon svg {
+.all-services-page .service-icon svg {
     width: 42px;
     height: 42px;
 }

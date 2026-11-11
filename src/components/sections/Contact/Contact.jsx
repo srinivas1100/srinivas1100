@@ -2,6 +2,18 @@ import arrowRightIcon from '../../../assets/arrow-right.png';
 import './Contact.css';
 
 const Contact = () => {
+    const openEmailDraft = (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (!form.reportValidity()) return;
+        const fields = new FormData(form);
+        const name = String(fields.get('name') || '').trim();
+        const email = String(fields.get('email') || '').trim();
+        const message = String(fields.get('message') || '').trim();
+        const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nReply email: ${email}\n\n${message}`);
+        window.location.href = `mailto:srinu11112000@gmail.com?subject=${subject}&body=${body}`;
+    };
     return (
         <section className="contact-section" id="contact">
             <div className="container" >
@@ -57,25 +69,28 @@ const Contact = () => {
 
                     {/* Right Column: Contact Form */}
                     <div className="contact-form-container">
-                        <form className="contact-form">
+                        <form className="contact-form" onSubmit={openEmailDraft} aria-describedby="contact-delivery-note">
                             <div className="form-row">
                                 <div className="form-group">
                                     <label htmlFor="name">Your Name *</label>
-                                    <input type="text" id="name" placeholder="Ex. John Doe" />
+                                    <input type="text" id="name" name="name" autoComplete="name" required maxLength={120} placeholder="Ex. John Doe" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="email">Email *</label>
-                                    <input type="email" id="email" placeholder="example@gmail.com" />
+                                    <input type="email" id="email" name="email" autoComplete="email" required maxLength={254} placeholder="example@gmail.com" />
                                 </div>
                             </div>
 
                             <div className="form-group message-group">
                                 <label htmlFor="message">Message *</label>
-                                <textarea id="message" placeholder="Tell me about the role, product, or opportunity." rows="4"></textarea>
+                                <textarea id="message" name="message" required maxLength={2000} placeholder="Tell me about the role, product, or opportunity." rows="4"></textarea>
                             </div>
 
+                            <p id="contact-delivery-note" className="contact-delivery-note">
+                                This opens a draft in your email app. Review it and press Send there; this website does not send or store your message. If no app opens, email srinu11112000@gmail.com directly.
+                            </p>
                             <button type="submit" className="contact-submit-btn">
-                                <span className="btn-text">Submit</span>
+                                <span className="btn-text">Open email app</span>
                                 <span className="btn-icon">
                                     <img
                                         src={arrowRightIcon}
@@ -98,3 +113,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

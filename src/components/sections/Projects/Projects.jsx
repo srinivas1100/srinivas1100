@@ -1,3 +1,4 @@
+import ProjectVisual from '../../common/ProjectVisual/ProjectVisual';
 import { Link } from 'react-router-dom';
 import { projects } from '../../../data/content';
 import SectionTitle from '../../common/SectionTitle';
@@ -39,11 +40,7 @@ const Projects = () => {
                     {homeProjects.map((project) => (
                         <div key={project.id} className="project-card">
                             <div className="project-image-container">
-                                <img
-                                    src={project.image || `https://picsum.photos/600/500?random=${project.id}`}
-                                    alt={project.title}
-                                    className={`project-img ${project.id === 4 ? 'project-img--contain' : ''}`}
-                                />
+                                <ProjectVisual project={project} className={project.id === 4 ? 'project-img--contain' : ''} />
                             </div>
                             <div className="project-content">
                                 {/* Project Header with Title & Subtitle */}
@@ -60,7 +57,8 @@ const Projects = () => {
                                 )}
 
                                 {/* Tech Stack Tags */}
-                                <div className="project-tags">
+                                <p className="project-impact-summary">{project.headline}</p>
+                                    <div className="project-tags">
                                     {project.tags.map((tag, index) => (
                                         <span key={index} className="project-tag">{tag}</span>
                                     ))}
@@ -89,7 +87,7 @@ const Projects = () => {
                                         <span className="project-role">{project.role}</span>
                                     )}
                                     {!project.hideDetailLink && (
-                                        <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label="View Project">
+                                        <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label={`View ${project.title} project`}>
                                             <img src={arrowRightIcon} alt="Go" className="project-arrow-icon" />
                                         </Link>
                                     )}

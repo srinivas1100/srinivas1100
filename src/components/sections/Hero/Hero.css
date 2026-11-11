@@ -832,8 +832,8 @@
         margin-top: 0;
     }
 
-    .btn-portfolio-wrapper,
-    .btn-hire {
+    .hero .btn-portfolio-wrapper,
+    .hero .btn-hire {
         flex: 0 1 auto;
         min-width: 0;
         justify-content: center;
@@ -985,8 +985,8 @@
         margin-right: auto;
     }
 
-    .btn-portfolio-wrapper,
-    .btn-hire {
+    .hero .btn-portfolio-wrapper,
+    .hero .btn-hire {
         width: 100%;
     }
 
@@ -995,3 +995,39 @@
         padding: 6px 16px;
     }
 }
+@media (max-width: 480px) {
+    .hero-title { font-size: clamp(26px, 7vw, 32px); }
+    .hero-role { font-size: .9em; line-height: 1.3; }
+    .hero-content { gap: 24px; }
+    .hero-description { font-size: 16px; }
+}
+
+/* One aligned control: flexible text segment and a fixed, centred icon. */
+.hero .hero-cta .btn-portfolio-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 4px 8px 4px 4px;
+}
+.hero .hero-cta .btn-portfolio {
+    min-width: 0;
+    min-height: 48px;
+    justify-content: center;
+    padding: 12px 24px;
+    line-height: 24px;
+}
+.hero .hero-cta .btn-play-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    flex-shrink: 0;
+}
+.hero .hero-cta .btn-play-icon svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+}
+.hero .hero-cta .btn-hire { min-height: 56px; }

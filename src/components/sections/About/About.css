@@ -1,216 +1,61 @@
-/* ===================================
-   About Section - Circle Session Design
-   =================================== */
-
+/* About portrait and biography: fluid columns, no overlapping labels. */
 .about-section {
     background-color: var(--color-secondary);
     padding: var(--space-20) 0;
     color: var(--color-text-light);
-    overflow: visible;
 }
-
 .about-grid {
     display: grid;
-    grid-template-columns: 0.55fr 1.45fr;
-    gap: var(--space-24);
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 5vw, 72px);
     align-items: center;
 }
-
-/* Visual Column - Circle Session */
 .about-visual {
     display: flex;
-    justify-content: center;
-    position: relative;
-    opacity: 1;
-}
-
-.animate-on-load {
-    animation: fadeInUpSubtle 0.8s ease-out forwards;
-}
-
-@keyframes fadeInUpSubtle {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== Circle Session Container ===== */
-.circle-session-container {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-/* Image Wrapper - Circle Design */
-.image-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 440px; 
-    height: 440px;
-    border-radius: 50%;
-    overflow: hidden; /* Contain the image and badges */
-    z-index: 2;
-    box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.15);
-}
-
-.about-image-overflow {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    transform: scale(1.05);
-}
-
-/* ===== Skills Clustered Layout (Matches Reference SS) ===== */
-.skills-overlay-cluster {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.skill-badge {
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 12px 28px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 700;
-    white-space: nowrap;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-    border: 2px solid #FFFFFF; /* High-contrast white border */
-    transition: all var(--transition-base);
-    pointer-events: auto;
-    opacity: 0;
-    /* Combined falling animation */
-    animation: dropSettle 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    gap: 24px;
+    min-width: 0;
+    width: 100%;
 }
-
-.skill-badge:hover {
-    transform: translateY(-3px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(1.05) !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    z-index: 20;
+.about-portrait {
+    display: block;
+    width: min(100%, 420px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
 }
-
-.skill-yellow {
-    background: var(--color-primary); /* Vibrant Yellow */
-    color: var(--color-secondary);
+.about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 420px;
 }
-
-.skill-green {
-    background: #2F4D37;
-    color: #ffffff;
-}
-
-/* Precise Clustered Positions - Tight Center & Higher up for full containment */
-.skill-badge[data-position="0"] { /* AI agents (Top Center) */
-    --tx: -50%;
-    --rot: 2deg;
-    top: 55%;
-    left: 50%;
-    transform: translateX(var(--tx)) rotate(var(--rot));
-    animation-delay: 0.1s;
-    z-index: 25;
-}
-
-.skill-badge[data-position="1"] { /* Flutter (Mid Left) */
-    --tx: 0;
-    --rot: -10deg;
-    top: 63%;
-    left: 24%; 
-    transform: rotate(var(--rot));
-    animation-delay: 0.2s;
-    z-index: 20;
-}
-
-.skill-badge[data-position="2"] { /* React js (Mid Right) */
-    --tx: 0;
-    --rot: 10deg;
-    top: 62%;
-    right: 20%;
-    transform: rotate(var(--rot));
-    animation-delay: 0.3s;
-    z-index: 19;
-}
-
-.skill-badge[data-position="3"] { /* System Design (Center) */
-    --tx: -50%;
-    --rot: 0deg;
-    top: 73%;
-    left: 52%;
-    padding: 10px 24px;
+.about-skills li {
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(255,255,255,.06);
     font-size: 14px;
-    transform: translateX(var(--tx)) rotate(var(--rot));
-    animation-delay: 0.4s;
-    z-index: 22;
+    line-height: 1.4;
 }
-
-.skill-badge[data-position="4"] { /* Swift (Bottom Left) */
-    --tx: 0;
-    --rot: -15deg;
-    top: 72%;
-    left: 18%;
-    transform: rotate(var(--rot));
-    animation-delay: 0.5s;
-    z-index: 18;
+@media (max-width: 600px) {
+    .about-section { padding-block: 48px; }
+    .about-portrait { width: min(100%, 320px); }
+    .about-visual { gap: 20px; }
 }
-
-.skill-badge[data-position="5"] { /* Nodejs (Bottom Right) */
-    --tx: 0;
-    --rot: 22deg;
-    top: 71%;
-    right: 17% ; 
-    transform: rotate(var(--rot));
-    animation-delay: 0.6s;
-    z-index: 17;
-}
-
-.skill-badge[data-position="6"] { /* Firebase (Bottom Center) */
-    --tx: -50%;
-    --rot: 0deg;
-    top: 82%;
-    left: 50%;
-    transform: translateX(var(--tx)) rotate(var(--rot));
-    animation-delay: 0.7s;
-    z-index: 16;
-}
-
-/* Falling Animation that respects individual positions/rotations */
-@keyframes dropSettle {
-    from {
-        opacity: 0;
-        transform: translateY(-80px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)) scale(1);
-    }
-}
-
-/* Subtle continuous floating after landing */
-@keyframes continuousFloat {
-    from { transform: translateY(0) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)); }
-    to { transform: translateY(-5px) translateX(var(--tx, 0)) rotate(var(--rot, 0deg)); }
-}
-
-/* Add lifecycle animation if desired, but for now dropSettle is the priority */
 
 /* ===== Content Column - Central Focus ===== */
 .about-content {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding-left: 60px;
+    padding-left: 0;
     max-width: 620px;
 }
 
@@ -371,7 +216,7 @@
 
     .about-visual {
         order: 2;
-        opacity: 0.6;
+        opacity: 1;
     }
 
     .about-content {
@@ -407,15 +252,110 @@
         font-size: 28px;
     }
 
-    .circle-session-container {
-        width: 320px;
-        height: 320px;
-        margin: 0 auto;
-    }
 
-    .image-wrapper {
-        width: 280px;
-        height: 320px;
-        border-radius: 16px;
+}
+
+/* Keep the illustration and actions within narrow phone viewports. */
+.about-grid > * { min-width: 0; }
+.about-actions-row { flex-wrap: wrap; gap: 24px; }
+@media (max-width: 768px) {
+    .about-heading-new { font-size: clamp(30px, 8vw, 38px); }
+    .about-text-short { max-width: 100%; font-size: 16px; }
+    .about-actions-row { justify-content: center; gap: 20px; }
+    .signature-text { margin-left: 0; }
+}
+@media (max-width: 480px) {
+    .about-actions-row { flex-direction: column; width: 100%; }
+    .about-section .btn-portfolio-wrapper { max-width: 100%; }
+}
+@media (max-width: 1024px) {
+    .about-content { padding-left: 0; max-width: 680px; margin-inline: auto; }
+}
+
+/* Explicit reading order keeps the heading, portrait, and skills together. */
+.about-grid {
+    grid-template-areas: "portrait heading" "portrait biography";
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    column-gap: clamp(32px, 5vw, 72px);
+    row-gap: 20px;
+}
+.about-heading-block { grid-area: heading; }
+.about-visual { grid-area: portrait; align-self: center; }
+.about-content { grid-area: biography; }
+.about-skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 420px);
+    gap: 10px;
+}
+.about-skills li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    text-align: center;
+    overflow-wrap: anywhere;
+    border-radius: 12px;
+}
+.about-skills li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "heading" "portrait" "biography";
+        grid-template-rows: auto;
+        row-gap: 28px;
     }
+    .about-heading-block { justify-self: center; }
+    .about-heading-block .about-subtitle { justify-content: center; }
+    .about-visual, .about-content { order: initial; }
+}
+@media (max-width: 600px) {
+    .about-skills { max-width: 320px; gap: 8px; }
+    .about-skills li { padding: 8px 10px; }
+}
+
+/* A flat pile of tangent capsules, settled against the portrait circle.
+   All dimensions scale together from a 420px reference portrait. */
+.about-portrait-stage {
+    position: relative;
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    isolation: isolate;
+    container-type: inline-size;
+}
+.about-portrait-stage .about-portrait { width: 100%; }
+.about-stone-chips {
+    position: absolute;
+    inset: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.about-stone {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 6.666667%;
+    border: .357143cqw solid #fff;
+    border-radius: 999px;
+    font-size: 3.095238cqw;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    transform: translate(-50%, -50%) rotate(var(--stone-angle));
+}
+.about-stone-yellow { background: var(--color-primary); color: #173623; }
+.about-stone-green { background: #2F4D37; color: #fff; }
+.about-stone-0 { width: 20.952381%; left: 51.721755%; top: 75.218863%; --stone-angle: -6.390786deg; }
+.about-stone-1 { width: 19.523810%; left: 31.803981%; top: 73.339848%; --stone-angle: 11.782817deg; }
+.about-stone-2 { width: 20.476190%; left: 72.035765%; top: 77.425758%; --stone-angle: 9.800913deg; }
+.about-stone-3 { width: 31.904762%; left: 37.557248%; top: 81.350133%; --stone-angle: 11.782816deg; }
+.about-stone-4 { width: 15.714286%; left: 38.175721%; top: 88.724678%; --stone-angle: 17.188734deg; }
+.about-stone-5 { width: 19.047619%; left: 55.263816%; top: 89.938239%; --stone-angle: -7.602329deg; }
+.about-stone-6 { width: 22.857143%; left: 64.071864%; top: 82.815429%; --stone-angle: 9.800913deg; }
+@media (max-width: 600px) {
+    .about-portrait-stage { width: min(100%, 360px); }
 }

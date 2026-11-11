@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "test:projects": "node --test tests/projects.test.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
