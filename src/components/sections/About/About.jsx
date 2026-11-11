@@ -67,7 +67,7 @@ const About = () => {
                         </div>
 
                         <div className="about-actions-row">
-                            <a href="/cv.pdf" className="btn-portfolio-wrapper">
+                            <a href="/cv.pdf" download="Srinivasu_Vadlamudi_Resume.pdf" className="btn-portfolio-wrapper">
                                 <div className="btn-portfolio">
                                     <span>Download CV</span>
                                 </div>

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { projects, projectDetails } from '../src/data/projects.js';
 
 test('catalogue contains the 12 named projects and the documented internship', () => {
@@ -146,4 +147,13 @@ test('concept artwork retains descriptive alt text without visible labels', () =
     const visual = readFileSync('src/components/common/ProjectVisual/ProjectVisual.jsx', 'utf8');
     assert.match(visual, /AI-generated concept illustration, not an app screenshot/);
     assert.doesNotMatch(visual, /<figcaption>/);
+});
+
+test('CV button downloads the exact user-supplied PDF', () => {
+    const pdf = readFileSync(new URL('../public/cv.pdf', import.meta.url));
+    assert.equal(pdf.length, 128563);
+    assert.equal(pdf.subarray(0, 5).toString(), '%PDF-');
+    assert.equal(createHash('sha256').update(pdf).digest('hex'), '543d05eb568f5171fda8afad284cb778f6b9ef00851d8d3655dd51405eafd5e8');
+    const about = readFileSync(new URL('../src/components/sections/About/About.jsx', import.meta.url), 'utf8');
+    assert.match(about, /href="\/cv.pdf" download="Srinivasu_Vadlamudi_Resume.pdf"/);
 });
