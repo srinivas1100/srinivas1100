@@ -325,7 +325,9 @@
 .about-portrait-stage .about-portrait { width: 100%; }
 .about-stone-chips {
     position: absolute;
-    inset: 54% 4% 5%;
+    /* The baked-in circle spans roughly 6.5%–94% of the square image.
+       Keep the entire tilted pile inset from its curved lower edge. */
+    inset: 55% 20% 16%;
     list-style: none;
     padding: 0;
     margin: 0;
