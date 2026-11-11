@@ -5,12 +5,12 @@ import aboutMeImage from '../../../assets/images/About_me.png';
 
 const About = () => {
     const skillBadges = [
-        { label: 'AI agents', color: 'yellow', position: 0 },
+        { label: 'Dart', color: 'yellow', position: 0 },
         { label: 'Flutter', color: 'green', position: 1 },
-        { label: 'React js', color: 'yellow', position: 2 },
-        { label: 'System Design', color: 'green', position: 3 },
+        { label: 'SwiftUI', color: 'yellow', position: 2 },
+        { label: 'Architecture', color: 'green', position: 3 },
         { label: 'Swift', color: 'yellow', position: 4 },
-        { label: 'Nodejs', color: 'green', position: 5 },
+        { label: 'Supabase', color: 'green', position: 5 },
         { label: 'Firebase', color: 'yellow', position: 6 },
     ];
 
@@ -18,42 +18,37 @@ const About = () => {
         <section className="about-section" id="about">
             <div className="container">
                 <div className="about-grid">
-                    {/* Circle Visual with Image & Skills */}
-                    <div className="about-visual animate-on-load">
-                        <div className="circle-session-container">
-                            {/* About Me Image - Cropped & Clipped Skills */}
-                            <div className="image-wrapper">
-                                <img 
-                                    src={aboutMeImage} 
-                                    alt="About Me"
-                                    className="about-image-overflow"
-                                />
-
-                                {/* Skill labels clustered and clipped at bottom */}
-                                <div className="skills-overlay-cluster">
-                                    {skillBadges.map((skill, index) => (
-                                        <div
-                                            key={index}
-                                            className={`skill-badge skill-${skill.color}`}
-                                            data-position={skill.position}
-                                        >
-                                            {skill.label}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Content Column */}
-                    <div className="about-content">
-                        <div className="content-header">
+                        <div className="content-header about-heading-block">
                             <span className="about-subtitle">About Me</span>
                             <h2 className="about-heading-new">
                                 Who is <span className="name-italic">{personalInfo.name}</span> ?
                             </h2>
                         </div>
 
+
+                    {/* Layered pill cluster over the lower portrait, keeping the face clear. */}
+                    <div className="about-visual">
+                        <div className="about-portrait-stage">
+                            <img
+                                src={aboutMeImage}
+                                alt="Srinivasu Vadlamudi"
+                                className="about-portrait"
+                                loading="lazy"
+                                width="1080"
+                                height="1080"
+                            />
+                            <ul className="about-stone-chips" aria-label="Engineering skills">
+                                {skillBadges.map(skill => (
+                                    <li key={skill.label} className={`about-stone about-stone-${skill.position} about-stone-${skill.color}`}>
+                                        {skill.label}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Content Column */}
+                    <div className="about-content">
                         <div className="about-text-container">
                             {personalInfo.aboutMe.map((paragraph, idx) => (
                                 <p key={idx} className="about-text-short">
@@ -72,7 +67,7 @@ const About = () => {
                         </div>
 
                         <div className="about-actions-row">
-                            <a href="/cv.pdf" className="btn-portfolio-wrapper">
+                            <a href="/cv.pdf" download="Srinivasu_Vadlamudi_Resume.pdf" className="btn-portfolio-wrapper">
                                 <div className="btn-portfolio">
                                     <span>Download CV</span>
                                 </div>
@@ -90,3 +85,4 @@ const About = () => {
 };
 
 export default About;
+

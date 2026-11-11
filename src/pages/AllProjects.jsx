@@ -1,3 +1,4 @@
+import ProjectVisual from '../components/common/ProjectVisual/ProjectVisual';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/content';
@@ -33,20 +34,16 @@ const AllProjects = () => {
                 <div className="container">
                     <div className="projects-header-center">
                         <span className="projects-subtitle-center">My Portfolio</span>
-                        <h1 className="projects-title-center">
+                        <h2 className="projects-title-center">
                             My Latest <span className="highlight">Projects</span>
-                        </h1>
+                        </h2>
                     </div>
 
                     <div className="all-projects-grid">
                         {projects.map(project => (
                             <div key={project.id} className="project-card">
                                 <div className="project-image-container">
-                                    <img
-                                        src={project.image || `https://picsum.photos/600/500?random=${project.id + 10}`}
-                                        alt={project.title}
-                                        className={`project-img ${project.id === 4 ? 'project-img--contain' : ''}`}
-                                    />
+                                    <ProjectVisual project={project} className={project.id === 4 ? 'project-img--contain' : ''} />
                                 </div>
                                 <div className="project-content">
                                     <div className="project-header">
@@ -60,6 +57,7 @@ const AllProjects = () => {
                                         <p className="project-description">{project.description}</p>
                                     )}
 
+                                    <p className="project-impact-summary">{project.headline}</p>
                                     <div className="project-tags">
                                         {project.tags.map((tag, idx) => (
                                             <span key={idx} className="project-tag">{tag}</span>
@@ -87,7 +85,7 @@ const AllProjects = () => {
                                             <span className="project-role">{project.role}</span>
                                         )}
                                         {!project.hideDetailLink && (
-                                            <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label="View Project">
+                                            <Link to={`/projects/${project.id}`} className="project-action-btn" aria-label={`View ${project.title} project`}>
                                                 <img src={arrowRightIcon} alt="Go" className="project-arrow-icon" />
                                             </Link>
                                         )}
@@ -97,9 +95,7 @@ const AllProjects = () => {
                         ))}
                     </div>
 
-                    <div className="load-more-container">
-                        <button className="load-more-btn">Load More Projects</button>
-                    </div>
+                    <p className="portfolio-count">Showing all {projects.length} projects, including one internship project.</p>
                 </div>
             </section>
 
