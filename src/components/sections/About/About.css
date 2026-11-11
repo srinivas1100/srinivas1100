@@ -315,48 +315,56 @@
     .about-skills li { padding: 8px 10px; }
 }
 
-/* Requested stone-like pile: small tilts, alternating colours, face unobscured. */
+/* Separated tapered rows settle inside the lower portrait circle. */
 .about-portrait-stage {
     position: relative;
     width: min(100%, 420px);
     aspect-ratio: 1;
     isolation: isolate;
+    container-type: inline-size;
 }
 .about-portrait-stage .about-portrait { width: 100%; }
 .about-stone-chips {
     position: absolute;
-    /* The baked-in circle spans roughly 6.5%–94% of the square image.
-       Keep the entire tilted pile inset from its curved lower edge. */
-    inset: 55% 20% 16%;
+    inset: 68% 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.about-stone-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5cqw;
+    height: 27.2727%;
     list-style: none;
     padding: 0;
     margin: 0;
 }
+.about-stone-row-0 { width: 68%; }
+.about-stone-row-1 { width: 52%; }
+.about-stone-row-2 { width: 34%; }
 .about-stone {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 24%;
-    border: 2px solid #fff;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-inline: 1.2cqw;
+    border: 1.5px solid #fff;
     border-radius: 999px;
-    font-size: clamp(11px, 1.1vw, 14px);
+    font-size: clamp(9px, 3.1cqw, 13px);
     font-weight: 700;
     line-height: 1;
     white-space: nowrap;
-    box-shadow: 0 5px 12px rgba(0,0,0,.22);
+    box-shadow: 0 2px 4px rgba(0,0,0,.18);
 }
 .about-stone-yellow { background: var(--color-primary); color: #173623; }
 .about-stone-green { background: #2F4D37; color: #fff; }
-.about-stone-0 { width: 36%; left: 32%; top: 0; transform: rotate(5deg); z-index: 4; }
-.about-stone-1 { width: 32%; left: 14%; top: 24%; transform: rotate(-9deg); z-index: 3; }
-.about-stone-2 { width: 33%; right: 13%; top: 24%; transform: rotate(9deg); z-index: 3; }
-.about-stone-3 { width: 44%; left: 28%; top: 50%; transform: rotate(-2deg); z-index: 5; }
-.about-stone-4 { width: 28%; left: 3%; top: 53%; transform: rotate(-13deg); z-index: 2; }
-.about-stone-5 { width: 28%; right: 2%; top: 53%; transform: rotate(13deg); z-index: 2; }
-.about-stone-6 { width: 36%; left: 32%; top: 76%; transform: rotate(3deg); z-index: 6; }
-@media (max-width: 1024px) { .about-stone { font-size: 14px; } }
+.about-stone-0, .about-stone-3 { transform: rotate(2deg); }
+.about-stone-1, .about-stone-4 { transform: rotate(-3deg); }
+.about-stone-2, .about-stone-5 { transform: rotate(3deg); }
+.about-stone-6 { transform: rotate(-2deg); }
 @media (max-width: 600px) {
     .about-portrait-stage { width: min(100%, 360px); }
-    .about-stone { font-size: clamp(10px, 3.1vw, 13px); border-width: 1.5px; }
 }

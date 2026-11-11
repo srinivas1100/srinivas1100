@@ -14,6 +14,9 @@ const About = () => {
         { label: 'Firebase', color: 'yellow', position: 6 },
     ];
 
+    const skillRows = [[skillBadges[1], skillBadges[0], skillBadges[2]],
+        [skillBadges[3], skillBadges[6]], [skillBadges[4], skillBadges[5]]];
+
     return (
         <section className="about-section" id="about">
             <div className="container">
@@ -37,13 +40,17 @@ const About = () => {
                                 width="1080"
                                 height="1080"
                             />
-                            <ul className="about-stone-chips" aria-label="Engineering skills">
-                                {skillBadges.map(skill => (
-                                    <li key={skill.label} className={`about-stone about-stone-${skill.position} about-stone-${skill.color}`}>
-                                        {skill.label}
-                                    </li>
+                            <div className="about-stone-chips" role="group" aria-label="Engineering skills">
+                                {skillRows.map((row, index) => (
+                                    <ul key={index} className={`about-stone-row about-stone-row-${index}`}>
+                                        {row.map(skill => (
+                                            <li key={skill.label} className={`about-stone about-stone-${skill.position} about-stone-${skill.color}`}>
+                                                {skill.label}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     </div>
 
