@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { projectDetails, projects } from '../data/content';
 import ProjectVisual from '../components/common/ProjectVisual/ProjectVisual';
 import RichieCaseStudy from '../components/case-studies/RichieCaseStudy';
+import ProjectCaseStudy from '../components/case-studies/ProjectCaseStudy';
 import Contact from '../components/sections/Contact/Contact';
 import ProjectCTA from '../components/sections/CTA/ProjectCTA';
 import Marquee from '../components/common/Marquee/Marquee';
@@ -18,6 +19,7 @@ const ProjectDetail = () => {
     if (!project) {
         return <div className="project-not-found"><h1>Project not found</h1><p>This project is not in the current portfolio.</p><Link to="/projects" className="back-link">Back to projects</Link></div>;
     }
+    const hasDetailedStudy = Boolean(project.caseStudy || project.projectCaseStudy);
     const otherProjects = projects.filter(p => p.id !== project.id).slice(0, 2);
     const links = [
         ['Official website', project.websiteUrl],
@@ -55,14 +57,14 @@ const ProjectDetail = () => {
                             {project.period && <div className="v4-meta-item"><dt className="v4-meta-label">Engagement</dt><dd className="v4-meta-value">{project.period}</dd></div>}
                         </dl>
                     </div>
-                    {project.caseStudy && <div className="richie-snapshot"><p>Historical résumé-reported scope · Not live analytics</p><dl>{project.metrics.map(metric => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl></div>}
+                    {hasDetailedStudy && project.metrics.length > 0 && <div className="richie-snapshot"><p>Historical résumé-reported scope · Not live analytics</p><dl>{project.metrics.map(metric => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl></div>}
                     <div className="portfolio-detail-visual"><ProjectVisual key={project.id} project={project} /></div>
                     <div className="case-outcome"><span>Delivery outcome</span><p>{project.outcome}</p></div>
                     <nav className="case-jump-links" aria-label="Case study sections">
-                        {project.caseStudy && <a href="#brief">The brief</a>}<a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a>{project.caseStudy && <a href="#quality">Code quality & testing</a>}<a href="#delivery">Delivery & CI/CD</a><a href="#results">Results</a>
+                        {hasDetailedStudy && <a href="#brief">The brief</a>}<a href="#contribution">Responsibilities</a><a href="#engineering">Architecture</a>{hasDetailedStudy && <a href="#quality">Engineering quality</a>}<a href="#delivery">{project.id === 1 || project.id === 8 ? 'Delivery & CI/CD' : 'Delivery'}</a><a href="#results">Results</a>
                     </nav>
                     <div className="v4-details-stack">
-                        {project.caseStudy ? <RichieCaseStudy project={project} /> : <>
+                        {project.caseStudy ? <RichieCaseStudy project={project} /> : project.projectCaseStudy ? <ProjectCaseStudy project={project} /> : <>
                         <section className="v4-detail-block" id="contribution">
                             <span className="case-eyebrow">01 · Ownership in practice</span><h2 className="v4-section-heading">Role, responsibilities & contributions</h2>
                             <ul className="portfolio-contributions">{project.contributions.map(point => <li key={point}>{point}</li>)}</ul>
@@ -83,16 +85,17 @@ const ProjectDetail = () => {
                         </div>
                         </>}
                         <section className="v4-detail-block" id="results">
-                            <span className="case-eyebrow">{project.caseStudy ? '05' : '04'} · Documented impact</span>
-                            <h2 className="v4-section-heading">Results & reliability</h2>
-                            <p className="project-evidence-note">Figures below describe the documented project scope or résumé-reported results. They are not live analytics.</p>
+                            <span className="case-eyebrow">{hasDetailedStudy ? '05' : '04'} · Documented impact</span>
+                            <h2 className="v4-section-heading">{project.reliability.value === 'Not published' ? 'Delivery outcomes' : 'Results & reliability'}</h2>
+                            {project.projectCaseStudy && <p className="v4-text-description">{project.outcome}</p>}
+                            {(project.metrics.length > 0 || project.reliability.value !== 'Not published') && <p className="project-evidence-note">Historical résumé-reported project results, not live analytics.</p>}
                             {(project.metrics.length > 0 || project.reliability.value !== 'Not published') && <dl className="portfolio-metrics">
                                 {project.metrics.map(metric => <div className="portfolio-metric" key={metric.label}>
                                     <dt>{metric.label}</dt><dd><strong>{metric.value}</strong><p>{metric.note}</p></dd>
                                 </div>)}
                                 {project.reliability.value !== 'Not published' && <div className="portfolio-metric"><dt>Crash-free performance</dt><dd><strong>{project.reliability.value}</strong><p>{project.reliability.note}</p></dd></div>}
                             </dl>}
-                            {project.reliability.value === 'Not published' && <p className="case-automation-note"><strong>Reliability reporting:</strong> {project.reliability.note}</p>}
+                            {!hasDetailedStudy && project.reliability.value === 'Not published' && <p className="case-automation-note"><strong>Reliability reporting:</strong> {project.reliability.note}</p>}
                         </section>
                         <section className="v4-detail-block">
                             <h2 className="v4-section-heading">Technologies & integrations</h2>

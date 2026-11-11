@@ -113,7 +113,7 @@ test('Richie narrative uses direct implementation evidence without inventing met
     assert.match(richie.caseStudy.support.note, /comparison baselines/);
     assert.deepEqual(richie.caseStudy.support.metrics.map(item => item.value), ['92%', '15%', '90%']);
     assert.doesNotMatch(JSON.stringify(richie), /GitHub Actions|Jenkins|Fastlane|MVVM/);
-    for (const p of projects.filter(p => p.id !== 1)) assert.equal(p.caseStudy, undefined);
+    for (const p of projects.filter(p => p.id !== 1)) { assert.equal(p.caseStudy, undefined); assert.ok(p.projectCaseStudy); }
 });
 
 
@@ -126,4 +126,17 @@ test('Richie states the corrected role and architecture without public audit com
     assert.equal(richie.architectureNote, undefined);
     assert.equal(richie.caseStudy.quality.limits, undefined);
     assert.doesNotMatch(JSON.stringify(richie.caseStudy), /email.verification|unfinished|evidence limits|available sources|test-suite evidence|not established/i);
+});
+
+
+test('each project has a specific complete case study without copied leadership or audit panels', () => {
+    for (const p of projects.filter(p => p.id !== 1)) {
+        const story = p.projectCaseStudy;
+        for (const f of ['title','brief','challenge','qualityTitle','deliveryTitle']) assert.ok(story[f]);
+        for (const f of ['responsibilities','workstreams','system','quality','release']) assert.ok(story[f].length >= 2);
+        assert.doesNotMatch(JSON.stringify(story), /evidence limits|not recorded|not established|four.engineer|100%/i);
+    }
+    assert.match(projectDetails[8].projectCaseStudy.brief, /solo engineer/);
+    assert.match(projectDetails[9].projectCaseStudy.deliveryTitle, /Pre-launch/);
+    assert.match(projectDetails[15].projectCaseStudy.brief, /senior developer guidance/);
 });
