@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { projects, projectDetails } from '../src/data/projects.js';
 
 test('catalogue contains the 12 named projects and the documented internship', () => {
@@ -96,7 +96,7 @@ test('case studies distinguish ownership, engineering evidence and delivery clai
 });
 
 test('new illustrative assets are explicitly conceptual, not app screenshots', () => {
-    for (const id of [9, 10, 11, 12]) {
+    for (const id of [9, 10, 11, 12, 13, 14, 15]) {
         assert.equal(projectDetails[id].visualKind, 'concept');
         assert.match(projectDetails[id].image, /concept\.webp$/);
         assert.ok(existsSync(`public${projectDetails[id].image}`));
@@ -139,4 +139,11 @@ test('each project has a specific complete case study without copied leadership 
     assert.match(projectDetails[8].projectCaseStudy.brief, /solo engineer/);
     assert.match(projectDetails[9].projectCaseStudy.deliveryTitle, /Pre-launch/);
     assert.match(projectDetails[15].projectCaseStudy.brief, /senior developer guidance/);
+});
+
+
+test('concept artwork retains descriptive alt text without visible labels', () => {
+    const visual = readFileSync('src/components/common/ProjectVisual/ProjectVisual.jsx', 'utf8');
+    assert.match(visual, /AI-generated concept illustration, not an app screenshot/);
+    assert.doesNotMatch(visual, /<figcaption>/);
 });

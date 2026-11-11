@@ -1393,7 +1393,7 @@ export const projects = [
     "scopeNote": "The current store listing describes a different product positioning. A store link is intentionally omitted until the delivered version is reconciled.",
     "status": "Delivered project",
     "gallery": [],
-    "image": null,
+    "image": "/projects/dopoxy-learning-concept.webp",
     "ownership": "Implemented and shipped the learning-platform version described in the résumé.",
     "headline": "Flutter learning-platform delivery",
     "architecture": [
@@ -1481,7 +1481,8 @@ export const projects = [
           "detail": "Delivered a cross-platform learning app; later product positioning is outside this case study."
         }
       ]
-    }
+    },
+    "visualKind": "concept"
   },
   {
     "id": 14,
@@ -1509,7 +1510,7 @@ export const projects = [
     "appStoreUrl": "https://apps.apple.com/gb/app/beatboxx/id1473917314",
     "status": "Delivered project",
     "gallery": [],
-    "image": null,
+    "image": "/projects/beatboxx-boxing-concept.webp",
     "scopeNote": "",
     "ownership": "Implemented and shipped the cross-platform boxing-coaching application.",
     "headline": "Flutter coaching-app delivery",
@@ -1598,7 +1599,8 @@ export const projects = [
           "detail": "Delivered a mobile boxing-coaching application."
         }
       ]
-    }
+    },
+    "visualKind": "concept"
   },
   {
     "id": 15,
@@ -1632,7 +1634,7 @@ export const projects = [
     "period": "15 Sep – 15 Dec 2021",
     "status": "Internship project",
     "gallery": [],
-    "image": null,
+    "image": "/projects/iot-home-automation-concept.webp",
     "scopeNote": "",
     "ownership": "Contributed Flutter UI and API integration under senior developer guidance.",
     "headline": "Internship · Responsive Flutter UI",
@@ -1724,7 +1726,8 @@ export const projects = [
           "detail": "Built responsive home-automation screens, reusable components and API-driven UI with loading and error handling."
         }
       ]
-    }
+    },
+    "visualKind": "concept"
   }
 ];
 
